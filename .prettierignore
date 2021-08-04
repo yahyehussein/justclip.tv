@@ -1,0 +1,11 @@
+# Ignore artifacts:
+public
+vendor
+app
+bootstrap
+database
+node_modules
+routes
+storage
+tests
+config
