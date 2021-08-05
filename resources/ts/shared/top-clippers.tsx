@@ -87,15 +87,19 @@ const TopClippers = ({
   top,
   broadcaster_id,
   category_id,
+  className,
 }: {
   asset_url: string;
   leaderboard: Leaderboard[];
   top?: string;
   broadcaster_id?: number;
   category_id?: number;
+  className?: string;
 }): JSX.Element => {
   return (
-    <div className="bg-dark lg:rounded-md pt-3 mb-3 border-t border-b lg:border-r lg:border-l">
+    <div
+      className={`bg-dark lg:rounded-md pt-3 mb-3 border-t border-b lg:border-r lg:border-l ${className}`}
+    >
       <p className="text-xl font-semibold pl-3 mb-2 capitalize">
         Top {top} Clippers
       </p>

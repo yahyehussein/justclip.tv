@@ -5410,13 +5410,15 @@ var Leaderboard = function Leaderboard(_a) {
           }), void 0), (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("p", __assign({
             className: "text-muted"
           }, {
-            children: "Browse Justclip's top growing clippers. Find the top clippers in your favorite broadcaster and category."
+            children: "Browse Justclip's top growing clippers. Find the top clippers in your favourite broadcaster and category."
           }), void 0)]
         }), void 0), (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(react_infinite_scroll_component__WEBPACK_IMPORTED_MODULE_4__.default, __assign({
           dataLength: leaderboards.to,
           next: getLeaderboards,
           hasMore: !!leaderboards.next_page_url,
-          loader: (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_shared_skeleton_leaderboard__WEBPACK_IMPORTED_MODULE_6__.default, {}, void 0)
+          loader: (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_shared_skeleton_leaderboard__WEBPACK_IMPORTED_MODULE_6__.default, {
+            mini: false
+          }, void 0)
         }, {
           children: leaderboards.data.map(function (leaderboard, index) {
             return (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", __assign({
@@ -6720,11 +6722,12 @@ var __spreadArray = undefined && undefined.__spreadArray || function (to, from) 
 var LeaderboardSkeleton = function LeaderboardSkeleton(_a) {
   var index = _a.index,
       _b = _a.mini,
-      mini = _b === void 0 ? true : _b;
+      mini = _b === void 0 ? true : _b,
+      className = _a.className;
 
   if (mini) {
     return (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", __assign({
-      className: "bg-dark w-full h-auto mb-3 border-t border-b lg:border-r lg:border-l lg:rounded-md pt-2"
+      className: "bg-dark w-full h-auto mb-3 border-t border-b lg:border-r lg:border-l lg:rounded-md pt-2 " + className
     }, {
       children: (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", __assign({
         className: "animate-pulse"

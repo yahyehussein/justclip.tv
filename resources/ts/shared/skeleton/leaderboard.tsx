@@ -3,13 +3,17 @@ import React from "react";
 const LeaderboardSkeleton = ({
   index,
   mini = true,
+  className,
 }: {
   index?: number;
   mini?: boolean;
+  className?: string;
 }): JSX.Element => {
   if (mini) {
     return (
-      <div className="bg-dark w-full h-auto mb-3 border-t border-b lg:border-r lg:border-l lg:rounded-md pt-2">
+      <div
+        className={`bg-dark w-full h-auto mb-3 border-t border-b lg:border-r lg:border-l lg:rounded-md pt-2 ${className}`}
+      >
         <div className="animate-pulse">
           <div className="w-32 h-5 bg-gray rounded-md mb-2 ml-3"></div>
           <div className="relative mb-2">

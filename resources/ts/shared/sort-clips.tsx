@@ -17,8 +17,8 @@ const SortClips = ({
   const [topDate, setTopDate] = useRemember("today", "date");
   const [isSortClipByOpen, setIsSortClipByOpen] = useState(false);
   const [isSortByOpen, setIsSortByOpen] = useState(false);
-  const [sortClipBy, setSortClipBy] = useState("hot");
-  const [sortBy, setSortBy] = useState("past day");
+  const [sortClipBy, setSortClipBy] = useRemember("hot", "sortClipBy");
+  const [sortBy, setSortBy] = useRemember("past day", "sortBy");
 
   const handleSort = (sortBy: string, topDate = "today") => {
     switch (sortBy) {

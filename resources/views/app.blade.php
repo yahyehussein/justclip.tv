@@ -28,7 +28,7 @@
             <script src="{{ asset('/js/app.js') }}" defer></script>
         @endif
         <script async src="https://kit.fontawesome.com/28596637d2.js" crossorigin="anonymous"></script>
-        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2478457205374361" crossorigin="anonymous"></script>
+        {{-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2478457205374361" crossorigin="anonymous"></script> --}}
     </head>
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-162613808-1"></script>
     <script>

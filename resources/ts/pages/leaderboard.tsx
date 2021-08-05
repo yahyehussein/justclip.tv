@@ -53,14 +53,14 @@ const Leaderboard = ({
             </p>
             <p className="text-muted">
               Browse Justclip&apos;s top growing clippers. Find the top clippers
-              in your favorite broadcaster and category.
+              in your favourite broadcaster and category.
             </p>
           </div>
           <InfiniteScroll
             dataLength={leaderboards.to}
             next={getLeaderboards}
             hasMore={!!leaderboards.next_page_url}
-            loader={<LeaderboardSkeleton></LeaderboardSkeleton>}
+            loader={<LeaderboardSkeleton mini={false}></LeaderboardSkeleton>}
           >
             {leaderboards.data.map((leaderboard, index) => {
               return (

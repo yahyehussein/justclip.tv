@@ -47,6 +47,7 @@ class Clip extends Model
 
     protected $casts = [
         'spoiler' => 'boolean',
+        'loud' => 'boolean',
         'tos' => 'boolean',
         'locked' => 'boolean',
         'out_of_context' => 'boolean',

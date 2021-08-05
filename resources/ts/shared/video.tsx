@@ -42,7 +42,6 @@ const Video: Video = ({ thumbnail, clip, autoplay = false, next }) => {
         },
         next,
         moment: next ? moment : null,
-        mirror: clip?.mirror,
       });
 
       return () => {

@@ -13,8 +13,8 @@ export interface Clip {
     offset: number;
     out_of_context: boolean;
     locked: boolean;
-    mirror: string;
     spoiler: boolean;
+    loud: boolean;
     tos: boolean;
     hearted: boolean;
     video_id: number;
