@@ -7,12 +7,12 @@
         {!! Meta::tag('twitter:card', 'summary') !!}
         <meta property="og:site_name" content="Justclip">
         {!! Meta::tag('og:title', 'Justclip') !!}
-        {!! Meta::tag('og:description', "Justclip is a network of communities based on power clipper's shared broadcaster moments. Find broadcasters you're interested in, and become part of an online community!") !!}
+        {!! Meta::tag('og:description', "Justclip is a network of communities based on clipper's shared memorable moments from their favourite Twitch streams and videos. Find broadcasters you're interested in, and become part of an online community!") !!}
         {!! Meta::tag('og:image', asset('/images/logo_icon.png')) !!}
         {!! Meta::tag('og:url', Request::url()); !!}
         <meta property="og:type" content="website">
         <meta name="title" content="Justclip">
-        <meta name="description" content="Justclip is a network of communities based on power clipper's shared broadcaster moments. Find broadcasters you're interested in, and become part of an online community!">
+        <meta name="description" content="Justclip is a network of communities based on clipper's shared memorable moments from their favourite Twitch streams and videos. Find broadcasters you're interested in, and become part of an online community!">
         <meta name="msapplication-TileColor" content="#4d8844">
         <meta name="theme-color" content="#ffffff">
         <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('/apple-touch-icon.png') }}">

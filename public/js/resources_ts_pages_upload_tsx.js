@@ -5835,7 +5835,7 @@ var Footer = function Footer(_a) {
       }, void 0), (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("p", __assign({
         className: "text-muted text-xs"
       }, {
-        children: "Disclaimer: This site is not affiliated with Twitch and does not store any clips on its server. All clips are provided by twitch media assets."
+        children: "Disclaimer: This site is not affiliated with Twitch."
       }), void 0)]
     }), void 0)
   }, void 0);
@@ -6204,10 +6204,15 @@ var Layout = function Layout(_a) {
             children: "Connect with Twitch"
           }, void 0)]
         }), void 0)
-      }), void 0), (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", __assign({
-        className: "lg:hidden block"
+      }), void 0), (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", __assign({
+        className: "lg:hidden flex items-center"
       }, {
-        children: (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_headlessui_react__WEBPACK_IMPORTED_MODULE_10__.Menu, {
+        children: [auth && (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.InertiaLink, __assign({
+          href: "/upload",
+          className: "rounded-full text-center bg-secondary px-4 py-2 mr-2 text-sm"
+        }, {
+          children: "Upload"
+        }), void 0), (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_headlessui_react__WEBPACK_IMPORTED_MODULE_10__.Menu, {
           children: function children(_a) {
             var open = _a.open;
             return (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.Fragment, {
@@ -6305,17 +6310,6 @@ var Layout = function Layout(_a) {
                     }, void 0)]
                   }), void 0), (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_headlessui_react__WEBPACK_IMPORTED_MODULE_10__.Menu.Item, {
                     children: (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.InertiaLink, __assign({
-                      href: "/popular",
-                      className: "flex items-center mb-3"
-                    }, {
-                      children: [(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("i", {
-                        className: "fas fa-fire mr-2 fa-fw"
-                      }, void 0), (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("span", {
-                        children: "Popular"
-                      }, void 0)]
-                    }), void 0)
-                  }, void 0), (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_headlessui_react__WEBPACK_IMPORTED_MODULE_10__.Menu.Item, {
-                    children: (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.InertiaLink, __assign({
                       href: "/clippers/leaderboard",
                       className: "flex items-center mb-3"
                     }, {
@@ -6372,13 +6366,6 @@ var Layout = function Layout(_a) {
                   }, void 0), auth && (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.Fragment, {
                     children: [(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_headlessui_react__WEBPACK_IMPORTED_MODULE_10__.Menu.Item, {
                       children: (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.InertiaLink, __assign({
-                        href: "/upload",
-                        className: "rounded-full text-center bg-secondary px-6 py-2 w-full block my-3"
-                      }, {
-                        children: "Upload"
-                      }), void 0)
-                    }, void 0), (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_headlessui_react__WEBPACK_IMPORTED_MODULE_10__.Menu.Item, {
-                      children: (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.InertiaLink, __assign({
                         href: "/settings",
                         className: "rounded-full text-center bg-secondary px-6 py-2 w-full block my-3"
                       }, {
@@ -6397,7 +6384,7 @@ var Layout = function Layout(_a) {
               }), void 0)]
             }, void 0);
           }
-        }, void 0)
+        }, void 0)]
       }), void 0)]
     }), void 0), children, !!!cookies.cookieSettings && (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", __assign({
       className: "fixed w-full bottom-2 flex justify-center items-center z-50"
@@ -6881,9 +6868,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _justclip_jcplayer__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_justclip_jcplayer__WEBPACK_IMPORTED_MODULE_3__);
 /* harmony import */ var plyr__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! plyr */ "./node_modules/plyr/dist/plyr.min.js");
 /* harmony import */ var plyr__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(plyr__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var _utils__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../utils */ "./resources/ts/utils.ts");
-/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js");
-/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(moment__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _utils__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../utils */ "./resources/ts/utils.ts");
+/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js");
+/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(moment__WEBPACK_IMPORTED_MODULE_7__);
 var __assign = undefined && undefined.__assign || function () {
   __assign = Object.assign || function (t) {
     for (var s, i = 1, n = arguments.length; i < n; i++) {
@@ -6908,6 +6897,7 @@ var __assign = undefined && undefined.__assign || function () {
 
 
 
+
 var Video = function Video(_a) {
   var thumbnail = _a.thumbnail,
       clip = _a.clip,
@@ -6916,8 +6906,13 @@ var Video = function Video(_a) {
       next = _a.next;
   var clipRef = (0,react__WEBPACK_IMPORTED_MODULE_2__.useRef)(null);
   (0,react__WEBPACK_IMPORTED_MODULE_2__.useEffect)(function () {
-    if (_utils__WEBPACK_IMPORTED_MODULE_5__.isMobile) {
+    if (_utils__WEBPACK_IMPORTED_MODULE_6__.isMobile) {
       var plyr_1 = new (plyr__WEBPACK_IMPORTED_MODULE_4___default())("#player");
+      plyr_1.on("ended", function () {
+        axios__WEBPACK_IMPORTED_MODULE_5___default().post("/viewed", {
+          clip_id: clip === null || clip === void 0 ? void 0 : clip.id
+        });
+      });
       return function () {
         plyr_1.destroy();
       };
@@ -6937,7 +6932,7 @@ var Video = function Video(_a) {
           api: "/bullet/chat"
         },
         next: next,
-        moment: next ? (moment__WEBPACK_IMPORTED_MODULE_6___default()) : null
+        moment: next ? (moment__WEBPACK_IMPORTED_MODULE_7___default()) : null
       });
       return function () {
         jcplayer_1.destroy();
@@ -6945,17 +6940,21 @@ var Video = function Video(_a) {
     }
   }, [autoplay, clip, next, thumbnail]);
 
-  if (_utils__WEBPACK_IMPORTED_MODULE_5__.isMobile) {
-    return (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("video", __assign({
-      id: "player",
-      playsInline: true,
-      controls: true,
-      "data-poster": thumbnail
+  if (_utils__WEBPACK_IMPORTED_MODULE_6__.isMobile) {
+    return (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", __assign({
+      className: "aspect-w-16 aspect-h-9"
     }, {
-      children: (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("source", {
-        src: thumbnail.replace("-preview-480x272.jpg", ".mp4"),
-        type: "video/mp4"
-      }, void 0)
+      children: (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("video", __assign({
+        id: "player",
+        playsInline: true,
+        controls: true,
+        "data-poster": thumbnail
+      }, {
+        children: (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("source", {
+          src: thumbnail.replace("-preview-480x272.jpg", ".mp4"),
+          type: "video/mp4"
+        }, void 0)
+      }), void 0)
     }), void 0);
   } else {
     return (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", {

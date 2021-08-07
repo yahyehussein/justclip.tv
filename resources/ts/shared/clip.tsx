@@ -486,11 +486,6 @@ const Clip = ({
                     />
                   </div>
                   <div className="flex items-center absolute top-0 right-0 mt-2 mr-1">
-                    {clip.category && (
-                      <div className="bg-primary px-2 py-1 rounded-full mr-1 font-semibold bg-opacity-80 text-white-light">
-                        {clip.category.name}
-                      </div>
-                    )}
                     <div className="bg-primary px-2 py-1 rounded-full font-semibold bg-opacity-80 text-white-light">
                       {clip.broadcaster.display_name}
                     </div>
@@ -531,7 +526,7 @@ const Clip = ({
               >
                 <i className="fas fa-comment-alt align-middle"></i>
                 &nbsp;
-                {numeral(clip.comments_count).format("0a")} Comments
+                {numeral(clip.comments_count).format("0.[0]a")} Comments
               </InertiaLink>
               <a
                 href={`https://www.twitch.tv/videos/${
@@ -822,10 +817,16 @@ const Clip = ({
                   <i className="fas fa-arrow-down"></i>
                 </button>
               </div>
-              <div className="items-center rounded-full flex border px-2 py-1">
+              <div className="items-center rounded-full flex border px-2 py-1 mr-2">
                 <i className="fas fa-comment-alt align-middle mr-1"></i>{" "}
-                {numeral(clip.comments_count).format("0a")}
+                {numeral(clip.comments_count).format("0.[0]a")}
               </div>
+              {page && (
+                <div className="items-center rounded-full flex border px-2 py-1">
+                  <i className="far fa-eye align-middle mr-1"></i>{" "}
+                  {numeral(clip.views_count).format("0.[0]a")}
+                </div>
+              )}
             </div>
             <div
               className="items-center rounded-full flex border p-2"
@@ -919,7 +920,7 @@ const Clip = ({
                           name="loud"
                           id={`loud-${clip.id}`}
                           className="mr-2 bg-primary"
-                          checked={spoiler}
+                          checked={loud}
                           onChange={handleLoud}
                         />
                         <span>Mark As Loud</span>

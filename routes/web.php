@@ -31,7 +31,7 @@ use App\Http\Controllers\CommentDownVoteController;
 use App\Http\Controllers\BlockBroadcasterController;
 use App\Http\Controllers\CookiePreferencesController;
 
-use Illuminate\Support\Facades\Route;
+// use Illuminate\Support\Facades\Route;
 // use App\Models\Role;
 // use App\Models\RoleUser;
 // Route::get('/role', function () {
@@ -44,16 +44,6 @@ use Illuminate\Support\Facades\Route;
 //     $role->role_id = 1;
 //     $role->save();
 // });
-
-Route::get('/testing', function () {
-    $thumbnail = ltrim(parse_url('https://clips-media-assets2.twitch.tv/AT-cm%7C1277422675-preview-480x272.jpg')['path'], '/');
-    $video = ltrim(parse_url(str_replace(['%7C', '-preview-480x272.jpg'], ['', '.mp4'], 'https://clips-media-assets2.twitch.tv/AT-cm%7C1277422675-preview-480x272.jpg'))['path'], '/');
-    return [
-        'thumbnail' => $thumbnail,
-        'video' => $video,
-        'urldecode' => urldecode('https://clips-media-assets2.twitch.tv/AT-cm%7C1277422675-preview-480x272.jpg')
-    ];
-});
 
 /*
 |--------------------------------------------------------------------------

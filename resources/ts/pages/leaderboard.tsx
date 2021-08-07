@@ -83,7 +83,6 @@ const Leaderboard = ({
                             alt="avatar"
                             width="70"
                             height="70"
-                            className="ring-2 ring-primary"
                             onError={(e) => {
                               e.currentTarget.src = `${
                                 asset_url ? asset_url : ""
@@ -120,7 +119,7 @@ const Leaderboard = ({
                       <i className="fas fa-caret-down text-red-persimmon mr-1"></i>
                     )}
                     <span>
-                      {numeral(leaderboard.current_points).format("0a")}
+                      {numeral(leaderboard.current_points).format("0.[0]a")}
                     </span>
                   </div>
                 </div>

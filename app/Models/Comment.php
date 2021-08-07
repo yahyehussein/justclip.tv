@@ -20,17 +20,11 @@ class Comment extends Model
     use HasRecursiveRelationships;
     use SoftDeletes;
 
-    protected $fillable = [
-        'comment',
-        'clip_id',
-        'user_id',
-        'comment_id'
-    ];
-
     protected $casts = [
         'emotes' => 'array',
         'sticky' => 'boolean',
-        'in_chat' => 'object'
+        'in_chat' => 'object',
+        'top_clipper' => 'boolean'
     ];
 
     protected $dispatchesEvents = [

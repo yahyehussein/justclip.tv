@@ -6055,10 +6055,15 @@ var Layout = function Layout(_a) {
             children: "Connect with Twitch"
           }, void 0)]
         }), void 0)
-      }), void 0), (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", __assign({
-        className: "lg:hidden block"
+      }), void 0), (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", __assign({
+        className: "lg:hidden flex items-center"
       }, {
-        children: (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_headlessui_react__WEBPACK_IMPORTED_MODULE_10__.Menu, {
+        children: [auth && (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.InertiaLink, __assign({
+          href: "/upload",
+          className: "rounded-full text-center bg-secondary px-4 py-2 mr-2 text-sm"
+        }, {
+          children: "Upload"
+        }), void 0), (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_headlessui_react__WEBPACK_IMPORTED_MODULE_10__.Menu, {
           children: function children(_a) {
             var open = _a.open;
             return (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.Fragment, {
@@ -6156,17 +6161,6 @@ var Layout = function Layout(_a) {
                     }, void 0)]
                   }), void 0), (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_headlessui_react__WEBPACK_IMPORTED_MODULE_10__.Menu.Item, {
                     children: (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.InertiaLink, __assign({
-                      href: "/popular",
-                      className: "flex items-center mb-3"
-                    }, {
-                      children: [(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("i", {
-                        className: "fas fa-fire mr-2 fa-fw"
-                      }, void 0), (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("span", {
-                        children: "Popular"
-                      }, void 0)]
-                    }), void 0)
-                  }, void 0), (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_headlessui_react__WEBPACK_IMPORTED_MODULE_10__.Menu.Item, {
-                    children: (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.InertiaLink, __assign({
                       href: "/clippers/leaderboard",
                       className: "flex items-center mb-3"
                     }, {
@@ -6223,13 +6217,6 @@ var Layout = function Layout(_a) {
                   }, void 0), auth && (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.Fragment, {
                     children: [(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_headlessui_react__WEBPACK_IMPORTED_MODULE_10__.Menu.Item, {
                       children: (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.InertiaLink, __assign({
-                        href: "/upload",
-                        className: "rounded-full text-center bg-secondary px-6 py-2 w-full block my-3"
-                      }, {
-                        children: "Upload"
-                      }), void 0)
-                    }, void 0), (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_headlessui_react__WEBPACK_IMPORTED_MODULE_10__.Menu.Item, {
-                      children: (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.InertiaLink, __assign({
                         href: "/settings",
                         className: "rounded-full text-center bg-secondary px-6 py-2 w-full block my-3"
                       }, {
@@ -6248,7 +6235,7 @@ var Layout = function Layout(_a) {
               }), void 0)]
             }, void 0);
           }
-        }, void 0)
+        }, void 0)]
       }), void 0)]
     }), void 0), children, !!!cookies.cookieSettings && (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", __assign({
       className: "fixed w-full bottom-2 flex justify-center items-center z-50"

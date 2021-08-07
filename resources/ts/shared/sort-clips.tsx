@@ -201,18 +201,20 @@ const SortClips = ({
           >
             <i className="fas fa-certificate"></i> Newest
           </button>
-          <button
-            className={`px-3 py-1 rounded-full mr-2 font-semibold focus:outline-none  w-full ${
-              sortClipBy === "top" ? "border" : "bg-secondary"
-            }`}
-            onClick={() => {
-              handleSort("top");
-              setSortClipBy("top");
-              setIsSortClipByOpen(false);
-            }}
-          >
-            <i className="fas fa-list-ol"></i> Top
-          </button>
+          {!comments && (
+            <button
+              className={`px-3 py-1 rounded-full mr-2 font-semibold focus:outline-none  w-full ${
+                sortClipBy === "top" ? "border" : "bg-secondary"
+              }`}
+              onClick={() => {
+                handleSort("top");
+                setSortClipBy("top");
+                setIsSortClipByOpen(false);
+              }}
+            >
+              <i className="fas fa-list-ol"></i> Top
+            </button>
+          )}
         </div>
       </ReactModal>
 

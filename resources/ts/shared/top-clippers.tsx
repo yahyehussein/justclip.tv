@@ -22,11 +22,24 @@ const Clipper = ({
       >
         <InertiaLink
           href={`/${leaderboard.user.login}`}
-          className="flex items-center pt-44 px-3 pb-2 bg-secondary bg-opacity-70 hover:bg-opacity-80 transition"
+          className="flex items-center lg:pt-44 px-3 lg:pb-2 bg-secondary bg-opacity-70 hover:bg-opacity-80 transition"
         >
-          <p className="px-4 py-2 bg-primary text-white rounded-md text-2xl mr-2">
+          <p className="px-4 py-2 bg-primary text-white-light rounded-md text-2xl lg:mr-2 mr-3">
             {index + 1}
           </p>
+          <div className="lg:hidden block mr-3">
+            <img
+              src={leaderboard.user.avatar.replace(/\d+x\d+/g, "70x70")}
+              alt="avatar"
+              width="45"
+              height="45"
+              onError={(e) => {
+                e.currentTarget.src = `${
+                  asset_url ? asset_url : ""
+                }/images/cdd517fe-def4-11e9-948e-784f43822e80-profile_image-70x70.png`;
+              }}
+            />
+          </div>
           <div className="flex flex-col">
             <p className="text-white-light">{leaderboard.user.display_name}</p>
             <p className="text-white-light">
@@ -35,7 +48,7 @@ const Clipper = ({
               ) : (
                 <i className="fas fa-caret-down text-red-persimmon mr-1"></i>
               )}
-              {numeral(leaderboard.current_points).format("0a")}
+              {numeral(leaderboard.current_points).format("0.[0]a")}
             </p>
           </div>
         </InertiaLink>
@@ -48,7 +61,7 @@ const Clipper = ({
       href={`/${leaderboard.user.login}`}
       className="flex items-center my-2 group px-3"
     >
-      <p className="px-4 py-2 border border-gray-ligter text-gray-ligter rounded-md text-2xl mr-3 group-hover:text-muted transition">
+      <p className="px-4 py-2 border rounded-md text-2xl mr-3 group-hover:text-muted transition">
         {index + 1}
       </p>
       <div className="mr-3">
@@ -74,7 +87,7 @@ const Clipper = ({
           ) : (
             <i className="fas fa-caret-down text-red-persimmon mr-1"></i>
           )}
-          {numeral(leaderboard.current_points).format("0a")}
+          {numeral(leaderboard.current_points).format("0.[0]a")}
         </p>
       </div>
     </InertiaLink>

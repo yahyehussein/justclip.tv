@@ -40,8 +40,8 @@ const Browse = ({
     <>
       <Site title="Browse Broadcasters"></Site>
       <Grid fluid>
-        <div>
-          <div className="flex items-center justify-between mb-3 lg:px-0 px-2">
+        <div className="lg:px-0 px-2">
+          <div className="flex items-center justify-between mb-3">
             <div>
               <InertiaLink
                 href="/browse"
@@ -154,7 +154,7 @@ const Browse = ({
                     <img
                       src={broadcaster.avatar}
                       alt="avatar"
-                      className="hover:ring-2 ring-twitch"
+                      className="hover:ring-2 ring-primary"
                       width="300"
                       height="300"
                       onError={(e) => {

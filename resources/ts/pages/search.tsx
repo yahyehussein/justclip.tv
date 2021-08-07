@@ -178,6 +178,7 @@ const Search = ({
                           alt="thumbnail"
                           className="lg:max-w-none max-w-full"
                           width="360"
+                          height="204"
                           onError={(e) => {
                             e.currentTarget.src = `${
                               asset_url ? asset_url : ""

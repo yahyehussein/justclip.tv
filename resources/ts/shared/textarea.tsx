@@ -76,6 +76,7 @@ const Textarea = ({
         clip_id: clip.id,
         comment_id,
         emotes: getTextEmotes(),
+        broadcaster_id: clip.broadcaster_id,
       })
       .then(({ data }) => {
         if (onCommentPost) {
@@ -120,9 +121,9 @@ const Textarea = ({
       <textarea
         name="comment"
         id="comment"
-        rows={4}
-        className="bg-secondary p-2 w-full mb-0 lg:rounded-t-md focus:outline-none focus:broder"
+        className="bg-secondary p-2 w-full mb-0 lg:rounded-t-md focus:outline-none focus:broder lg:h-[112px] h-[84px]"
         placeholder="What are your thoughts?"
+        rows={4}
         ref={textarea}
         onChange={(e) => setText(e.target.value)}
         value={text}

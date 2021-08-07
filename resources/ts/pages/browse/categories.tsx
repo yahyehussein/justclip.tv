@@ -36,8 +36,8 @@ const Browse = ({
     <>
       <Site title="Browse Categories"></Site>
       <Grid fluid>
-        <div>
-          <div className="flex items-center justify-between mb-3 lg:px-0 px-2">
+        <div className="lg:px-0 px-2">
+          <div className="flex items-center justify-between mb-3">
             <div>
               <InertiaLink
                 href="/browse"
@@ -150,7 +150,7 @@ const Browse = ({
                         "285x380"
                       )}
                       alt="category"
-                      className="hover:ring-2 ring-twitch h-auto w-full"
+                      className="hover:ring-2 ring-primary h-auto w-full"
                       width="285"
                       height="380"
                     />

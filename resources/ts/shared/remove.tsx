@@ -14,6 +14,9 @@ const Remove = ({
 }): JSX.Element => {
   const rules = [
     {
+      name: "Not Gaming Related",
+    },
+    {
       name: "Title spoiling",
     },
     {

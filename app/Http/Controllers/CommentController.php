@@ -7,6 +7,7 @@ use App\Http\Requests\StoreCommentRequest;
 use App\Http\Requests\UpdateCommentRequest;
 use App\Models\ClipBulletChat;
 use App\Models\Comment;
+use App\Models\Leaderboard;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
@@ -86,12 +87,15 @@ class CommentController extends Controller
 
     public function store(StoreCommentRequest $request)
     {
+        $top_clipper = Leaderboard::whereJsonContains('broadcaster_id', $request->input('broadcaster_id'))->orderByDesc('current_points')->first();
+
         $comment = new Comment();
         $comment->text = $request->input('text');
         $comment->clip_id = $request->input('clip_id');
         $comment->user_id = $request->user()->id;
         $comment->emotes =  $request->input('emotes');
         $comment->in_chat =  ClipBulletChat::where('clip_id', $request->input('clip_id'))->where('user_id', $request->user()->id)->first();
+        $comment->top_clipper =  $top_clipper ? $top_clipper->user_id === $request->user()->id : null;
         $comment->comment_id = $request->input('comment_id');
 
         $comment->save();
@@ -106,6 +110,7 @@ class CommentController extends Controller
             'upvotes' => 0,
             'downvotes' => 0,
             'in_chat' => $comment->in_chat,
+            'top_clipper' => $comment->top_clipper,
             'comment_id' => $request->input('comment_id'),
             'user' => [
                 'id' => $request->user()->id,

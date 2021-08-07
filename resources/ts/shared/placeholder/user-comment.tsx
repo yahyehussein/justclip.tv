@@ -3,15 +3,15 @@ import React from "react";
 const CommentPlaceholder = (): JSX.Element => {
   return (
     <div className="bg-dark w-full h-auto mb-3">
-      <div className="border px-4 py-4 flex justify-between items-center">
+      <div className="border-t border-b lg:border-r lg:border-l px-4 py-4 flex justify-between items-center">
         <div className="flex flex-col">
           <div className="w-24 h-2 bg-gray rounded-md mb-1"></div>
           <div className="w-64 h-5 bg-gray rounded-md"></div>
         </div>
         <div className="w-24 h-14 bg-gray rounded-md"></div>
       </div>
-      <div className="flex border-l border-b border-r py-2 px-4">
-        <div className="w-12 h-12 bg-gray mt-2 mr-5"></div>
+      <div className="flex lg:border-l border-b lg:border-r py-2 px-4 overflow-hidden">
+        <div className="w-12 h-12 bg-gray mt-2 mr-5 flex-shrink-0"></div>
         <div className="flex flex-col flex-1">
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-1">
@@ -38,8 +38,8 @@ const CommentPlaceholder = (): JSX.Element => {
           </div>
         </div>
       </div>
-      <div className="flex border-l border-b border-r py-2 px-4">
-        <div className="w-12 h-12 bg-gray mt-2 mr-5"></div>
+      <div className="flex lg:border-l border-b lg:border-r py-2 px-4 overflow-hidden">
+        <div className="w-12 h-12 bg-gray mt-2 mr-5 flex-shrink-0"></div>
         <div className="flex flex-col flex-1">
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-1">

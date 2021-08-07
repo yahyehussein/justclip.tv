@@ -100,7 +100,7 @@ const Home = ({
                 <>
                   <InertiaLink
                     href="/"
-                    className={`px-3 py-1 rounded-full mr-1 hover:bg-opacity-80 font-semibold focus:outline-none lg:inline hidden ${
+                    className={`px-3 py-1 rounded-full mr-1 hover:bg-opacity-80 font-semibold focus:outline-none lg:ml-0 ml-2 ${
                       feed === "&feed=home"
                         ? "text-white-light bg-primary"
                         : "bg-secondary"
@@ -110,7 +110,7 @@ const Home = ({
                   </InertiaLink>
                   <InertiaLink
                     href="/popular"
-                    className={`px-3 py-1 rounded-full mr-1 hover:bg-opacity-80 font-semibold focus:outline-none lg:inline hidden ${
+                    className={`px-3 py-1 rounded-full mr-1 hover:bg-opacity-80 font-semibold focus:outline-none ${
                       feed === "&feed=popular"
                         ? "text-white-light bg-primary"
                         : "bg-secondary"

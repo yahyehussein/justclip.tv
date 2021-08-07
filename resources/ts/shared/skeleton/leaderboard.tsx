@@ -17,14 +17,15 @@ const LeaderboardSkeleton = ({
         <div className="animate-pulse">
           <div className="w-32 h-5 bg-gray rounded-md mb-2 ml-3"></div>
           <div className="relative mb-2">
-            <div className="w-full h-56 bg-gray mb-1"></div>
-            <div className="flex items-center mb-2 absolute bottom-0 ml-4">
+            <div className="w-full h-56 bg-gray mb-1 lg:block hidden"></div>
+            <div className="flex items-center mb-2 lg:absolute bottom-0 ml-4">
               <p className="px-4 py-2 border border-gray-ligter text-gray-ligter rounded-md text-2xl mr-2 group-hover:text-muted transition">
                 1
               </p>
+              <div className="w-12 h-12 bg-gray mr-2 lg:hidden block"></div>
               <div className="flex flex-col">
-                <div className="w-20 h-4 bg-dark rounded-md mb-1"></div>
-                <div className="w-10 h-3 bg-dark rounded-md mb-1"></div>
+                <div className="w-20 h-4 lg:bg-dark bg-gray rounded-md mb-1"></div>
+                <div className="w-10 h-3 lg:bg-dark bg-gray rounded-md mb-1"></div>
               </div>
             </div>
           </div>
