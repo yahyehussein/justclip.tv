@@ -114,7 +114,7 @@ class ProcessClip implements ShouldQueue
             ];
         });
 
-        $emotes = Cache::remember("broadcaster.{$event->clip->broadcaster->id}.emotes", 1800, function () use ($event) {
+        $emotes = Cache::remember("broadcaster.{$event->clip->broadcaster->id}.emotes", 3600, function () use ($event) {
             $channelEmotes = Http::withHeaders(['Client-Id' => env('TWITCH_CLIENT_ID')])
                 ->withToken($event->clip->user->access_token)
                 ->get("https://api.twitch.tv/helix/chat/emotes?broadcaster_id={$event->clip->broadcaster->id}");

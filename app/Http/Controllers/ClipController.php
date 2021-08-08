@@ -56,6 +56,25 @@ class ClipController extends Controller
                     return $request->user()->following()->get()->pluck('id')->toArray();
                 }));
             })
+            ->when($request->query('feed') === 'popular', function ($query) {
+                return $query->whereIntegerNotInRaw('category_id', [
+                    509658,
+                    26936,
+                    509660,
+                    509659,
+                    518203,
+                    116747788,
+                    509670,
+                    417752,
+                    509667,
+                    509663,
+                    509672,
+                    509673,
+                    509669,
+                    509671,
+                    515214,
+                  ]);
+            })
             ->when($request->has('user_id'), function ($query) use ($request) {
                 return $query->where('user_id', $request->query('user_id'));
             })

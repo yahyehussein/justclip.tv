@@ -327,7 +327,7 @@ const Clip = ({
                 <img
                   src={clip.user.avatar.replace(/\d+x\d+/g, "28x28")}
                   alt="avatar"
-                  className="lg:hidden inline align-middle ring-2 ring-primary mr-2"
+                  className="lg:hidden inline align-middle mr-2"
                   width="20"
                   height="20"
                 />

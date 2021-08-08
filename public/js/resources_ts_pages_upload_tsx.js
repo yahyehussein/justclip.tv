@@ -5513,6 +5513,8 @@ var __generator = undefined && undefined.__generator || function (thisArg, body)
 
 
 var Upload = function Upload() {
+  var irl = [509658, 26936, 509660, 509659, 518203, 116747788, 509670, 417752, 509667, 509663, 509672, 509673, 509669, 509671, 515214];
+
   var _a = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(""),
       link = _a[0],
       setLink = _a[1];
@@ -5596,20 +5598,20 @@ var Upload = function Upload() {
           }), void 0), (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("i", {
             className: "fab fa-twitch fa-lg text-twitch"
           }, void 0)]
-        }), void 0), (clip === null || clip === void 0 ? void 0 : clip.category.name) === "Just Chatting" && (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", __assign({
+        }), void 0), (clip === null || clip === void 0 ? void 0 : clip.category) && irl.includes(clip.category.id) && (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", __assign({
           className: "bg-dark border-l-8 border-t border-b border-r border-yellow-300 p-3 mb-3 rounded-md flex items-center lg:mx-0 mx-2 lg:mt-0 mt-3"
         }, {
           children: [(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("i", {
             className: "fas fa-exclamation-triangle text-2xl mr-3 text-yellow-300"
           }, void 0), (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
-            children: [(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("p", __assign({
+            children: [(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("p", __assign({
               className: "text-lg"
             }, {
-              children: "Just Chatting should be:"
+              children: ["Only ", clip.broadcaster.display_name, " followers can see", " ", clip.category.name, " clips"]
             }), void 0), (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("p", __assign({
               className: "text-sm"
             }, {
-              children: "Either about a game directly, people talking about gaming, or something fun that has happened involving games... Please keep the clips primarily centralized around games and the people who play them!"
+              children: "Any clips that are not primarily centralized around games and the people, will be hidden from popular."
             }), void 0)]
           }, void 0)]
         }), void 0), (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", __assign({
