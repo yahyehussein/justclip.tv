@@ -207,7 +207,15 @@ const Layout = ({ children }: { children: JSX.Element }): JSX.Element => {
 
         {/* mobile */}
 
-        <div className="lg:hidden block">
+        <div className="lg:hidden flex items-center">
+          {auth && (
+            <InertiaLink
+              href="/upload"
+              className="rounded-full text-center bg-secondary px-4 py-2 mr-2 text-sm"
+            >
+              Upload
+            </InertiaLink>
+          )}
           <Menu>
             {({ open }) => (
               <>
@@ -290,15 +298,6 @@ const Layout = ({ children }: { children: JSX.Element }): JSX.Element => {
                     </div>
                     <Menu.Item>
                       <InertiaLink
-                        href="/popular"
-                        className="flex items-center mb-3"
-                      >
-                        <i className="fas fa-fire mr-2 fa-fw"></i>
-                        <span>Popular</span>
-                      </InertiaLink>
-                    </Menu.Item>
-                    <Menu.Item>
-                      <InertiaLink
                         href="/clippers/leaderboard"
                         className="flex items-center mb-3"
                       >
@@ -341,14 +340,6 @@ const Layout = ({ children }: { children: JSX.Element }): JSX.Element => {
                     </Menu.Item>
                     {auth && (
                       <>
-                        <Menu.Item>
-                          <InertiaLink
-                            href="/upload"
-                            className="rounded-full text-center bg-secondary px-6 py-2 w-full block my-3"
-                          >
-                            Upload
-                          </InertiaLink>
-                        </Menu.Item>
                         <Menu.Item>
                           <InertiaLink
                             href="/settings"

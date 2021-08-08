@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 import type { Category } from "../types/category";
-import { Clip } from "types/clip";
+import type { Clip } from "../types/clip";
 import Footer from "@shared/footer";
 import Grid from "@shared/grid";
 import { Inertia } from "@inertiajs/inertia";
@@ -17,20 +17,30 @@ interface Data extends Clip {
 }
 
 const Upload = (): JSX.Element => {
+  const irl = [
+    509658,
+    26936,
+    509660,
+    509659,
+    518203,
+    116747788,
+    509670,
+    417752,
+    509667,
+    509663,
+    509672,
+    509673,
+    509669,
+    509671,
+    515214,
+  ];
+
   const [link, setLink] = useState("");
   const [title, setTitle] = useState("");
   const [clip, setClip] = useState<Data | null>(null);
-  const [mirror, setMirror] = useState<{
-    on: boolean;
-    value: string | null;
-    error: boolean;
-  }>({
-    on: false,
-    value: null,
-    error: false,
-  });
   const [spoiler, setSpoiler] = useState(false);
-  const [tos, setTos] = useState(false);
+  const [loud, setLoud] = useState(false);
+  // const [tos, setTos] = useState(false);
   const [notification, setNotification] = useState(true);
   const [lock, setLock] = useState(false);
 
@@ -62,13 +72,9 @@ const Upload = (): JSX.Element => {
       ...clip,
       title,
       spoiler,
-      tos,
+      loud,
       notification,
     };
-
-    if (mirror.value) {
-      upload.mirror = mirror.value;
-    }
 
     // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-ignore
@@ -84,6 +90,22 @@ const Upload = (): JSX.Element => {
             <p className=" text-xl font-semibold">Upload Clip</p>
             <i className="fab fa-twitch fa-lg text-twitch"></i>
           </div>
+          {clip?.category && irl.includes(clip.category.id) && (
+            <div className="bg-dark border-l-8 border-t border-b border-r border-yellow-300 p-3 mb-3 rounded-md flex items-center lg:mx-0 mx-2 lg:mt-0 mt-3">
+              <i className="fas fa-exclamation-triangle text-2xl mr-3 text-yellow-300"></i>
+              <div>
+                <p className="text-lg">
+                  Only {clip.broadcaster.display_name} followers can see{" "}
+                  {clip.category.name} clips
+                </p>
+                <p className="text-sm">
+                  Any clips that are not primarily centralized around games and
+                  the people, will be hidden from popular.
+                </p>
+              </div>
+            </div>
+          )}
+
           <div className="bg-dark lg:rounded-md mb-3 border-t border-b lg:border-r lg:border-l">
             <div className="px-3 pt-3">
               <input
@@ -115,93 +137,9 @@ const Upload = (): JSX.Element => {
                 {clip?.thumbnail && <Video thumbnail={clip.thumbnail}></Video>}
               </div>
             </div>
-            {clip && mirror.on && (
-              <div className="px-3 py-2">
-                <p className="mb-2">
-                  Step 1: Download{" "}
-                  <a
-                    href={clip.thumbnail.replace(
-                      "-preview-480x272.jpg",
-                      ".mp4"
-                    )}
-                    className="text-primary hover:underline"
-                  >
-                    {title}
-                  </a>
-                </p>
-                <p className="mb-2">
-                  Step 2: Upload clip to{" "}
-                  <a
-                    href="https://streamable.com/"
-                    className="text-primary hover:underline"
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    Streamable
-                  </a>
-                </p>
-                <div className="flex items-center">
-                  <p className="flex-shrink-0 mr-3">Step 3:</p>
-                  <div className="w-full">
-                    <input
-                      type="text"
-                      className="w-full bg-dark focus:outline-none rounded-full border px-3 py-2"
-                      placeholder="Streamable URL"
-                      onChange={(e) => {
-                        const streamable = e.currentTarget.value.match(
-                          /^https?:\/\/(www\.)?(streamable)\.com\/([\w]+)$/
-                        );
-
-                        if (streamable) {
-                          setMirror({
-                            ...mirror,
-                            value: e.currentTarget.value,
-                            error: false,
-                          });
-                        } else if (e.currentTarget.value) {
-                          setMirror({
-                            ...mirror,
-                            value: null,
-                            error: true,
-                          });
-                        } else {
-                          setMirror({
-                            ...mirror,
-                            value: null,
-                            error: false,
-                          });
-                        }
-                      }}
-                    />
-                    {mirror.error && (
-                      <p className="text-sm text-muted">
-                        Streamable link wrong
-                      </p>
-                    )}
-                  </div>
-                </div>
-              </div>
-            )}
             <form onSubmit={handleUpload} method="post" className="px-3 py-3">
               <div className="flex lg:flex-row flex-col justify-between items-center">
                 <div className="flex lg:flex-row flex-col w-full">
-                  {clip && (
-                    <div
-                      className={`
-                      rounded-full py-1 px-6 border-2 font-semibold focus:outline-none lg:w-32 w-full text-center cursor-pointer lg:mr-2 lg:mb-0 mb-2
-                      ${
-                        mirror.on &&
-                        "border-[#0f90fa] bg-[#0f90fa] text-white-light"
-                      }
-                    `}
-                      onClick={() => setMirror({ ...mirror, on: !mirror.on })}
-                    >
-                      <i
-                        className={`fas ${mirror.on ? "fa-check" : "fa-plus"}`}
-                      ></i>{" "}
-                      Mirror
-                    </div>
-                  )}
                   <div
                     className={`
                       rounded-full py-1 px-6 border-2 font-semibold focus:outline-none lg:w-32 w-full text-center cursor-pointer lg:mr-2 lg:mb-0 mb-2
@@ -216,6 +154,16 @@ const Upload = (): JSX.Element => {
                   </div>
                   <div
                     className={`
+                      rounded-full py-1 px-6 border-2 font-semibold focus:outline-none lg:w-32 w-full text-center cursor-pointer lg:mr-2 lg:mb-0 mb-2
+                      ${loud && "border-yellow-300 bg-yellow-300 text-black"}
+                    `}
+                    onClick={() => setLoud(!loud)}
+                  >
+                    <i className={`fas ${loud ? "fa-check" : "fa-plus"}`}></i>{" "}
+                    Loud
+                  </div>
+                  {/* <div
+                    className={`
                       rounded-full py-1 px-6 border-2 font-semibold focus:outline-none lg:w-28 w-full text-center cursor-pointer lg:mb-0 mb-2
                       ${tos && "border-red-500 bg-red-500"}
                     `}
@@ -223,7 +171,7 @@ const Upload = (): JSX.Element => {
                   >
                     <i className={`fas ${tos ? "fa-check" : "fa-plus"}`}></i>{" "}
                     TOS
-                  </div>
+                  </div> */}
                 </div>
                 {lock ? (
                   <div>
@@ -232,9 +180,9 @@ const Upload = (): JSX.Element => {
                 ) : (
                   <button
                     className={`rounded-full py-1 px-6 font-semibold bg-primary focus:outline-none hover:bg-opacity-80 lg:w-40 w-full text-white-light ${
-                      title && clip && !mirror.error ? "" : "cursor-not-allowed"
+                      title && clip ? "" : "cursor-not-allowed"
                     }`}
-                    disabled={!!!(title && clip && !mirror.error)}
+                    disabled={!!!(title && clip)}
                   >
                     Upload
                   </button>

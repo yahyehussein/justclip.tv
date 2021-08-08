@@ -6,7 +6,7 @@ import moment from "moment";
 const Footer = ({ ad = true }: { ad?: boolean }): JSX.Element => {
   return (
     <>
-      {ad && (
+      {/* {ad && (
         <div
           // eslint-disable-next-line @typescript-eslint/ban-ts-comment
           // @ts-ignore
@@ -15,7 +15,7 @@ const Footer = ({ ad = true }: { ad?: boolean }): JSX.Element => {
         >
           <Ad dataAdSlot="1328388064" dataAdFormat="rectangle"></Ad>
         </div>
-      )}
+      )} */}
       <div className="bg-dark rounded-md p-3 text-sm border lg:block hidden">
         <div className="flex mb-5">
           <div className="space-y-1 flex-1">
@@ -37,9 +37,7 @@ const Footer = ({ ad = true }: { ad?: boolean }): JSX.Element => {
         </div>
         <p>Justclip &copy; {moment().year()}. All rights reserved</p>
         <p className="text-muted text-xs">
-          Disclaimer: This site is not affiliated with Twitch and does not store
-          any clips on its server. All clips are provided by twitch media
-          assets.
+          Disclaimer: This site is not affiliated with Twitch.
         </p>
       </div>
     </>

@@ -6167,7 +6167,7 @@ var ClipPage = function ClipPage(props) {
               children: [(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("p", __assign({
                 className: "text-lg"
               }, {
-                children: "Sorry, this clip has been removed"
+                children: "Sorry, this clip has been removed by Justclip"
               }), void 0), (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("p", __assign({
                 className: "text-sm"
               }, {
@@ -6276,7 +6276,7 @@ var ClipPage = function ClipPage(props) {
               children: [(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("p", __assign({
                 className: "text-lg"
               }, {
-                children: "This Thread has been locked by the global moderator of Justclip"
+                children: "This Thread has been locked by Justclip"
               }), void 0), (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("p", __assign({
                 className: "text-sm"
               }, {
@@ -6312,7 +6312,7 @@ var ClipPage = function ClipPage(props) {
                 return (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_shared_comment__WEBPACK_IMPORTED_MODULE_3__.default, {
                   comment: comment,
                   asset_url: props.asset_url,
-                  className: "bg-dark lg:rounded-md border-t border-b lg:border-r lg:border-l lg:px-4 lg:pt-4 px-3 pt-3 mb-3"
+                  className: "bg-dark lg:rounded-md border-t lg:border-b lg:border-r lg:border-l lg:px-4 lg:pt-4 px-3 pt-3 lg:mb-3"
                 }, comment.id);
               })
             }), void 0)
@@ -6345,45 +6345,6 @@ ClipPage.layout = function (page) {
 
 /***/ }),
 
-/***/ "./resources/ts/shared/ad.tsx":
-/*!************************************!*\
-  !*** ./resources/ts/shared/ad.tsx ***!
-  \************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-
-
-
-var Ad = function Ad(_a) {
-  var dataAdSlot = _a.dataAdSlot,
-      dataAdFormat = _a.dataAdFormat,
-      className = _a.className;
-  (0,react__WEBPACK_IMPORTED_MODULE_1__.useEffect)(function () {
-    (window.adsbygoogle = window.adsbygoogle || []).push({});
-  }, []);
-  return (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("ins", {
-    className: "adsbygoogle " + className,
-    style: {
-      display: "block"
-    },
-    "data-ad-client": "ca-pub-2478457205374361",
-    "data-ad-slot": dataAdSlot,
-    "data-ad-format": dataAdFormat,
-    "data-full-width-responsive": "true"
-  }, void 0);
-};
-
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Ad);
-
-/***/ }),
-
 /***/ "./resources/ts/shared/clip.tsx":
 /*!**************************************!*\
   !*** ./resources/ts/shared/clip.tsx ***!
@@ -6400,24 +6361,23 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var moment_duration_format__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(moment_duration_format__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var _utils__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../utils */ "./resources/ts/utils.ts");
-/* harmony import */ var _ad__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./ad */ "./resources/ts/shared/ad.tsx");
-/* harmony import */ var _confirm__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./confirm */ "./resources/ts/shared/confirm.tsx");
-/* harmony import */ var _shared_dropdown__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @shared/dropdown */ "./resources/ts/shared/dropdown.tsx");
-/* harmony import */ var _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @inertiajs/inertia */ "./node_modules/@inertiajs/inertia/dist/index.js");
-/* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @inertiajs/inertia-react */ "./node_modules/@inertiajs/inertia-react/dist/index.js");
-/* harmony import */ var _shared_mini_profile__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @shared/mini-profile */ "./resources/ts/shared/mini-profile.tsx");
-/* harmony import */ var react_modal__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! react-modal */ "./node_modules/react-modal/lib/index.js");
-/* harmony import */ var react_modal__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(react_modal__WEBPACK_IMPORTED_MODULE_10__);
-/* harmony import */ var _shared_remove__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @shared/remove */ "./resources/ts/shared/remove.tsx");
-/* harmony import */ var _report__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./report */ "./resources/ts/shared/report.tsx");
-/* harmony import */ var _tippyjs_react__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! @tippyjs/react */ "./node_modules/@tippyjs/react/dist/tippy-react.esm.js");
-/* harmony import */ var _shared_video__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! @shared/video */ "./resources/ts/shared/video.tsx");
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_14___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_14__);
-/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js");
-/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_15___default = /*#__PURE__*/__webpack_require__.n(moment__WEBPACK_IMPORTED_MODULE_15__);
-/* harmony import */ var numeral__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! numeral */ "./node_modules/numeral/numeral.js");
-/* harmony import */ var numeral__WEBPACK_IMPORTED_MODULE_16___default = /*#__PURE__*/__webpack_require__.n(numeral__WEBPACK_IMPORTED_MODULE_16__);
+/* harmony import */ var _confirm__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./confirm */ "./resources/ts/shared/confirm.tsx");
+/* harmony import */ var _shared_dropdown__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @shared/dropdown */ "./resources/ts/shared/dropdown.tsx");
+/* harmony import */ var _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @inertiajs/inertia */ "./node_modules/@inertiajs/inertia/dist/index.js");
+/* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @inertiajs/inertia-react */ "./node_modules/@inertiajs/inertia-react/dist/index.js");
+/* harmony import */ var _shared_mini_profile__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @shared/mini-profile */ "./resources/ts/shared/mini-profile.tsx");
+/* harmony import */ var react_modal__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! react-modal */ "./node_modules/react-modal/lib/index.js");
+/* harmony import */ var react_modal__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(react_modal__WEBPACK_IMPORTED_MODULE_9__);
+/* harmony import */ var _shared_remove__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @shared/remove */ "./resources/ts/shared/remove.tsx");
+/* harmony import */ var _report__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./report */ "./resources/ts/shared/report.tsx");
+/* harmony import */ var _tippyjs_react__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! @tippyjs/react */ "./node_modules/@tippyjs/react/dist/tippy-react.esm.js");
+/* harmony import */ var _shared_video__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @shared/video */ "./resources/ts/shared/video.tsx");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_13___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_13__);
+/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js");
+/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_14___default = /*#__PURE__*/__webpack_require__.n(moment__WEBPACK_IMPORTED_MODULE_14__);
+/* harmony import */ var numeral__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! numeral */ "./node_modules/numeral/numeral.js");
+/* harmony import */ var numeral__WEBPACK_IMPORTED_MODULE_15___default = /*#__PURE__*/__webpack_require__.n(numeral__WEBPACK_IMPORTED_MODULE_15__);
 var __assign = undefined && undefined.__assign || function () {
   __assign = Object.assign || function (t) {
     for (var s, i = 1, n = arguments.length; i < n; i++) {
@@ -6433,7 +6393,6 @@ var __assign = undefined && undefined.__assign || function () {
 
   return __assign.apply(this, arguments);
 };
-
 
 
 
@@ -6509,9 +6468,9 @@ var Clip = function Clip(_a) {
       spoiler = _s[0],
       setSpoiler = _s[1];
 
-  var _t = (0,react__WEBPACK_IMPORTED_MODULE_2__.useState)(clip.tos),
-      tos = _t[0],
-      setTos = _t[1];
+  var _t = (0,react__WEBPACK_IMPORTED_MODULE_2__.useState)(clip.loud),
+      loud = _t[0],
+      setLoud = _t[1];
 
   var _u = (0,react__WEBPACK_IMPORTED_MODULE_2__.useState)(clip.notify_comments),
       notifyComments = _u[0],
@@ -6552,7 +6511,7 @@ var Clip = function Clip(_a) {
           }
         }
 
-        axios__WEBPACK_IMPORTED_MODULE_14___default().delete("/clip/" + clip.id + "/upvote/" + userVoted.user_id);
+        axios__WEBPACK_IMPORTED_MODULE_13___default().delete("/clip/" + clip.id + "/upvote/" + userVoted.user_id);
       } else {
         setUserVoted({
           user_id: auth.id,
@@ -6576,10 +6535,10 @@ var Clip = function Clip(_a) {
           }
         }
 
-        axios__WEBPACK_IMPORTED_MODULE_14___default().post("/clip/" + clip.id + "/upvote");
+        axios__WEBPACK_IMPORTED_MODULE_13___default().post("/clip/" + clip.id + "/upvote");
       }
     } else {
-      axios__WEBPACK_IMPORTED_MODULE_14___default().post("/clip/" + clip.id + "/upvote");
+      axios__WEBPACK_IMPORTED_MODULE_13___default().post("/clip/" + clip.id + "/upvote");
     }
   };
 
@@ -6615,7 +6574,7 @@ var Clip = function Clip(_a) {
           }
         }
 
-        axios__WEBPACK_IMPORTED_MODULE_14___default().delete("/clip/" + clip.id + "/downvote/" + userVoted.user_id);
+        axios__WEBPACK_IMPORTED_MODULE_13___default().delete("/clip/" + clip.id + "/downvote/" + userVoted.user_id);
       } else {
         setUserVoted({
           user_id: auth.id,
@@ -6639,10 +6598,10 @@ var Clip = function Clip(_a) {
           }
         }
 
-        axios__WEBPACK_IMPORTED_MODULE_14___default().post("/clip/" + clip.id + "/downvote");
+        axios__WEBPACK_IMPORTED_MODULE_13___default().post("/clip/" + clip.id + "/downvote");
       }
     } else {
-      axios__WEBPACK_IMPORTED_MODULE_14___default().post("/clip/" + clip.id + "/downvote");
+      axios__WEBPACK_IMPORTED_MODULE_13___default().post("/clip/" + clip.id + "/downvote");
     }
   };
 
@@ -6653,10 +6612,10 @@ var Clip = function Clip(_a) {
       setIsOpen(false);
 
       if (page) {
-        _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_7__.Inertia.delete("/clip/" + id + "?redirect=" + ((_a = clip.user) === null || _a === void 0 ? void 0 : _a.login));
+        _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_6__.Inertia.delete("/clip/" + id + "?redirect=" + ((_a = clip.user) === null || _a === void 0 ? void 0 : _a.login));
       } else {
         setDeleted(true);
-        axios__WEBPACK_IMPORTED_MODULE_14___default().delete("/clip/" + id);
+        axios__WEBPACK_IMPORTED_MODULE_13___default().delete("/clip/" + id);
       }
     }
   };
@@ -6664,12 +6623,12 @@ var Clip = function Clip(_a) {
   var handleRemove = function handleRemove(rule, confirm) {
     if (confirm) {
       setIsOpen(false);
-      setRemoved(moment__WEBPACK_IMPORTED_MODULE_15___default()().toDate());
+      setRemoved(moment__WEBPACK_IMPORTED_MODULE_14___default()().toDate());
 
       if (page) {
-        _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_7__.Inertia.delete("/reports/" + clip.id + "?approved=1&type=clip&rule=" + rule);
+        _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_6__.Inertia.delete("/reports/" + clip.id + "?approved=1&type=clip&rule=" + rule);
       } else {
-        axios__WEBPACK_IMPORTED_MODULE_14___default().delete("/reports/" + clip.id + "?approved=1&type=clip&rule=" + rule);
+        axios__WEBPACK_IMPORTED_MODULE_13___default().delete("/reports/" + clip.id + "?approved=1&type=clip&rule=" + rule);
       }
     }
   };
@@ -6683,9 +6642,9 @@ var Clip = function Clip(_a) {
       setDeletedBy(undefined);
 
       if (page) {
-        _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_7__.Inertia.delete("/clip/" + id + "?redirect=" + ((_a = clip.user) === null || _a === void 0 ? void 0 : _a.login));
+        _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_6__.Inertia.delete("/clip/" + id + "?redirect=" + ((_a = clip.user) === null || _a === void 0 ? void 0 : _a.login));
       } else {
-        axios__WEBPACK_IMPORTED_MODULE_14___default().delete("/clip/" + id);
+        axios__WEBPACK_IMPORTED_MODULE_13___default().delete("/clip/" + id);
       }
     }
   };
@@ -6695,11 +6654,11 @@ var Clip = function Clip(_a) {
     setIsOpen(false);
 
     if (page) {
-      _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_7__.Inertia.patch("/clip/" + clip.id + "?redirect=true", {
+      _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_6__.Inertia.patch("/clip/" + clip.id + "?redirect=true", {
         out_of_context: !outOfContext
       });
     } else {
-      axios__WEBPACK_IMPORTED_MODULE_14___default().patch("/clip/" + clip.id, {
+      axios__WEBPACK_IMPORTED_MODULE_13___default().patch("/clip/" + clip.id, {
         out_of_context: !outOfContext
       });
     }
@@ -6710,11 +6669,11 @@ var Clip = function Clip(_a) {
     setIsOpen(false);
 
     if (page) {
-      _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_7__.Inertia.patch("/clip/" + clip.id + "?redirect=true", {
+      _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_6__.Inertia.patch("/clip/" + clip.id + "?redirect=true", {
         locked: !locked
       });
     } else {
-      axios__WEBPACK_IMPORTED_MODULE_14___default().patch("/clip/" + clip.id, {
+      axios__WEBPACK_IMPORTED_MODULE_13___default().patch("/clip/" + clip.id, {
         locked: !locked
       });
     }
@@ -6725,27 +6684,27 @@ var Clip = function Clip(_a) {
     setIsOpen(false);
 
     if (page) {
-      _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_7__.Inertia.patch("/clip/" + clip.id + "?redirect=true", {
+      _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_6__.Inertia.patch("/clip/" + clip.id + "?redirect=true", {
         spoiler: !spoiler
       });
     } else {
-      axios__WEBPACK_IMPORTED_MODULE_14___default().patch("/clip/" + clip.id, {
+      axios__WEBPACK_IMPORTED_MODULE_13___default().patch("/clip/" + clip.id, {
         spoiler: !spoiler
       });
     }
   };
 
-  var handleTos = function handleTos() {
-    setTos(!tos);
+  var handleLoud = function handleLoud() {
+    setLoud(!loud);
     setIsOpen(false);
 
     if (page) {
-      _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_7__.Inertia.patch("/clip/" + clip.id + "?redirect=true", {
-        tos: !tos
+      _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_6__.Inertia.patch("/clip/" + clip.id + "?redirect=true", {
+        loud: !loud
       });
     } else {
-      axios__WEBPACK_IMPORTED_MODULE_14___default().patch("/clip/" + clip.id, {
-        tos: !tos
+      axios__WEBPACK_IMPORTED_MODULE_13___default().patch("/clip/" + clip.id, {
+        loud: !loud
       });
     }
   };
@@ -6755,11 +6714,11 @@ var Clip = function Clip(_a) {
     setIsOpen(false);
 
     if (page) {
-      _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_7__.Inertia.patch("/clip/" + clip.id + "?redirect=true", {
+      _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_6__.Inertia.patch("/clip/" + clip.id + "?redirect=true", {
         notifyComments: !notifyComments
       });
     } else {
-      axios__WEBPACK_IMPORTED_MODULE_14___default().patch("/clip/" + clip.id, {
+      axios__WEBPACK_IMPORTED_MODULE_13___default().patch("/clip/" + clip.id, {
         notifyComments: !notifyComments
       });
     }
@@ -6773,7 +6732,7 @@ var Clip = function Clip(_a) {
     return (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", __assign({
       onClick: function onClick() {
         if (link) {
-          _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_7__.Inertia.get("/clip/" + clip.slug);
+          _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_6__.Inertia.get("/clip/" + clip.slug);
         }
       },
       className: "flex bg-dark lg:rounded-md lg:mb-3 lg:border " + (link ? "hover:border-muted cursor-pointer" : "")
@@ -6789,7 +6748,7 @@ var Clip = function Clip(_a) {
             className: "fas fa-arrow-up"
           }, void 0)
         }), void 0), (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("span", {
-          children: votes >= 0 ? numeral__WEBPACK_IMPORTED_MODULE_16___default()(votes).format("0.[0]a") : (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.Fragment, {
+          children: votes >= 0 ? numeral__WEBPACK_IMPORTED_MODULE_15___default()(votes).format("0.[0]a") : (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.Fragment, {
             children: "\u2022"
           }, void 0)
         }, void 0), (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("button", __assign({
@@ -6816,14 +6775,14 @@ var Clip = function Clip(_a) {
             }), void 0), "\xA0", clip.user && (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("img", {
               src: clip.user.avatar.replace(/\d+x\d+/g, "28x28"),
               alt: "avatar",
-              className: "lg:hidden inline align-middle ring-2 ring-primary mr-2",
+              className: "lg:hidden inline align-middle mr-2",
               width: "20",
               height: "20"
-            }, void 0), clip.user ? (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_shared_mini_profile__WEBPACK_IMPORTED_MODULE_9__.default, __assign({
+            }, void 0), clip.user ? (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_shared_mini_profile__WEBPACK_IMPORTED_MODULE_8__.default, __assign({
               asset_url: asset_url,
               user_id: clip.user.id
             }, {
-              children: (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_8__.InertiaLink, __assign({
+              children: (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_7__.InertiaLink, __assign({
                 href: "/" + clip.user.display_name,
                 className: "hover:underline lg:font-normal font-semibold inline-block align-middle",
                 onClick: function onClick(e) {
@@ -6840,13 +6799,13 @@ var Clip = function Clip(_a) {
               className: "lg:hidden inline-block align-middle"
             }, {
               children: "\xA0\u2022"
-            }), void 0), "\xA0", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_tippyjs_react__WEBPACK_IMPORTED_MODULE_17__.default, __assign({
-              content: moment__WEBPACK_IMPORTED_MODULE_15___default()(clip.created_at).format("ddd, MMM Do, YYYY, HH:mm:ss A")
+            }), void 0), "\xA0", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_tippyjs_react__WEBPACK_IMPORTED_MODULE_16__.default, __assign({
+              content: moment__WEBPACK_IMPORTED_MODULE_14___default()(clip.created_at).format("ddd, MMM Do, YYYY, HH:mm:ss A")
             }, {
               children: (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("span", __assign({
                 className: "inline-block align-middle hover:underline"
               }, {
-                children: moment__WEBPACK_IMPORTED_MODULE_15___default()(clip.created_at).fromNow()
+                children: moment__WEBPACK_IMPORTED_MODULE_14___default()(clip.created_at).fromNow()
               }), void 0)
             }), void 0), "\xA0", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("span", __assign({
               className: "lg:inline-block hidden align-middle"
@@ -6855,19 +6814,19 @@ var Clip = function Clip(_a) {
             }), void 0), "\xA0", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("span", __assign({
               className: "inline-block align-middle"
             }, {
-              children: [removed && (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_tippyjs_react__WEBPACK_IMPORTED_MODULE_17__.default, __assign({
+              children: [removed && (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_tippyjs_react__WEBPACK_IMPORTED_MODULE_16__.default, __assign({
                 content: "Clip Removed"
               }, {
                 children: (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("i", {
                   className: "far fa-trash-alt text-red-persimmon mr-1 inline-block align-middle"
                 }, void 0)
-              }), void 0), locked && (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_tippyjs_react__WEBPACK_IMPORTED_MODULE_17__.default, __assign({
+              }), void 0), locked && (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_tippyjs_react__WEBPACK_IMPORTED_MODULE_16__.default, __assign({
                 content: "Comment Locked"
               }, {
                 children: (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("i", {
                   className: "fas fa-lock text-yellow-300 mr-1 inline-block align-middle"
                 }, void 0)
-              }), void 0), outOfContext && (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_tippyjs_react__WEBPACK_IMPORTED_MODULE_17__.default, __assign({
+              }), void 0), outOfContext && (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_tippyjs_react__WEBPACK_IMPORTED_MODULE_16__.default, __assign({
                 content: "Out of Context"
               }, {
                 children: (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("i", {
@@ -6878,7 +6837,7 @@ var Clip = function Clip(_a) {
           }), void 0), (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("p", __assign({
             className: "lg:text-xl text-lg lg:py-0 py-1"
           }, {
-            children: [hearted && (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_tippyjs_react__WEBPACK_IMPORTED_MODULE_17__.default, __assign({
+            children: [hearted && (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_tippyjs_react__WEBPACK_IMPORTED_MODULE_16__.default, __assign({
               content: (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("span", {
                 children: [(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("i", {
                   className: "fas fa-heart text-xs"
@@ -6903,7 +6862,7 @@ var Clip = function Clip(_a) {
                 return e.stopPropagation();
               }
             }, {
-              children: (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_8__.InertiaLink, __assign({
+              children: (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_7__.InertiaLink, __assign({
                 href: "/category/" + clip.category.name,
                 className: "bg-primary px-2 py-1 rounded-full text-xs mr-1 hover:bg-opacity-80 font-semibold inline-block align-middle text-white-light"
               }, {
@@ -6914,7 +6873,7 @@ var Clip = function Clip(_a) {
                 return e.stopPropagation();
               }
             }, {
-              children: (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_8__.InertiaLink, __assign({
+              children: (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_7__.InertiaLink, __assign({
                 href: "/content-policy#" + deletedBy.rule.replaceAll(" ", "_").toLowerCase(),
                 className: "bg-secondary px-2 py-1 rounded-full text-xs mr-1 hover:bg-opacity-80 font-semibold lg:inline-block align-middle hidden"
               }, {
@@ -6924,13 +6883,13 @@ var Clip = function Clip(_a) {
               className: "border border-gray-chateau text-xs px-1 pb-1 inline-block align-middle ml-1 rounded-md font-semibold text-gray-chateau leading-3"
             }, {
               children: "spoiler"
-            }), void 0), tos && (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("span", __assign({
-              className: "border border-red-persimmon text-xs px-1 pb-1 inline-block align-middle ml-1 rounded-md text-red-persimmon font-semibold leading-3"
+            }), void 0), loud && (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("span", __assign({
+              className: "border border-yellow-300 text-xs px-1 pb-1 inline-block align-middle ml-1 rounded-md text-yellow-300 font-semibold leading-3"
             }, {
-              children: "tos"
+              children: "loud"
             }), void 0)]
           }), void 0)]
-        }), void 0), (spoiler || tos) && !page ? (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", __assign({
+        }), void 0), spoiler && !page ? (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", __assign({
           className: "overflow-hidden relative lg:text-base text-xs"
         }, {
           children: [(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", __assign({
@@ -6956,10 +6915,10 @@ var Clip = function Clip(_a) {
           }), void 0), (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", __assign({
             className: "bg-dark bg-opacity-70 absolute bottom-0 right-0 mb-2 mr-2 rounded-md px-1"
           }, {
-            children: moment__WEBPACK_IMPORTED_MODULE_15___default().duration(clip.duration, "seconds").format()
+            children: moment__WEBPACK_IMPORTED_MODULE_14___default().duration(clip.duration, "seconds").format()
           }), void 0)]
-        }), void 0) : (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.Fragment, {
-          children: [_utils__WEBPACK_IMPORTED_MODULE_3__.isMobile && !page ? (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", __assign({
+        }), void 0) : (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.Fragment, {
+          children: _utils__WEBPACK_IMPORTED_MODULE_3__.isMobile && !page ? (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", __assign({
             className: "relative lg:hidden block text-xs"
           }, {
             children: [(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", __assign({
@@ -6970,33 +6929,25 @@ var Clip = function Clip(_a) {
                 alt: "thumbnail",
                 className: "w-full"
               }, void 0)
-            }), void 0), (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", __assign({
+            }), void 0), (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", __assign({
               className: "flex items-center absolute top-0 right-0 mt-2 mr-1"
             }, {
-              children: [clip.category && (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", __assign({
-                className: "bg-primary px-2 py-1 rounded-full mr-1 font-semibold bg-opacity-80 text-white-light"
-              }, {
-                children: clip.category.name
-              }), void 0), (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", __assign({
+              children: (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", __assign({
                 className: "bg-primary px-2 py-1 rounded-full font-semibold bg-opacity-80 text-white-light"
               }, {
                 children: clip.broadcaster.display_name
-              }), void 0)]
+              }), void 0)
             }), void 0), (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", __assign({
               className: "bg-dark bg-opacity-70 absolute bottom-0 right-0 mb-2 mr-2 rounded-md px-1"
             }, {
-              children: moment__WEBPACK_IMPORTED_MODULE_15___default().duration(clip.duration, "seconds").format()
+              children: moment__WEBPACK_IMPORTED_MODULE_14___default().duration(clip.duration, "seconds").format()
             }), void 0)]
-          }), void 0) : (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_shared_video__WEBPACK_IMPORTED_MODULE_13__.default, {
+          }), void 0) : (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_shared_video__WEBPACK_IMPORTED_MODULE_12__.default, {
             thumbnail: clip.thumbnail,
             clip: clip,
             autoplay: autoplay,
             next: clip.next
-          }, void 0), page && (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_ad__WEBPACK_IMPORTED_MODULE_4__.default, {
-            dataAdSlot: "1328388064",
-            dataAdFormat: "horizontal",
-            className: "lg:mt-0 mt-2"
-          }, void 0)]
+          }, void 0)
         }, void 0), (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", __assign({
           className: "lg:flex text-muted justify-between items-center justify-items-stretch hidden h-[56px] " + (page ? "border-t" : "")
         }, {
@@ -7006,13 +6957,13 @@ var Clip = function Clip(_a) {
               return e.stopPropagation();
             }
           }, {
-            children: [(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_8__.InertiaLink, __assign({
+            children: [(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_7__.InertiaLink, __assign({
               href: "/clip/" + clip.slug,
               className: "flex items-center p-2 font-semibold border-r hover:bg-secondary hover:text-white focus:outline-none"
             }, {
               children: [(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("i", {
                 className: "fas fa-comment-alt align-middle"
-              }, void 0), "\xA0", numeral__WEBPACK_IMPORTED_MODULE_16___default()(clip.comments_count).format("0a"), " Comments"]
+              }, void 0), "\xA0", numeral__WEBPACK_IMPORTED_MODULE_15___default()(clip.comments_count).format("0.[0]a"), " Comments"]
             }), void 0), (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("a", __assign({
               href: "https://www.twitch.tv/videos/" + clip.video_id + "?t=" + (0,_utils__WEBPACK_IMPORTED_MODULE_3__.secondsToHms)(clip.offset + clip.duration),
               className: "flex items-center p-2 font-semibold border-r hover:bg-secondary hover:text-white focus:outline-none",
@@ -7023,7 +6974,7 @@ var Clip = function Clip(_a) {
                 className: "fas fa-info-circle"
               }, void 0), "\xA0Context"]
             }), void 0), ((_d = clip.user) === null || _d === void 0 ? void 0 : _d.id) === (auth === null || auth === void 0 ? void 0 : auth.id) ? (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.Fragment, {
-              children: [(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_confirm__WEBPACK_IMPORTED_MODULE_5__.default, __assign({
+              children: [(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_confirm__WEBPACK_IMPORTED_MODULE_4__.default, __assign({
                 id: clip.id,
                 title: "Delete clip?",
                 description: "Are you sure you want to delete your clip and votes? You can't undo this.",
@@ -7035,7 +6986,7 @@ var Clip = function Clip(_a) {
                     className: "far fa-trash-alt"
                   }, void 0), " Delete"]
                 }, void 0)
-              }), void 0), (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(_shared_dropdown__WEBPACK_IMPORTED_MODULE_6__.default, __assign({
+              }), void 0), (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(_shared_dropdown__WEBPACK_IMPORTED_MODULE_5__.default, __assign({
                 menu: (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("i", {
                   className: "fas fa-ellipsis-h"
                 }, void 0),
@@ -7058,19 +7009,19 @@ var Clip = function Clip(_a) {
                     children: "Mark As Spoiler"
                   }, void 0)]
                 }), void 0), (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("label", __assign({
-                  htmlFor: "tos-" + clip.id,
+                  htmlFor: "loud-" + clip.id,
                   className: "flex items-center px-5 py-2 hover:bg-secondary cursor-pointer",
-                  onClick: handleTos
+                  onClick: handleLoud
                 }, {
                   children: [(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("input", {
                     type: "checkbox",
-                    name: "tos",
-                    id: "tos-" + clip.id,
+                    name: "loud",
+                    id: "loud-" + clip.id,
                     className: "mr-2 bg-primary",
-                    checked: tos,
-                    onChange: handleTos
+                    checked: loud,
+                    onChange: handleLoud
                   }, void 0), (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("span", {
-                    children: "Mark As TOS"
+                    children: "Mark As Loud"
                   }, void 0)]
                 }), void 0), (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("label", __assign({
                   htmlFor: "notification-" + clip.id,
@@ -7090,7 +7041,7 @@ var Clip = function Clip(_a) {
                 }), void 0)]
               }), void 0)]
             }, void 0) : isAdmin || isGlobalMod ? (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.Fragment, {
-              children: removed ? (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_confirm__WEBPACK_IMPORTED_MODULE_5__.default, __assign({
+              children: removed ? (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_confirm__WEBPACK_IMPORTED_MODULE_4__.default, __assign({
                 id: clip.id,
                 title: "Restore clip?",
                 description: "Are you sure you want to restore this clip?",
@@ -7103,7 +7054,7 @@ var Clip = function Clip(_a) {
                   }, void 0), " Restore"]
                 }, void 0)
               }), void 0) : (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.Fragment, {
-                children: [(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_shared_remove__WEBPACK_IMPORTED_MODULE_11__.default, __assign({
+                children: [(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_shared_remove__WEBPACK_IMPORTED_MODULE_10__.default, __assign({
                   className: "p-2 hover:bg-secondary hover:text-white focus:outline-none font-semibold border-r",
                   onConfirmed: handleRemove
                 }, {
@@ -7112,7 +7063,7 @@ var Clip = function Clip(_a) {
                       className: "fas fa-ban"
                     }, void 0), " Remove"]
                   }, void 0)
-                }), void 0), (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(_shared_dropdown__WEBPACK_IMPORTED_MODULE_6__.default, __assign({
+                }), void 0), (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(_shared_dropdown__WEBPACK_IMPORTED_MODULE_5__.default, __assign({
                   menu: (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("i", {
                     className: "fas fa-shield-alt"
                   }, void 0),
@@ -7165,24 +7116,24 @@ var Clip = function Clip(_a) {
                       children: "Mark As Spoiler"
                     }, void 0)]
                   }), void 0), (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("label", __assign({
-                    htmlFor: "tos-" + clip.id,
+                    htmlFor: "loud-" + clip.id,
                     className: "flex items-center px-5 py-2 hover:bg-secondary cursor-pointer",
-                    onClick: handleTos
+                    onClick: handleLoud
                   }, {
                     children: [(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("input", {
                       type: "checkbox",
-                      name: "tos",
-                      id: "tos-" + clip.id,
+                      name: "loud",
+                      id: "loud-" + clip.id,
                       className: "mr-2 bg-primary",
-                      checked: tos,
-                      onChange: handleTos
+                      checked: loud,
+                      onChange: handleLoud
                     }, void 0), (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("span", {
-                      children: "Mark As TOS"
+                      children: "Mark As Loud"
                     }, void 0)]
                   }), void 0)]
                 }), void 0)]
               }, void 0)
-            }, void 0) : !removed && (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_report__WEBPACK_IMPORTED_MODULE_12__.default, __assign({
+            }, void 0) : !removed && (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_report__WEBPACK_IMPORTED_MODULE_11__.default, __assign({
               className: "flex items-center p-2 font-semibold border-r hover:bg-secondary hover:text-white focus:outline-none",
               clip: clip,
               type: "clip",
@@ -7194,7 +7145,7 @@ var Clip = function Clip(_a) {
                 }, void 0), " Report"]
               }, void 0)
             }), void 0)]
-          }), void 0), typeof clip.views_count === "undefined" ? (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_8__.InertiaLink, __assign({
+          }), void 0), typeof clip.views_count === "undefined" ? (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_7__.InertiaLink, __assign({
             href: "/broadcaster/" + clip.broadcaster.login,
             className: "p-2 font-semibold flex items-center rounded-br-md group hover:bg-secondary border-l",
             onClick: function onClick(e) {
@@ -7238,7 +7189,7 @@ var Clip = function Clip(_a) {
           }), void 0) : (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", __assign({
             className: "flex items-center self-stretch p-2 font-semibold border-l"
           }, {
-            children: [numeral__WEBPACK_IMPORTED_MODULE_16___default()(clip.views_count).format("0,0"), " views"]
+            children: [numeral__WEBPACK_IMPORTED_MODULE_15___default()(clip.views_count).format("0,0"), " views"]
           }), void 0)]
         }), void 0), (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", __assign({
           className: "flex items-center p-2 lg:hidden justify-between"
@@ -7269,11 +7220,17 @@ var Clip = function Clip(_a) {
                 }, void 0)
               }), void 0)]
             }), void 0), (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", __assign({
-              className: "items-center rounded-full flex border px-2 py-1"
+              className: "items-center rounded-full flex border px-2 py-1 mr-2"
             }, {
               children: [(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("i", {
                 className: "fas fa-comment-alt align-middle mr-1"
-              }, void 0), " ", numeral__WEBPACK_IMPORTED_MODULE_16___default()(clip.comments_count).format("0a")]
+              }, void 0), " ", numeral__WEBPACK_IMPORTED_MODULE_15___default()(clip.comments_count).format("0.[0]a")]
+            }), void 0), page && (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", __assign({
+              className: "items-center rounded-full flex border px-2 py-1"
+            }, {
+              children: [(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("i", {
+                className: "far fa-eye align-middle mr-1"
+              }, void 0), " ", numeral__WEBPACK_IMPORTED_MODULE_15___default()(clip.views_count).format("0.[0]a")]
             }), void 0)]
           }), void 0), (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", __assign({
             className: "items-center rounded-full flex border p-2",
@@ -7284,7 +7241,7 @@ var Clip = function Clip(_a) {
           }, {
             children: [(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("i", {
               className: "fas fa-ellipsis-h"
-            }, void 0), (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)((react_modal__WEBPACK_IMPORTED_MODULE_10___default()), __assign({
+            }, void 0), (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)((react_modal__WEBPACK_IMPORTED_MODULE_9___default()), __assign({
               isOpen: isOpen,
               className: "fixed inset-0 z-10 flex items-center justify-center overflow-y-auto",
               overlayClassName: "fixed inset-0 bg-dark bg-opacity-30"
@@ -7310,7 +7267,7 @@ var Clip = function Clip(_a) {
                   children: [(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("i", {
                     className: "fas fa-info-circle fa-fw"
                   }, void 0), " Context"]
-                }), void 0), clip.user ? (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_8__.InertiaLink, __assign({
+                }), void 0), clip.user ? (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_7__.InertiaLink, __assign({
                   href: "/" + clip.user.login,
                   className: "px-3 py-2 font-semibold focus:outline-none block"
                 }, {
@@ -7319,7 +7276,7 @@ var Clip = function Clip(_a) {
                   }, void 0), " ", clip.user.display_name, "'s profile"]
                 }), void 0) : (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("span", {
                   children: "[DELETED]"
-                }, void 0), (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_8__.InertiaLink, __assign({
+                }, void 0), (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_7__.InertiaLink, __assign({
                   href: "/broadcaster/" + clip.broadcaster.login,
                   className: "px-3 py-2 font-semibold focus:outline-none block"
                 }, {
@@ -7327,18 +7284,22 @@ var Clip = function Clip(_a) {
                     className: "fab fa-twitch fa-fw"
                   }, void 0), " More from", " ", clip.broadcaster.display_name]
                 }), void 0), ((_e = clip.user) === null || _e === void 0 ? void 0 : _e.id) === (auth === null || auth === void 0 ? void 0 : auth.id) ? (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.Fragment, {
-                  children: [(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_confirm__WEBPACK_IMPORTED_MODULE_5__.default, __assign({
-                    id: clip.id,
-                    title: "Delete clip?",
-                    description: "Are you sure you want to delete your clip and votes? You can't undo this.",
+                  children: [(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("button", __assign({
                     className: "px-3 py-2 font-semibold focus:outline-none",
-                    onConfirmed: handleDelete
+                    onClick: function onClick() {
+                      var _a;
+
+                      if (page) {
+                        _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_6__.Inertia.delete("/clip/" + clip.id + "?redirect=" + ((_a = clip.user) === null || _a === void 0 ? void 0 : _a.login));
+                      } else {
+                        setDeleted(true);
+                        axios__WEBPACK_IMPORTED_MODULE_13___default().delete("/clip/" + clip.id);
+                      }
+                    }
                   }, {
-                    children: (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.Fragment, {
-                      children: [(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("i", {
-                        className: "far fa-trash-alt fa-fw"
-                      }, void 0), " Delete"]
-                    }, void 0)
+                    children: [(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("i", {
+                      className: "far fa-trash-alt fa-fw"
+                    }, void 0), " Delete"]
                   }), void 0), (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("label", __assign({
                     htmlFor: "spoiler-" + clip.id,
                     className: "px-4 py-2 font-semibold focus:outline-none block",
@@ -7355,19 +7316,19 @@ var Clip = function Clip(_a) {
                       children: "Mark As Spoiler"
                     }, void 0)]
                   }), void 0), (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("label", __assign({
-                    htmlFor: "tos-" + clip.id,
+                    htmlFor: "loud-" + clip.id,
                     className: "px-4 py-2 font-semibold focus:outline-none block",
-                    onClick: handleTos
+                    onClick: handleLoud
                   }, {
                     children: [(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("input", {
                       type: "checkbox",
-                      name: "tos",
-                      id: "tos-" + clip.id,
+                      name: "loud",
+                      id: "loud-" + clip.id,
                       className: "mr-2 bg-primary",
-                      checked: tos,
-                      onChange: handleTos
+                      checked: loud,
+                      onChange: handleLoud
                     }, void 0), (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("span", {
-                      children: "Mark As TOS"
+                      children: "Mark As Loud"
                     }, void 0)]
                   }), void 0), (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("label", __assign({
                     htmlFor: "notification-" + clip.id,
@@ -7385,7 +7346,7 @@ var Clip = function Clip(_a) {
                       children: "Send Me Reply Notifications"
                     }, void 0)]
                   }), void 0)]
-                }, void 0) : !removed && (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_report__WEBPACK_IMPORTED_MODULE_12__.default, __assign({
+                }, void 0) : !removed && (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_report__WEBPACK_IMPORTED_MODULE_11__.default, __assign({
                   className: "px-3 py-2 font-semibold focus:outline-none",
                   clip: clip,
                   type: "clip",
@@ -7428,18 +7389,19 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _utils__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../utils */ "./resources/ts/utils.ts");
 /* harmony import */ var _shared_skeleton_comment__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @shared/skeleton/comment */ "./resources/ts/shared/skeleton/comment.tsx");
 /* harmony import */ var _confirm__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./confirm */ "./resources/ts/shared/confirm.tsx");
-/* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @inertiajs/inertia-react */ "./node_modules/@inertiajs/inertia-react/dist/index.js");
-/* harmony import */ var _shared_mini_profile__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @shared/mini-profile */ "./resources/ts/shared/mini-profile.tsx");
-/* harmony import */ var _report__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./report */ "./resources/ts/shared/report.tsx");
-/* harmony import */ var _shared_textarea__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @shared/textarea */ "./resources/ts/shared/textarea.tsx");
-/* harmony import */ var _tippyjs_react__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! @tippyjs/react */ "./node_modules/@tippyjs/react/dist/tippy-react.esm.js");
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_9__);
-/* harmony import */ var _context_clipContext__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @context/clipContext */ "./resources/ts/context/clipContext.tsx");
-/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js");
-/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_11___default = /*#__PURE__*/__webpack_require__.n(moment__WEBPACK_IMPORTED_MODULE_11__);
-/* harmony import */ var numeral__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! numeral */ "./node_modules/numeral/numeral.js");
-/* harmony import */ var numeral__WEBPACK_IMPORTED_MODULE_12___default = /*#__PURE__*/__webpack_require__.n(numeral__WEBPACK_IMPORTED_MODULE_12__);
+/* harmony import */ var hashids__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! hashids */ "./node_modules/hashids/esm/index.js");
+/* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @inertiajs/inertia-react */ "./node_modules/@inertiajs/inertia-react/dist/index.js");
+/* harmony import */ var _shared_mini_profile__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @shared/mini-profile */ "./resources/ts/shared/mini-profile.tsx");
+/* harmony import */ var _report__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./report */ "./resources/ts/shared/report.tsx");
+/* harmony import */ var _shared_textarea__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @shared/textarea */ "./resources/ts/shared/textarea.tsx");
+/* harmony import */ var _tippyjs_react__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! @tippyjs/react */ "./node_modules/@tippyjs/react/dist/tippy-react.esm.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_10__);
+/* harmony import */ var _context_clipContext__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @context/clipContext */ "./resources/ts/context/clipContext.tsx");
+/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js");
+/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_12___default = /*#__PURE__*/__webpack_require__.n(moment__WEBPACK_IMPORTED_MODULE_12__);
+/* harmony import */ var numeral__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! numeral */ "./node_modules/numeral/numeral.js");
+/* harmony import */ var numeral__WEBPACK_IMPORTED_MODULE_13___default = /*#__PURE__*/__webpack_require__.n(numeral__WEBPACK_IMPORTED_MODULE_13__);
 var __assign = undefined && undefined.__assign || function () {
   __assign = Object.assign || function (t) {
     for (var s, i = 1, n = arguments.length; i < n; i++) {
@@ -7622,6 +7584,8 @@ var __spreadArray = undefined && undefined.__spreadArray || function (to, from) 
 
 
 
+var hashids = new hashids__WEBPACK_IMPORTED_MODULE_5__.default("justclip");
+
 var Comment = function Comment(_a) {
   var _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m;
 
@@ -7636,7 +7600,7 @@ var Comment = function Comment(_a) {
   var isCommentGlobalMod = (_c = comment.roles) === null || _c === void 0 ? void 0 : _c.find(function (role) {
     return (0,_utils__WEBPACK_IMPORTED_MODULE_2__.isGlobalModerator)(role);
   });
-  var clip = (0,react__WEBPACK_IMPORTED_MODULE_1__.useContext)(_context_clipContext__WEBPACK_IMPORTED_MODULE_10__.clipContext);
+  var clip = (0,react__WEBPACK_IMPORTED_MODULE_1__.useContext)(_context_clipContext__WEBPACK_IMPORTED_MODULE_11__.clipContext);
   var isAdmin = (_e = (_d = clip.auth) === null || _d === void 0 ? void 0 : _d.roles) === null || _e === void 0 ? void 0 : _e.find(function (role) {
     return (0,_utils__WEBPACK_IMPORTED_MODULE_2__.isAdminister)(role);
   });
@@ -7728,7 +7692,7 @@ var Comment = function Comment(_a) {
           }
         }
 
-        axios__WEBPACK_IMPORTED_MODULE_9___default().delete("/comment/" + comment.id + "/upvote/" + ((_a = clip.auth) === null || _a === void 0 ? void 0 : _a.id));
+        axios__WEBPACK_IMPORTED_MODULE_10___default().delete("/comment/" + comment.id + "/upvote/" + ((_a = clip.auth) === null || _a === void 0 ? void 0 : _a.id));
       } else {
         setUserVoted({
           user_id: clip.auth.id,
@@ -7747,10 +7711,10 @@ var Comment = function Comment(_a) {
           }
         }
 
-        axios__WEBPACK_IMPORTED_MODULE_9___default().post("/comment/" + comment.id + "/upvote");
+        axios__WEBPACK_IMPORTED_MODULE_10___default().post("/comment/" + comment.id + "/upvote");
       }
     } else {
-      axios__WEBPACK_IMPORTED_MODULE_9___default().post("/comment/" + comment.id + "/upvote");
+      axios__WEBPACK_IMPORTED_MODULE_10___default().post("/comment/" + comment.id + "/upvote");
     }
   };
 
@@ -7777,7 +7741,7 @@ var Comment = function Comment(_a) {
           }
         }
 
-        axios__WEBPACK_IMPORTED_MODULE_9___default().delete("/comment/" + comment.id + "/downvote/" + userVoted.user_id);
+        axios__WEBPACK_IMPORTED_MODULE_10___default().delete("/comment/" + comment.id + "/downvote/" + userVoted.user_id);
       } else {
         setUserVoted({
           user_id: clip.auth.id,
@@ -7796,22 +7760,22 @@ var Comment = function Comment(_a) {
           }
         }
 
-        axios__WEBPACK_IMPORTED_MODULE_9___default().post("/comment/" + comment.id + "/downvote");
+        axios__WEBPACK_IMPORTED_MODULE_10___default().post("/comment/" + comment.id + "/downvote");
       }
     } else {
-      axios__WEBPACK_IMPORTED_MODULE_9___default().post("/comment/" + comment.id + "/downvote");
+      axios__WEBPACK_IMPORTED_MODULE_10___default().post("/comment/" + comment.id + "/downvote");
     }
   };
 
   var handleDelete = function handleDelete(id, confirm) {
     if (confirm) {
       if (comment.replies) {
-        setSoftDelete(moment__WEBPACK_IMPORTED_MODULE_11___default()().toDate());
+        setSoftDelete(moment__WEBPACK_IMPORTED_MODULE_12___default()().toDate());
       } else {
         setForceDelete(true);
       }
 
-      axios__WEBPACK_IMPORTED_MODULE_9___default().delete("/comments/" + id);
+      axios__WEBPACK_IMPORTED_MODULE_10___default().delete("/comments/" + id);
     }
   };
 
@@ -7823,14 +7787,14 @@ var Comment = function Comment(_a) {
         setDeletedBy("global moderator");
       }
 
-      setSoftDelete(moment__WEBPACK_IMPORTED_MODULE_11___default()().toDate());
-      axios__WEBPACK_IMPORTED_MODULE_9___default().delete("/comments/" + id);
+      setSoftDelete(moment__WEBPACK_IMPORTED_MODULE_12___default()().toDate());
+      axios__WEBPACK_IMPORTED_MODULE_10___default().delete("/comments/" + id);
     }
   };
 
   var handleSticky = function handleSticky() {
     setSticky(!sticky);
-    axios__WEBPACK_IMPORTED_MODULE_9___default().patch("/comments/" + comment.id, {
+    axios__WEBPACK_IMPORTED_MODULE_10___default().patch("/comments/" + comment.id, {
       sticky: !sticky
     });
   };
@@ -7858,7 +7822,7 @@ var Comment = function Comment(_a) {
           case 0:
             if (!replies.next_page_url) return [3, 2];
             setLoadingMoreReplies(true);
-            return [4, axios__WEBPACK_IMPORTED_MODULE_9___default().get("" + replies.next_page_url)];
+            return [4, axios__WEBPACK_IMPORTED_MODULE_10___default().get("" + replies.next_page_url)];
 
           case 1:
             data = _a.sent().data;
@@ -7908,13 +7872,13 @@ var Comment = function Comment(_a) {
       className: className
     }, {
       children: [(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", __assign({
-        className: "flex mb-3"
+        className: "flex"
       }, {
-        children: [!softDelete ? comment.user ? (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_5__.InertiaLink, __assign({
+        children: [!softDelete ? comment.user ? (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_6__.InertiaLink, __assign({
           href: "/" + comment.user.login,
           className: "mt-[6px] mr-[18px]"
         }, {
-          children: (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_shared_mini_profile__WEBPACK_IMPORTED_MODULE_6__.default, __assign({
+          children: (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_shared_mini_profile__WEBPACK_IMPORTED_MODULE_7__.default, __assign({
             asset_url: asset_url,
             user_id: comment.user.id
           }, {
@@ -7960,7 +7924,7 @@ var Comment = function Comment(_a) {
               }, {
                 children: deletedBy ? "Comment deleted by " + deletedBy : "Comment deleted by user"
               }), void 0) : (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.Fragment, {
-                children: [((_h = comment.user) === null || _h === void 0 ? void 0 : _h.id) === clip.user_id && (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_tippyjs_react__WEBPACK_IMPORTED_MODULE_13__.default, __assign({
+                children: [((_h = comment.user) === null || _h === void 0 ? void 0 : _h.id) === clip.user_id && (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_tippyjs_react__WEBPACK_IMPORTED_MODULE_14__.default, __assign({
                   content: "Clipper"
                 }, {
                   children: (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("img", {
@@ -7968,7 +7932,7 @@ var Comment = function Comment(_a) {
                     alt: "clip-champ",
                     className: "inline align-middle"
                   }, void 0)
-                }), void 0), ((_j = comment.user) === null || _j === void 0 ? void 0 : _j.id) === clip.broadcaster_id && (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_tippyjs_react__WEBPACK_IMPORTED_MODULE_13__.default, __assign({
+                }), void 0), ((_j = comment.user) === null || _j === void 0 ? void 0 : _j.id) === clip.broadcaster_id && (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_tippyjs_react__WEBPACK_IMPORTED_MODULE_14__.default, __assign({
                   content: "Broadcaster"
                 }, {
                   children: (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("img", {
@@ -7976,10 +7940,10 @@ var Comment = function Comment(_a) {
                     alt: "broadcaster",
                     className: "inline align-middle"
                   }, void 0)
-                }), void 0), comment.user ? (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_5__.InertiaLink, __assign({
+                }), void 0), comment.user ? (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_6__.InertiaLink, __assign({
                   href: "/" + comment.user.login
                 }, {
-                  children: (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_shared_mini_profile__WEBPACK_IMPORTED_MODULE_6__.default, __assign({
+                  children: (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_shared_mini_profile__WEBPACK_IMPORTED_MODULE_7__.default, __assign({
                     asset_url: asset_url,
                     user_id: comment.user.id
                   }, {
@@ -8004,6 +7968,17 @@ var Comment = function Comment(_a) {
                   }, {
                     children: "In Chat"
                   }), void 0)]
+                }, void 0), comment.top_clipper && (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.Fragment, {
+                  children: [(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("span", __assign({
+                    className: "text-muted inline-block align-middle"
+                  }, {
+                    children: "\u2022"
+                  }), void 0), (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_6__.InertiaLink, __assign({
+                    href: "/clippers/leaderboard?broadcaster_id=" + clip.broadcaster_id,
+                    className: "text-xs font-semibold inline-block align-middle uppercase hover:underline text-primary"
+                  }, {
+                    children: "Top Clipper"
+                  }), void 0)]
                 }, void 0), isCommentAdmin && (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.Fragment, {
                   children: [(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("span", __assign({
                     className: "text-muted inline-block align-middle"
@@ -8027,8 +8002,8 @@ var Comment = function Comment(_a) {
                 }, void 0), replyingTo && (comment.comment_id ? ((_k = comment === null || comment === void 0 ? void 0 : comment.comment) === null || _k === void 0 ? void 0 : _k.user) && (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.Fragment, {
                   children: [(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("i", {
                     className: "fas fa-reply fa-flip-horizontal text-muted inline-block align-middle"
-                  }, void 0), (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_5__.InertiaLink, __assign({
-                    href: "/" + comment.comment.user.login,
+                  }, void 0), (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_6__.InertiaLink, __assign({
+                    href: "/clip/" + clip.slug + "/" + hashids.encode(comment.comment_id),
                     className: "text-muted hover:underline mr-1 inline-block align-middle"
                   }, {
                     children: (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("span", __assign({
@@ -8051,8 +8026,8 @@ var Comment = function Comment(_a) {
               }), void 0), (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("span", __assign({
                 className: "text-muted inline-block align-middle"
               }, {
-                children: moment__WEBPACK_IMPORTED_MODULE_11___default()(comment.created_at).fromNow()
-              }), void 0), !softDelete && moment__WEBPACK_IMPORTED_MODULE_11___default()(comment.created_at).isBefore(comment.updated_at) && (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.Fragment, {
+                children: moment__WEBPACK_IMPORTED_MODULE_12___default()(comment.created_at).fromNow()
+              }), void 0), !softDelete && moment__WEBPACK_IMPORTED_MODULE_12___default()(comment.created_at).isBefore(comment.updated_at) && (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.Fragment, {
                 children: [(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("span", __assign({
                   className: "text-muted inline-block align-middle"
                 }, {
@@ -8105,7 +8080,7 @@ var Comment = function Comment(_a) {
                 }), void 0), (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("span", __assign({
                   className: "mx-1"
                 }, {
-                  children: votes ? numeral__WEBPACK_IMPORTED_MODULE_12___default()(votes).format("0.[0]a") : "0"
+                  children: votes ? numeral__WEBPACK_IMPORTED_MODULE_13___default()(votes).format("0.[0]a") : "0"
                 }), void 0), (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("button", __assign({
                   className: "hover:bg-red-500 hover:bg-opacity-50 px-2 focus:outline-none hover:text-white " + ((userVoted === null || userVoted === void 0 ? void 0 : userVoted.vote_type) === 0 && "bg-red-500 bg-opacity-70 text-white"),
                   onClick: handleDownvote
@@ -8167,7 +8142,7 @@ var Comment = function Comment(_a) {
                   }, {
                     children: sticky ? "Unsticky" : "Sticky"
                   }), void 0)]
-                }, void 0) : (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_report__WEBPACK_IMPORTED_MODULE_7__.default, __assign({
+                }, void 0) : (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_report__WEBPACK_IMPORTED_MODULE_8__.default, __assign({
                   className: "hover:bg-secondary rounded-sm px-2 focus:outline-none",
                   type: "comment",
                   clip: clip,
@@ -8199,11 +8174,11 @@ var Comment = function Comment(_a) {
           }, void 0), (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", __assign({
             className: "mt-2"
           }, {
-            children: [reply && (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_shared_textarea__WEBPACK_IMPORTED_MODULE_8__.default, {
+            children: [reply && (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_shared_textarea__WEBPACK_IMPORTED_MODULE_9__.default, {
               locked: clip.locked || !!clip.deleted_at,
               onCommentPost: onCommentPost,
               comment_id: comment.id
-            }, void 0), edit && (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_shared_textarea__WEBPACK_IMPORTED_MODULE_8__.default, {
+            }, void 0), edit && (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_shared_textarea__WEBPACK_IMPORTED_MODULE_9__.default, {
               locked: clip.locked || !!clip.deleted_at,
               comment_id: comment.id,
               edit: {
@@ -8220,7 +8195,7 @@ var Comment = function Comment(_a) {
             comment: reply,
             asset_url: asset_url,
             replyingTo: true,
-            className: replyingTo ? "" : "ml-[66px]"
+            className: replyingTo ? "" : "ml-[66px] mb-3"
           }, reply.id);
         }), loadingMoreReplies && (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", __assign({
           className: "ml-[66px]"
@@ -8977,10 +8952,15 @@ var Layout = function Layout(_a) {
             children: "Connect with Twitch"
           }, void 0)]
         }), void 0)
-      }), void 0), (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", __assign({
-        className: "lg:hidden block"
+      }), void 0), (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", __assign({
+        className: "lg:hidden flex items-center"
       }, {
-        children: (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_headlessui_react__WEBPACK_IMPORTED_MODULE_10__.Menu, {
+        children: [auth && (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.InertiaLink, __assign({
+          href: "/upload",
+          className: "rounded-full text-center bg-secondary px-4 py-2 mr-2 text-sm"
+        }, {
+          children: "Upload"
+        }), void 0), (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_headlessui_react__WEBPACK_IMPORTED_MODULE_10__.Menu, {
           children: function children(_a) {
             var open = _a.open;
             return (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.Fragment, {
@@ -9078,17 +9058,6 @@ var Layout = function Layout(_a) {
                     }, void 0)]
                   }), void 0), (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_headlessui_react__WEBPACK_IMPORTED_MODULE_10__.Menu.Item, {
                     children: (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.InertiaLink, __assign({
-                      href: "/popular",
-                      className: "flex items-center mb-3"
-                    }, {
-                      children: [(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("i", {
-                        className: "fas fa-fire mr-2 fa-fw"
-                      }, void 0), (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("span", {
-                        children: "Popular"
-                      }, void 0)]
-                    }), void 0)
-                  }, void 0), (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_headlessui_react__WEBPACK_IMPORTED_MODULE_10__.Menu.Item, {
-                    children: (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.InertiaLink, __assign({
                       href: "/clippers/leaderboard",
                       className: "flex items-center mb-3"
                     }, {
@@ -9145,13 +9114,6 @@ var Layout = function Layout(_a) {
                   }, void 0), auth && (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.Fragment, {
                     children: [(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_headlessui_react__WEBPACK_IMPORTED_MODULE_10__.Menu.Item, {
                       children: (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.InertiaLink, __assign({
-                        href: "/upload",
-                        className: "rounded-full text-center bg-secondary px-6 py-2 w-full block my-3"
-                      }, {
-                        children: "Upload"
-                      }), void 0)
-                    }, void 0), (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_headlessui_react__WEBPACK_IMPORTED_MODULE_10__.Menu.Item, {
-                      children: (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.InertiaLink, __assign({
                         href: "/settings",
                         className: "rounded-full text-center bg-secondary px-6 py-2 w-full block my-3"
                       }, {
@@ -9170,7 +9132,7 @@ var Layout = function Layout(_a) {
               }), void 0)]
             }, void 0);
           }
-        }, void 0)
+        }, void 0)]
       }), void 0)]
     }), void 0), children, !!!cookies.cookieSettings && (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", __assign({
       className: "fixed w-full bottom-2 flex justify-center items-center z-50"
@@ -9812,6 +9774,8 @@ var Remove = function Remove(_a) {
       children = _a.children,
       onConfirmed = _a.onConfirmed;
   var rules = [{
+    name: "Not Gaming Related"
+  }, {
     name: "Title spoiling"
   }, {
     name: "Personal attacks"
@@ -10004,6 +9968,8 @@ var Report = function Report(_a) {
       auth = _a.auth,
       children = _a.children;
   var rules = [{
+    name: "Not Gaming Related"
+  }, {
     name: "Title spoiling"
   }, {
     name: "Personal attacks"
@@ -10869,7 +10835,8 @@ var Textarea = function Textarea(_a) {
       text: dompurify__WEBPACK_IMPORTED_MODULE_2___default().sanitize(text),
       clip_id: clip.id,
       comment_id: comment_id,
-      emotes: getTextEmotes()
+      emotes: getTextEmotes(),
+      broadcaster_id: clip.broadcaster_id
     }).then(function (_a) {
       var data = _a.data;
 
@@ -10920,9 +10887,9 @@ var Textarea = function Textarea(_a) {
     children: [(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("textarea", {
       name: "comment",
       id: "comment",
-      rows: 4,
-      className: "bg-secondary p-2 w-full mb-0 lg:rounded-t-md focus:outline-none focus:broder",
+      className: "bg-secondary p-2 w-full mb-0 lg:rounded-t-md focus:outline-none focus:broder lg:h-[112px] h-[84px]",
       placeholder: "What are your thoughts?",
+      rows: 4,
       ref: textarea,
       onChange: function onChange(e) {
         return setText(e.target.value);
@@ -10979,9 +10946,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _justclip_jcplayer__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_justclip_jcplayer__WEBPACK_IMPORTED_MODULE_3__);
 /* harmony import */ var plyr__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! plyr */ "./node_modules/plyr/dist/plyr.min.js");
 /* harmony import */ var plyr__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(plyr__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var _utils__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../utils */ "./resources/ts/utils.ts");
-/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js");
-/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(moment__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _utils__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../utils */ "./resources/ts/utils.ts");
+/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js");
+/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(moment__WEBPACK_IMPORTED_MODULE_7__);
 var __assign = undefined && undefined.__assign || function () {
   __assign = Object.assign || function (t) {
     for (var s, i = 1, n = arguments.length; i < n; i++) {
@@ -11006,6 +10975,7 @@ var __assign = undefined && undefined.__assign || function () {
 
 
 
+
 var Video = function Video(_a) {
   var thumbnail = _a.thumbnail,
       clip = _a.clip,
@@ -11014,8 +10984,13 @@ var Video = function Video(_a) {
       next = _a.next;
   var clipRef = (0,react__WEBPACK_IMPORTED_MODULE_2__.useRef)(null);
   (0,react__WEBPACK_IMPORTED_MODULE_2__.useEffect)(function () {
-    if (_utils__WEBPACK_IMPORTED_MODULE_5__.isMobile) {
+    if (_utils__WEBPACK_IMPORTED_MODULE_6__.isMobile) {
       var plyr_1 = new (plyr__WEBPACK_IMPORTED_MODULE_4___default())("#player");
+      plyr_1.on("ended", function () {
+        axios__WEBPACK_IMPORTED_MODULE_5___default().post("/viewed", {
+          clip_id: clip === null || clip === void 0 ? void 0 : clip.id
+        });
+      });
       return function () {
         plyr_1.destroy();
       };
@@ -11035,8 +11010,7 @@ var Video = function Video(_a) {
           api: "/bullet/chat"
         },
         next: next,
-        moment: next ? (moment__WEBPACK_IMPORTED_MODULE_6___default()) : null,
-        mirror: clip === null || clip === void 0 ? void 0 : clip.mirror
+        moment: next ? (moment__WEBPACK_IMPORTED_MODULE_7___default()) : null
       });
       return function () {
         jcplayer_1.destroy();
@@ -11044,17 +11018,21 @@ var Video = function Video(_a) {
     }
   }, [autoplay, clip, next, thumbnail]);
 
-  if (_utils__WEBPACK_IMPORTED_MODULE_5__.isMobile) {
-    return (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("video", __assign({
-      id: "player",
-      playsInline: true,
-      controls: true,
-      "data-poster": thumbnail
+  if (_utils__WEBPACK_IMPORTED_MODULE_6__.isMobile) {
+    return (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", __assign({
+      className: "aspect-w-16 aspect-h-9"
     }, {
-      children: (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("source", {
-        src: thumbnail.replace("-preview-480x272.jpg", ".mp4"),
-        type: "video/mp4"
-      }, void 0)
+      children: (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("video", __assign({
+        id: "player",
+        playsInline: true,
+        controls: true,
+        "data-poster": thumbnail
+      }, {
+        children: (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("source", {
+          src: thumbnail.replace("-preview-480x272.jpg", ".mp4"),
+          type: "video/mp4"
+        }, void 0)
+      }), void 0)
     }), void 0);
   } else {
     return (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", {

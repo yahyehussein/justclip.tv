@@ -7,12 +7,12 @@
         {!! Meta::tag('twitter:card', 'summary') !!}
         <meta property="og:site_name" content="Justclip">
         {!! Meta::tag('og:title', 'Justclip') !!}
-        {!! Meta::tag('og:description', "Justclip is a network of communities based on power clipper's shared broadcaster moments. Find broadcasters you're interested in, and become part of an online community!") !!}
+        {!! Meta::tag('og:description', "Justclip is a network of communities based on clipper's shared memorable moments from their favourite Twitch streams and videos. Find broadcasters you're interested in, and become part of an online community!") !!}
         {!! Meta::tag('og:image', asset('/images/logo_icon.png')) !!}
         {!! Meta::tag('og:url', Request::url()); !!}
         <meta property="og:type" content="website">
         <meta name="title" content="Justclip">
-        <meta name="description" content="Justclip is a network of communities based on power clipper's shared broadcaster moments. Find broadcasters you're interested in, and become part of an online community!">
+        <meta name="description" content="Justclip is a network of communities based on clipper's shared memorable moments from their favourite Twitch streams and videos. Find broadcasters you're interested in, and become part of an online community!">
         <meta name="msapplication-TileColor" content="#4d8844">
         <meta name="theme-color" content="#ffffff">
         <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('/apple-touch-icon.png') }}">
@@ -28,7 +28,7 @@
             <script src="{{ asset('/js/app.js') }}" defer></script>
         @endif
         <script async src="https://kit.fontawesome.com/28596637d2.js" crossorigin="anonymous"></script>
-        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2478457205374361" crossorigin="anonymous"></script>
+        {{-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2478457205374361" crossorigin="anonymous"></script> --}}
     </head>
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-162613808-1"></script>
     <script>

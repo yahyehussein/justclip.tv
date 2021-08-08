@@ -18,7 +18,6 @@ export interface Comment {
     downvotes_count: number;
     comment_id: number;
     comment: {
-        comment: string;
         user: User;
     } | null;
     sticky: boolean;
@@ -32,4 +31,5 @@ export interface Comment {
     report_count?: number;
     clip?: Clip;
     in_chat?: ClipBulletChat;
+    top_clipper?: boolean;
 }

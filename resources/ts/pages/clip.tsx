@@ -103,7 +103,9 @@ const ClipPage = (props: {
               <div className="bg-dark border-l-8 border-t border-b border-r border-red-persimmon p-3 lg:mb-3 rounded-md flex items-center lg:mx-0 mx-2">
                 <i className="far fa-trash-alt text-2xl mr-3 text-red-persimmon"></i>
                 <div>
-                  <p className="text-lg">Sorry, this clip has been removed</p>
+                  <p className="text-lg">
+                    Sorry, this clip has been removed by Justclip
+                  </p>
                   <p className="text-sm">
                     We remove clips for a varity of reasons, including keeping
                     viewers safe, civil, and true to their purpose
@@ -216,8 +218,7 @@ const ClipPage = (props: {
                 <i className="fas fa-lock text-2xl mr-3 text-yellow-300"></i>
                 <div>
                   <p className="text-lg">
-                    This Thread has been locked by the global moderator of
-                    Justclip
+                    This Thread has been locked by Justclip
                   </p>
                   <p className="text-sm">New comment cannot be posted</p>
                 </div>
@@ -256,7 +257,7 @@ const ClipPage = (props: {
                         key={comment.id}
                         comment={comment}
                         asset_url={props.asset_url}
-                        className="bg-dark lg:rounded-md border-t border-b lg:border-r lg:border-l lg:px-4 lg:pt-4 px-3 pt-3 mb-3"
+                        className="bg-dark lg:rounded-md border-t lg:border-b lg:border-r lg:border-l lg:px-4 lg:pt-4 px-3 pt-3 lg:mb-3"
                       ></Comment>
                     );
                   })}

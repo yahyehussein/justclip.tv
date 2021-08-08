@@ -136,6 +136,15 @@ const ContentPolicy = (): JSX.Element => {
             <br />
             <p>Clip title should not spoil the outcome of the clip.</p>
             <br />
+            <p id="not_gaming_related" className="text-2xl">
+              4.3. Not Gaming Related
+            </p>
+            <br />
+            <p>
+              Clips that are not primarily centralized around games and the
+              people who play them!
+            </p>
+            <br />
             <p className="text-2xl">5. Spam</p>
             <br />
             <p id="self_promotion" className="text-2xl">

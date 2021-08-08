@@ -10,6 +10,7 @@ import CommentSkeleton from "@shared/skeleton/comment";
 import type { Comment as CommentType } from "../types/comment";
 import Confirm from "./confirm";
 import type { Emote } from "../types/emote";
+import Hashids from "hashids";
 import { InertiaLink } from "@inertiajs/inertia-react";
 import MiniProfile from "@shared/mini-profile";
 import type { Pagination } from "../types/pagination";
@@ -21,6 +22,8 @@ import axios from "axios";
 import { clipContext } from "@context/clipContext";
 import moment from "moment";
 import numeral from "numeral";
+
+const hashids = new Hashids("justclip");
 
 const Comment = ({
   comment,
@@ -229,7 +232,7 @@ const Comment = ({
   if (!forceDelete) {
     return (
       <div className={className}>
-        <div className="flex mb-3">
+        <div className="flex">
           {!softDelete ? (
             comment.user ? (
               <InertiaLink
@@ -338,6 +341,19 @@ const Comment = ({
                         </span>
                       </>
                     )}
+                    {comment.top_clipper && (
+                      <>
+                        <span className="text-muted inline-block align-middle">
+                          &#8226;
+                        </span>
+                        <InertiaLink
+                          href={`/clippers/leaderboard?broadcaster_id=${clip.broadcaster_id}`}
+                          className="text-xs font-semibold inline-block align-middle uppercase hover:underline text-primary"
+                        >
+                          Top Clipper
+                        </InertiaLink>
+                      </>
+                    )}
                     {isCommentAdmin && (
                       <>
                         <span className="text-muted inline-block align-middle">
@@ -364,7 +380,9 @@ const Comment = ({
                           <>
                             <i className="fas fa-reply fa-flip-horizontal text-muted inline-block align-middle"></i>
                             <InertiaLink
-                              href={`/${comment.comment.user.login}`}
+                              href={`/clip/${clip.slug}/${hashids.encode(
+                                comment.comment_id
+                              )}`}
                               className="text-muted hover:underline mr-1 inline-block align-middle"
                             >
                               <span className="">
@@ -574,7 +592,7 @@ const Comment = ({
                   comment={reply}
                   asset_url={asset_url}
                   replyingTo
-                  className={replyingTo ? "" : "ml-[66px]"}
+                  className={replyingTo ? "" : "ml-[66px] mb-3"}
                 ></Comment>
               );
             })}

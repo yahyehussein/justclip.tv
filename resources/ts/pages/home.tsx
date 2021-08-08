@@ -19,6 +19,7 @@ import SortClips from "@shared/sort-clips";
 import TopClippers from "@shared/top-clippers";
 import type { User } from "../types/user";
 import axios from "axios";
+import { isMobile } from "../utils";
 import route from "ziggy-js";
 
 const Home = ({
@@ -81,9 +82,11 @@ const Home = ({
   }, []);
 
   useEffect(() => {
-    axios.get("/json/leaderboard?limit=5").then(({ data }) => {
-      setLeaderboard(data.data);
-    });
+    if (!isMobile) {
+      axios.get("/json/leaderboard?limit=5").then(({ data }) => {
+        setLeaderboard(data.data);
+      });
+    }
   }, []);
 
   return (
@@ -97,7 +100,7 @@ const Home = ({
                 <>
                   <InertiaLink
                     href="/"
-                    className={`px-3 py-1 rounded-full mr-1 hover:bg-opacity-80 font-semibold focus:outline-none lg:inline hidden ${
+                    className={`px-3 py-1 rounded-full mr-1 hover:bg-opacity-80 font-semibold focus:outline-none lg:ml-0 ml-2 ${
                       feed === "&feed=home"
                         ? "text-white-light bg-primary"
                         : "bg-secondary"
@@ -107,7 +110,7 @@ const Home = ({
                   </InertiaLink>
                   <InertiaLink
                     href="/popular"
-                    className={`px-3 py-1 rounded-full mr-1 hover:bg-opacity-80 font-semibold focus:outline-none lg:inline hidden ${
+                    className={`px-3 py-1 rounded-full mr-1 hover:bg-opacity-80 font-semibold focus:outline-none ${
                       feed === "&feed=popular"
                         ? "text-white-light bg-primary"
                         : "bg-secondary"
@@ -186,29 +189,30 @@ const Home = ({
               <TopClippers
                 asset_url={asset_url}
                 leaderboard={leaderboard}
+                className="lg:block hidden"
               ></TopClippers>
             )
           ) : (
-            <LeaderboardSkeleton></LeaderboardSkeleton>
+            <LeaderboardSkeleton className="lg:block hidden"></LeaderboardSkeleton>
           )}
 
-          <div
+          {/* <div
             // eslint-disable-next-line @typescript-eslint/ban-ts-comment
             // @ts-ignore
             align="center"
             className="bg-dark lg:rounded-md lg:p-3 lg:border mb-3"
           >
             <Ad dataAdSlot="8252889064" dataAdFormat="rectangle"></Ad>
-          </div>
+          </div> */}
           {feed === "&feed=home" && (
-            <>
+            <div className="lg:block hidden">
               <div className="bg-dark lg:rounded-t-md border-t border-b lg:border-r lg:border-l p-3">
                 <p className="border-b-2 pb-1 font-semibold mb-2 text-lg">
                   Home
                 </p>
                 <p>
                   Your personal Justclip frontpage. Come here to check in with
-                  your favorite broadcasters.
+                  your favourite broadcasters.
                 </p>
               </div>
               <div className="p-2 border-b lg:border-l lg:border-r bg-dark mb-3">
@@ -219,10 +223,10 @@ const Home = ({
                   Upload Clip
                 </InertiaLink>
               </div>
-            </>
+            </div>
           )}
           {feed === "&feed=popular" && (
-            <>
+            <div className="lg:block hidden">
               <div className="bg-dark lg:rounded-t-md border-t border-b lg:border-r lg:border-l p-3">
                 <p className="border-b-2 pb-1 font-semibold mb-2 text-lg">
                   Popular
@@ -241,7 +245,7 @@ const Home = ({
                   Upload Clip
                 </InertiaLink>
               </div>
-            </>
+            </div>
           )}
           <div className="lg:sticky lg:top-3">
             <Footer></Footer>

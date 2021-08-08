@@ -17,8 +17,8 @@ const SortClips = ({
   const [topDate, setTopDate] = useRemember("today", "date");
   const [isSortClipByOpen, setIsSortClipByOpen] = useState(false);
   const [isSortByOpen, setIsSortByOpen] = useState(false);
-  const [sortClipBy, setSortClipBy] = useState("hot");
-  const [sortBy, setSortBy] = useState("past day");
+  const [sortClipBy, setSortClipBy] = useRemember("hot", "sortClipBy");
+  const [sortBy, setSortBy] = useRemember("past day", "sortBy");
 
   const handleSort = (sortBy: string, topDate = "today") => {
     switch (sortBy) {
@@ -201,18 +201,20 @@ const SortClips = ({
           >
             <i className="fas fa-certificate"></i> Newest
           </button>
-          <button
-            className={`px-3 py-1 rounded-full mr-2 font-semibold focus:outline-none  w-full ${
-              sortClipBy === "top" ? "border" : "bg-secondary"
-            }`}
-            onClick={() => {
-              handleSort("top");
-              setSortClipBy("top");
-              setIsSortClipByOpen(false);
-            }}
-          >
-            <i className="fas fa-list-ol"></i> Top
-          </button>
+          {!comments && (
+            <button
+              className={`px-3 py-1 rounded-full mr-2 font-semibold focus:outline-none  w-full ${
+                sortClipBy === "top" ? "border" : "bg-secondary"
+              }`}
+              onClick={() => {
+                handleSort("top");
+                setSortClipBy("top");
+                setIsSortClipByOpen(false);
+              }}
+            >
+              <i className="fas fa-list-ol"></i> Top
+            </button>
+          )}
         </div>
       </ReactModal>
 

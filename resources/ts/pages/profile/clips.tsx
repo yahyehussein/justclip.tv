@@ -102,7 +102,7 @@ const Clips = ({
                 {auth?.id === user.id ? (
                   <>
                     <p className="text-2xl text-center mb-2">
-                      Upload clips of memorable moments from your favorite
+                      Upload clips of memorable moments from your favourite
                       Twitch streams and videos.
                     </p>
                     <button

@@ -55,7 +55,8 @@ const Clip = ({
   const [outOfContext, setOutOfContext] = useState(clip.out_of_context);
   const [locked, setLocked] = useState(clip.locked);
   const [spoiler, setSpoiler] = useState(clip.spoiler);
-  const [tos, setTos] = useState(clip.tos);
+  const [loud, setLoud] = useState(clip.loud);
+  // const [tos, setTos] = useState(clip.tos);
   const [notifyComments, setNotifyComments] = useState(clip.notify_comments);
   const [isOpen, setIsOpen] = useState(false);
 
@@ -240,15 +241,29 @@ const Clip = ({
     }
   };
 
-  const handleTos = () => {
-    setTos(!tos);
+  const handleLoud = () => {
+    setLoud(!loud);
     setIsOpen(false);
     if (page) {
-      Inertia.patch(`/clip/${clip.id}?redirect=true`, { tos: !tos });
+      Inertia.patch(`/clip/${clip.id}?redirect=true`, {
+        loud: !loud,
+      });
     } else {
-      axios.patch(`/clip/${clip.id}`, { tos: !tos });
+      axios.patch(`/clip/${clip.id}`, {
+        loud: !loud,
+      });
     }
   };
+
+  // const handleTos = () => {
+  //   setTos(!tos);
+  //   setIsOpen(false);
+  //   if (page) {
+  //     Inertia.patch(`/clip/${clip.id}?redirect=true`, { tos: !tos });
+  //   } else {
+  //     axios.patch(`/clip/${clip.id}`, { tos: !tos });
+  //   }
+  // };
 
   const handleNotifyComments = () => {
     setNotifyComments(!notifyComments);
@@ -312,7 +327,7 @@ const Clip = ({
                 <img
                   src={clip.user.avatar.replace(/\d+x\d+/g, "28x28")}
                   alt="avatar"
-                  className="lg:hidden inline align-middle ring-2 ring-primary mr-2"
+                  className="lg:hidden inline align-middle mr-2"
                   width="20"
                   height="20"
                 />
@@ -424,14 +439,19 @@ const Clip = ({
                   spoiler
                 </span>
               )}
-              {tos && (
+              {loud && (
+                <span className="border border-yellow-300 text-xs px-1 pb-1 inline-block align-middle ml-1 rounded-md text-yellow-300 font-semibold leading-3">
+                  loud
+                </span>
+              )}
+              {/* {tos && (
                 <span className="border border-red-persimmon text-xs px-1 pb-1 inline-block align-middle ml-1 rounded-md text-red-persimmon font-semibold leading-3">
                   tos
                 </span>
-              )}
+              )} */}
             </p>
           </div>
-          {(spoiler || tos) && !page ? (
+          {spoiler && !page ? (
             <div className="overflow-hidden relative lg:text-base text-xs">
               <div className="aspect-w-16 aspect-h-9">
                 <img
@@ -466,11 +486,6 @@ const Clip = ({
                     />
                   </div>
                   <div className="flex items-center absolute top-0 right-0 mt-2 mr-1">
-                    {clip.category && (
-                      <div className="bg-primary px-2 py-1 rounded-full mr-1 font-semibold bg-opacity-80 text-white-light">
-                        {clip.category.name}
-                      </div>
-                    )}
                     <div className="bg-primary px-2 py-1 rounded-full font-semibold bg-opacity-80 text-white-light">
                       {clip.broadcaster.display_name}
                     </div>
@@ -487,13 +502,13 @@ const Clip = ({
                   next={clip.next}
                 ></Video>
               )}
-              {page && (
+              {/* {page && (
                 <Ad
                   dataAdSlot="1328388064"
                   dataAdFormat="horizontal"
                   className="lg:mt-0 mt-2"
                 ></Ad>
-              )}
+              )} */}
             </>
           )}
           <div
@@ -511,7 +526,7 @@ const Clip = ({
               >
                 <i className="fas fa-comment-alt align-middle"></i>
                 &nbsp;
-                {numeral(clip.comments_count).format("0a")} Comments
+                {numeral(clip.comments_count).format("0.[0]a")} Comments
               </InertiaLink>
               <a
                 href={`https://www.twitch.tv/videos/${
@@ -557,6 +572,21 @@ const Clip = ({
                       <span>Mark As Spoiler</span>
                     </label>
                     <label
+                      htmlFor={`loud-${clip.id}`}
+                      className="flex items-center px-5 py-2 hover:bg-secondary cursor-pointer"
+                      onClick={handleLoud}
+                    >
+                      <input
+                        type="checkbox"
+                        name="loud"
+                        id={`loud-${clip.id}`}
+                        className="mr-2 bg-primary"
+                        checked={loud}
+                        onChange={handleLoud}
+                      />
+                      <span>Mark As Loud</span>
+                    </label>
+                    {/* <label
                       htmlFor={`tos-${clip.id}`}
                       className="flex items-center px-5 py-2 hover:bg-secondary cursor-pointer"
                       onClick={handleTos}
@@ -570,7 +600,7 @@ const Clip = ({
                         onChange={handleTos}
                       />
                       <span>Mark As TOS</span>
-                    </label>
+                    </label> */}
                     <label
                       htmlFor={`notification-${clip.id}`}
                       className="flex items-center px-5 py-2 hover:bg-secondary cursor-pointer"
@@ -663,6 +693,21 @@ const Clip = ({
                           <span>Mark As Spoiler</span>
                         </label>
                         <label
+                          htmlFor={`loud-${clip.id}`}
+                          className="flex items-center px-5 py-2 hover:bg-secondary cursor-pointer"
+                          onClick={handleLoud}
+                        >
+                          <input
+                            type="checkbox"
+                            name="loud"
+                            id={`loud-${clip.id}`}
+                            className="mr-2 bg-primary"
+                            checked={loud}
+                            onChange={handleLoud}
+                          />
+                          <span>Mark As Loud</span>
+                        </label>
+                        {/* <label
                           htmlFor={`tos-${clip.id}`}
                           className="flex items-center px-5 py-2 hover:bg-secondary cursor-pointer"
                           onClick={handleTos}
@@ -676,7 +721,7 @@ const Clip = ({
                             onChange={handleTos}
                           />
                           <span>Mark As TOS</span>
-                        </label>
+                        </label> */}
                       </Dropdown>
                     </>
                   )}
@@ -772,10 +817,16 @@ const Clip = ({
                   <i className="fas fa-arrow-down"></i>
                 </button>
               </div>
-              <div className="items-center rounded-full flex border px-2 py-1">
+              <div className="items-center rounded-full flex border px-2 py-1 mr-2">
                 <i className="fas fa-comment-alt align-middle mr-1"></i>{" "}
-                {numeral(clip.comments_count).format("0a")}
+                {numeral(clip.comments_count).format("0.[0]a")}
               </div>
+              {page && (
+                <div className="items-center rounded-full flex border px-2 py-1">
+                  <i className="far fa-eye align-middle mr-1"></i>{" "}
+                  {numeral(clip.views_count).format("0.[0]a")}
+                </div>
+              )}
             </div>
             <div
               className="items-center rounded-full flex border p-2"
@@ -829,17 +880,21 @@ const Clip = ({
                   </InertiaLink>
                   {clip.user?.id === auth?.id ? (
                     <>
-                      <Confirm
-                        id={clip.id}
-                        title="Delete clip?"
-                        description="Are you sure you want to delete your clip and votes? You can't undo this."
+                      <button
                         className="px-3 py-2 font-semibold focus:outline-none"
-                        onConfirmed={handleDelete}
+                        onClick={() => {
+                          if (page) {
+                            Inertia.delete(
+                              `/clip/${clip.id}?redirect=${clip.user?.login}`
+                            );
+                          } else {
+                            setDeleted(true);
+                            axios.delete(`/clip/${clip.id}`);
+                          }
+                        }}
                       >
-                        <>
-                          <i className="far fa-trash-alt fa-fw"></i> Delete
-                        </>
-                      </Confirm>
+                        <i className="far fa-trash-alt fa-fw"></i> Delete
+                      </button>
                       <label
                         htmlFor={`spoiler-${clip.id}`}
                         className="px-4 py-2 font-semibold focus:outline-none block"
@@ -856,6 +911,21 @@ const Clip = ({
                         <span>Mark As Spoiler</span>
                       </label>
                       <label
+                        htmlFor={`loud-${clip.id}`}
+                        className="px-4 py-2 font-semibold focus:outline-none block"
+                        onClick={handleLoud}
+                      >
+                        <input
+                          type="checkbox"
+                          name="loud"
+                          id={`loud-${clip.id}`}
+                          className="mr-2 bg-primary"
+                          checked={loud}
+                          onChange={handleLoud}
+                        />
+                        <span>Mark As Loud</span>
+                      </label>
+                      {/* <label
                         htmlFor={`tos-${clip.id}`}
                         className="px-4 py-2 font-semibold focus:outline-none block"
                         onClick={handleTos}
@@ -869,7 +939,7 @@ const Clip = ({
                           onChange={handleTos}
                         />
                         <span>Mark As TOS</span>
-                      </label>
+                      </label> */}
                       <label
                         htmlFor={`notification-${clip.id}`}
                         className="px-4 py-2 font-semibold focus:outline-none block"

@@ -53,14 +53,14 @@ const Leaderboard = ({
             </p>
             <p className="text-muted">
               Browse Justclip&apos;s top growing clippers. Find the top clippers
-              in your favorite broadcaster and category.
+              in your favourite broadcaster and category.
             </p>
           </div>
           <InfiniteScroll
             dataLength={leaderboards.to}
             next={getLeaderboards}
             hasMore={!!leaderboards.next_page_url}
-            loader={<LeaderboardSkeleton></LeaderboardSkeleton>}
+            loader={<LeaderboardSkeleton mini={false}></LeaderboardSkeleton>}
           >
             {leaderboards.data.map((leaderboard, index) => {
               return (
@@ -83,7 +83,6 @@ const Leaderboard = ({
                             alt="avatar"
                             width="70"
                             height="70"
-                            className="ring-2 ring-primary"
                             onError={(e) => {
                               e.currentTarget.src = `${
                                 asset_url ? asset_url : ""
@@ -120,7 +119,7 @@ const Leaderboard = ({
                       <i className="fas fa-caret-down text-red-persimmon mr-1"></i>
                     )}
                     <span>
-                      {numeral(leaderboard.current_points).format("0a")}
+                      {numeral(leaderboard.current_points).format("0.[0]a")}
                     </span>
                   </div>
                 </div>

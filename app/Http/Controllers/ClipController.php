@@ -16,7 +16,7 @@ use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Cache;
 use App\Http\Requests\StoreClipRequest;
 use App\Http\Requests\UpdateClipRequest;
-
+use App\Jobs\DeleteClipAssets;
 use Meta;
 
 class ClipController extends Controller
@@ -56,6 +56,25 @@ class ClipController extends Controller
                     return $request->user()->following()->get()->pluck('id')->toArray();
                 }));
             })
+            ->when($request->query('feed') === 'popular', function ($query) {
+                return $query->whereIntegerNotInRaw('category_id', [
+                    509658,
+                    26936,
+                    509660,
+                    509659,
+                    518203,
+                    116747788,
+                    509670,
+                    417752,
+                    509667,
+                    509663,
+                    509672,
+                    509673,
+                    509669,
+                    509671,
+                    515214,
+                  ]);
+            })
             ->when($request->has('user_id'), function ($query) use ($request) {
                 return $query->where('user_id', $request->query('user_id'));
             })
@@ -85,7 +104,8 @@ class ClipController extends Controller
                 ]);
             })
             ->when($request->has('hot'), function ($query) {
-                return $query->orderBy('score', 'desc');
+                return $query->orderBy('score', 'desc')
+                    ->orderBy('created_at', 'desc');
             })
             ->when($request->has('newest'), function ($query) {
                 return $query->orderBy('created_at', 'desc');
@@ -249,8 +269,8 @@ class ClipController extends Controller
             $clip->title = $request->input('title');
             $clip->thumbnail = $request->input('thumbnail');
             $clip->duration = $request->input('duration');
-            $clip->mirror = $request->input('mirror') ?? null;
             $clip->spoiler = $request->input('spoiler');
+            $clip->loud = $request->input('loud');
             $clip->tos = $request->input('tos');
             $clip->video_id = $request->input('video_id');
             $clip->category_id = $request->input('category_id');
@@ -337,10 +357,15 @@ class ClipController extends Controller
                 $clip->save();
             }
 
-            if ($request->has('tos')) {
-                $clip->tos = $request->input('tos');
+            if ($request->has('loud')) {
+                $clip->loud = $request->input('loud');
                 $clip->save();
             }
+
+            // if ($request->has('tos')) {
+            //     $clip->tos = $request->input('tos');
+            //     $clip->save();
+            // }
 
             if ($request->has('notifyComments')) {
                 $clip->notify_comments = $request->input('notifyComments');
@@ -360,6 +385,8 @@ class ClipController extends Controller
         abort_if(!Gate::allows('update-delete-clip', $clip), 403);
 
         if ($request->user()->id === $clip->user_id) {
+            DeleteClipAssets::dispatch($clip->thumbnail);
+
             $clip->forceDelete();
 
             if ($request->has('redirect')) {

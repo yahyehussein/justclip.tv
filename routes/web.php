@@ -107,8 +107,6 @@ Route::get('/bullet/chat', [ClipbulletchatController::class, 'index']);
 
 Route::get('/clippers/leaderboard', [LeaderboardController::class, 'index']);
 
-Route::get('/clippers/leaderboard/calc', [LeaderboardController::class, 'argrateLeaderboard']);
-
 Route::get('/category/{category_name}', [CategoryController::class, 'show'])->where('category_name', '.*');
 
 Route::get('/broadcaster/{login}', [BroadcasterController::class, 'show']);

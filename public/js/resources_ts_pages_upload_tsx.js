@@ -5513,6 +5513,8 @@ var __generator = undefined && undefined.__generator || function (thisArg, body)
 
 
 var Upload = function Upload() {
+  var irl = [509658, 26936, 509660, 509659, 518203, 116747788, 509670, 417752, 509667, 509663, 509672, 509673, 509669, 509671, 515214];
+
   var _a = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(""),
       link = _a[0],
       setLink = _a[1];
@@ -5525,29 +5527,21 @@ var Upload = function Upload() {
       clip = _c[0],
       setClip = _c[1];
 
-  var _d = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)({
-    on: false,
-    value: null,
-    error: false
-  }),
-      mirror = _d[0],
-      setMirror = _d[1];
+  var _d = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(false),
+      spoiler = _d[0],
+      setSpoiler = _d[1];
 
   var _e = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(false),
-      spoiler = _e[0],
-      setSpoiler = _e[1];
+      loud = _e[0],
+      setLoud = _e[1];
 
-  var _f = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(false),
-      tos = _f[0],
-      setTos = _f[1];
+  var _f = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(true),
+      notification = _f[0],
+      setNotification = _f[1];
 
-  var _g = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(true),
-      notification = _g[0],
-      setNotification = _g[1];
-
-  var _h = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(false),
-      lock = _h[0],
-      setLock = _h[1];
+  var _g = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(false),
+      lock = _g[0],
+      setLock = _g[1];
 
   var handleClip = function handleClip(e) {
     return __awaiter(void 0, void 0, void 0, function () {
@@ -5580,13 +5574,9 @@ var Upload = function Upload() {
     var upload = __assign(__assign({}, clip), {
       title: title,
       spoiler: spoiler,
-      tos: tos,
+      loud: loud,
       notification: notification
     });
-
-    if (mirror.value) {
-      upload.mirror = mirror.value;
-    }
 
     _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_4__.Inertia.post("/clip", upload);
   };
@@ -5607,6 +5597,22 @@ var Upload = function Upload() {
             children: "Upload Clip"
           }), void 0), (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("i", {
             className: "fab fa-twitch fa-lg text-twitch"
+          }, void 0)]
+        }), void 0), (clip === null || clip === void 0 ? void 0 : clip.category) && irl.includes(clip.category.id) && (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", __assign({
+          className: "bg-dark border-l-8 border-t border-b border-r border-yellow-300 p-3 mb-3 rounded-md flex items-center lg:mx-0 mx-2 lg:mt-0 mt-3"
+        }, {
+          children: [(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("i", {
+            className: "fas fa-exclamation-triangle text-2xl mr-3 text-yellow-300"
+          }, void 0), (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
+            children: [(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("p", __assign({
+              className: "text-lg"
+            }, {
+              children: ["Only ", clip.broadcaster.display_name, " followers can see", " ", clip.category.name, " clips"]
+            }), void 0), (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("p", __assign({
+              className: "text-sm"
+            }, {
+              children: "Any clips that are not primarily centralized around games and the people, will be hidden from popular."
+            }), void 0)]
           }, void 0)]
         }), void 0), (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", __assign({
           className: "bg-dark lg:rounded-md mb-3 border-t border-b lg:border-r lg:border-l"
@@ -5647,70 +5653,6 @@ var Upload = function Upload() {
                 thumbnail: clip.thumbnail
               }, void 0)
             }), void 0)]
-          }), void 0), clip && mirror.on && (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", __assign({
-            className: "px-3 py-2"
-          }, {
-            children: [(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("p", __assign({
-              className: "mb-2"
-            }, {
-              children: ["Step 1: Download", " ", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("a", __assign({
-                href: clip.thumbnail.replace("-preview-480x272.jpg", ".mp4"),
-                className: "text-primary hover:underline"
-              }, {
-                children: title
-              }), void 0)]
-            }), void 0), (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("p", __assign({
-              className: "mb-2"
-            }, {
-              children: ["Step 2: Upload clip to", " ", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("a", __assign({
-                href: "https://streamable.com/",
-                className: "text-primary hover:underline",
-                target: "_blank",
-                rel: "noreferrer"
-              }, {
-                children: "Streamable"
-              }), void 0)]
-            }), void 0), (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", __assign({
-              className: "flex items-center"
-            }, {
-              children: [(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("p", __assign({
-                className: "flex-shrink-0 mr-3"
-              }, {
-                children: "Step 3:"
-              }), void 0), (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", __assign({
-                className: "w-full"
-              }, {
-                children: [(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("input", {
-                  type: "text",
-                  className: "w-full bg-dark focus:outline-none rounded-full border px-3 py-2",
-                  placeholder: "Streamable URL",
-                  onChange: function onChange(e) {
-                    var streamable = e.currentTarget.value.match(/^https?:\/\/(www\.)?(streamable)\.com\/([\w]+)$/);
-
-                    if (streamable) {
-                      setMirror(__assign(__assign({}, mirror), {
-                        value: e.currentTarget.value,
-                        error: false
-                      }));
-                    } else if (e.currentTarget.value) {
-                      setMirror(__assign(__assign({}, mirror), {
-                        value: null,
-                        error: true
-                      }));
-                    } else {
-                      setMirror(__assign(__assign({}, mirror), {
-                        value: null,
-                        error: false
-                      }));
-                    }
-                  }
-                }, void 0), mirror.error && (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("p", __assign({
-                  className: "text-sm text-muted"
-                }, {
-                  children: "Streamable link wrong"
-                }), void 0)]
-              }), void 0)]
-            }), void 0)]
           }), void 0), (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("form", __assign({
             onSubmit: handleUpload,
             method: "post",
@@ -5722,18 +5664,7 @@ var Upload = function Upload() {
               children: [(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", __assign({
                 className: "flex lg:flex-row flex-col w-full"
               }, {
-                children: [clip && (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", __assign({
-                  className: "\n                      rounded-full py-1 px-6 border-2 font-semibold focus:outline-none lg:w-32 w-full text-center cursor-pointer lg:mr-2 lg:mb-0 mb-2\n                      " + (mirror.on && "border-[#0f90fa] bg-[#0f90fa] text-white-light") + "\n                    ",
-                  onClick: function onClick() {
-                    return setMirror(__assign(__assign({}, mirror), {
-                      on: !mirror.on
-                    }));
-                  }
-                }, {
-                  children: [(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("i", {
-                    className: "fas " + (mirror.on ? "fa-check" : "fa-plus")
-                  }, void 0), " ", "Mirror"]
-                }), void 0), (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", __assign({
+                children: [(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", __assign({
                   className: "\n                      rounded-full py-1 px-6 border-2 font-semibold focus:outline-none lg:w-32 w-full text-center cursor-pointer lg:mr-2 lg:mb-0 mb-2\n                      " + (spoiler && "border-secondary bg-secondary") + "\n                    ",
                   onClick: function onClick() {
                     return setSpoiler(!spoiler);
@@ -5743,22 +5674,22 @@ var Upload = function Upload() {
                     className: "fas " + (spoiler ? "fa-check" : "fa-plus")
                   }, void 0), " ", "Spoiler"]
                 }), void 0), (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", __assign({
-                  className: "\n                      rounded-full py-1 px-6 border-2 font-semibold focus:outline-none lg:w-28 w-full text-center cursor-pointer lg:mb-0 mb-2\n                      " + (tos && "border-red-500 bg-red-500") + "\n                    ",
+                  className: "\n                      rounded-full py-1 px-6 border-2 font-semibold focus:outline-none lg:w-32 w-full text-center cursor-pointer lg:mr-2 lg:mb-0 mb-2\n                      " + (loud && "border-yellow-300 bg-yellow-300 text-black") + "\n                    ",
                   onClick: function onClick() {
-                    return setTos(!tos);
+                    return setLoud(!loud);
                   }
                 }, {
                   children: [(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("i", {
-                    className: "fas " + (tos ? "fa-check" : "fa-plus")
-                  }, void 0), " ", "TOS"]
+                    className: "fas " + (loud ? "fa-check" : "fa-plus")
+                  }, void 0), " ", "Loud"]
                 }), void 0)]
               }), void 0), lock ? (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", {
                 children: (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", {
                   className: "spinner w-[35px] h-[35px]"
                 }, void 0)
               }, void 0) : (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("button", __assign({
-                className: "rounded-full py-1 px-6 font-semibold bg-primary focus:outline-none hover:bg-opacity-80 lg:w-40 w-full text-white-light " + (title && clip && !mirror.error ? "" : "cursor-not-allowed"),
-                disabled: !!!(title && clip && !mirror.error)
+                className: "rounded-full py-1 px-6 font-semibold bg-primary focus:outline-none hover:bg-opacity-80 lg:w-40 w-full text-white-light " + (title && clip ? "" : "cursor-not-allowed"),
+                disabled: !!!(title && clip)
               }, {
                 children: "Upload"
               }), void 0)]
@@ -5827,45 +5758,6 @@ Upload.layout = function (page) {
 
 /***/ }),
 
-/***/ "./resources/ts/shared/ad.tsx":
-/*!************************************!*\
-  !*** ./resources/ts/shared/ad.tsx ***!
-  \************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-
-
-
-var Ad = function Ad(_a) {
-  var dataAdSlot = _a.dataAdSlot,
-      dataAdFormat = _a.dataAdFormat,
-      className = _a.className;
-  (0,react__WEBPACK_IMPORTED_MODULE_1__.useEffect)(function () {
-    (window.adsbygoogle = window.adsbygoogle || []).push({});
-  }, []);
-  return (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("ins", {
-    className: "adsbygoogle " + className,
-    style: {
-      display: "block"
-    },
-    "data-ad-client": "ca-pub-2478457205374361",
-    "data-ad-slot": dataAdSlot,
-    "data-ad-format": dataAdFormat,
-    "data-full-width-responsive": "true"
-  }, void 0);
-};
-
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Ad);
-
-/***/ }),
-
 /***/ "./resources/ts/shared/footer.tsx":
 /*!****************************************!*\
   !*** ./resources/ts/shared/footer.tsx ***!
@@ -5878,10 +5770,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
-/* harmony import */ var _shared_ad__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @shared/ad */ "./resources/ts/shared/ad.tsx");
-/* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @inertiajs/inertia-react */ "./node_modules/@inertiajs/inertia-react/dist/index.js");
-/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js");
-/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(moment__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @inertiajs/inertia-react */ "./node_modules/@inertiajs/inertia-react/dist/index.js");
+/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js");
+/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(moment__WEBPACK_IMPORTED_MODULE_2__);
 var __assign = undefined && undefined.__assign || function () {
   __assign = Object.assign || function (t) {
     for (var s, i = 1, n = arguments.length; i < n; i++) {
@@ -5902,20 +5793,11 @@ var __assign = undefined && undefined.__assign || function () {
 
 
 
-
 var Footer = function Footer(_a) {
   var _b = _a.ad,
       ad = _b === void 0 ? true : _b;
-  return (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.Fragment, {
-    children: [ad && (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", __assign({
-      align: "center",
-      className: "bg-dark lg:rounded-md lg:p-3 lg:border mb-3"
-    }, {
-      children: (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_shared_ad__WEBPACK_IMPORTED_MODULE_1__.default, {
-        dataAdSlot: "1328388064",
-        dataAdFormat: "rectangle"
-      }, void 0)
-    }), void 0), (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", __assign({
+  return (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.Fragment, {
+    children: (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", __assign({
       className: "bg-dark rounded-md p-3 text-sm border lg:block hidden"
     }, {
       children: [(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", __assign({
@@ -5924,7 +5806,7 @@ var Footer = function Footer(_a) {
         children: [(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", __assign({
           className: "space-y-1 flex-1"
         }, {
-          children: (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_2__.InertiaLink, __assign({
+          children: (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.InertiaLink, __assign({
             href: "/terms",
             className: "block"
           }, {
@@ -5933,17 +5815,17 @@ var Footer = function Footer(_a) {
         }), void 0), (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", __assign({
           className: "space-y-1 flex-1"
         }, {
-          children: [(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_2__.InertiaLink, __assign({
+          children: [(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.InertiaLink, __assign({
             href: "/content-policy",
             className: "block"
           }, {
             children: "Content Policy"
-          }), void 0), (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_2__.InertiaLink, __assign({
+          }), void 0), (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.InertiaLink, __assign({
             href: "/privacy-policy",
             className: "block"
           }, {
             children: "Privacy Policy"
-          }), void 0), (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_2__.InertiaLink, __assign({
+          }), void 0), (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.InertiaLink, __assign({
             href: "/dmca",
             className: "block"
           }, {
@@ -5951,13 +5833,13 @@ var Footer = function Footer(_a) {
           }), void 0)]
         }), void 0)]
       }), void 0), (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("p", {
-        children: ["Justclip \xA9 ", moment__WEBPACK_IMPORTED_MODULE_3___default()().year(), ". All rights reserved"]
+        children: ["Justclip \xA9 ", moment__WEBPACK_IMPORTED_MODULE_2___default()().year(), ". All rights reserved"]
       }, void 0), (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("p", __assign({
         className: "text-muted text-xs"
       }, {
-        children: "Disclaimer: This site is not affiliated with Twitch and does not store any clips on its server. All clips are provided by twitch media assets."
+        children: "Disclaimer: This site is not affiliated with Twitch."
       }), void 0)]
-    }), void 0)]
+    }), void 0)
   }, void 0);
 };
 
@@ -6324,10 +6206,15 @@ var Layout = function Layout(_a) {
             children: "Connect with Twitch"
           }, void 0)]
         }), void 0)
-      }), void 0), (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", __assign({
-        className: "lg:hidden block"
+      }), void 0), (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", __assign({
+        className: "lg:hidden flex items-center"
       }, {
-        children: (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_headlessui_react__WEBPACK_IMPORTED_MODULE_10__.Menu, {
+        children: [auth && (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.InertiaLink, __assign({
+          href: "/upload",
+          className: "rounded-full text-center bg-secondary px-4 py-2 mr-2 text-sm"
+        }, {
+          children: "Upload"
+        }), void 0), (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_headlessui_react__WEBPACK_IMPORTED_MODULE_10__.Menu, {
           children: function children(_a) {
             var open = _a.open;
             return (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.Fragment, {
@@ -6425,17 +6312,6 @@ var Layout = function Layout(_a) {
                     }, void 0)]
                   }), void 0), (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_headlessui_react__WEBPACK_IMPORTED_MODULE_10__.Menu.Item, {
                     children: (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.InertiaLink, __assign({
-                      href: "/popular",
-                      className: "flex items-center mb-3"
-                    }, {
-                      children: [(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("i", {
-                        className: "fas fa-fire mr-2 fa-fw"
-                      }, void 0), (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("span", {
-                        children: "Popular"
-                      }, void 0)]
-                    }), void 0)
-                  }, void 0), (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_headlessui_react__WEBPACK_IMPORTED_MODULE_10__.Menu.Item, {
-                    children: (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.InertiaLink, __assign({
                       href: "/clippers/leaderboard",
                       className: "flex items-center mb-3"
                     }, {
@@ -6492,13 +6368,6 @@ var Layout = function Layout(_a) {
                   }, void 0), auth && (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.Fragment, {
                     children: [(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_headlessui_react__WEBPACK_IMPORTED_MODULE_10__.Menu.Item, {
                       children: (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.InertiaLink, __assign({
-                        href: "/upload",
-                        className: "rounded-full text-center bg-secondary px-6 py-2 w-full block my-3"
-                      }, {
-                        children: "Upload"
-                      }), void 0)
-                    }, void 0), (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_headlessui_react__WEBPACK_IMPORTED_MODULE_10__.Menu.Item, {
-                      children: (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.InertiaLink, __assign({
                         href: "/settings",
                         className: "rounded-full text-center bg-secondary px-6 py-2 w-full block my-3"
                       }, {
@@ -6517,7 +6386,7 @@ var Layout = function Layout(_a) {
               }), void 0)]
             }, void 0);
           }
-        }, void 0)
+        }, void 0)]
       }), void 0)]
     }), void 0), children, !!!cookies.cookieSettings && (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", __assign({
       className: "fixed w-full bottom-2 flex justify-center items-center z-50"
@@ -7001,9 +6870,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _justclip_jcplayer__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_justclip_jcplayer__WEBPACK_IMPORTED_MODULE_3__);
 /* harmony import */ var plyr__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! plyr */ "./node_modules/plyr/dist/plyr.min.js");
 /* harmony import */ var plyr__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(plyr__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var _utils__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../utils */ "./resources/ts/utils.ts");
-/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js");
-/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(moment__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _utils__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../utils */ "./resources/ts/utils.ts");
+/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js");
+/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(moment__WEBPACK_IMPORTED_MODULE_7__);
 var __assign = undefined && undefined.__assign || function () {
   __assign = Object.assign || function (t) {
     for (var s, i = 1, n = arguments.length; i < n; i++) {
@@ -7028,6 +6899,7 @@ var __assign = undefined && undefined.__assign || function () {
 
 
 
+
 var Video = function Video(_a) {
   var thumbnail = _a.thumbnail,
       clip = _a.clip,
@@ -7036,8 +6908,13 @@ var Video = function Video(_a) {
       next = _a.next;
   var clipRef = (0,react__WEBPACK_IMPORTED_MODULE_2__.useRef)(null);
   (0,react__WEBPACK_IMPORTED_MODULE_2__.useEffect)(function () {
-    if (_utils__WEBPACK_IMPORTED_MODULE_5__.isMobile) {
+    if (_utils__WEBPACK_IMPORTED_MODULE_6__.isMobile) {
       var plyr_1 = new (plyr__WEBPACK_IMPORTED_MODULE_4___default())("#player");
+      plyr_1.on("ended", function () {
+        axios__WEBPACK_IMPORTED_MODULE_5___default().post("/viewed", {
+          clip_id: clip === null || clip === void 0 ? void 0 : clip.id
+        });
+      });
       return function () {
         plyr_1.destroy();
       };
@@ -7057,8 +6934,7 @@ var Video = function Video(_a) {
           api: "/bullet/chat"
         },
         next: next,
-        moment: next ? (moment__WEBPACK_IMPORTED_MODULE_6___default()) : null,
-        mirror: clip === null || clip === void 0 ? void 0 : clip.mirror
+        moment: next ? (moment__WEBPACK_IMPORTED_MODULE_7___default()) : null
       });
       return function () {
         jcplayer_1.destroy();
@@ -7066,17 +6942,21 @@ var Video = function Video(_a) {
     }
   }, [autoplay, clip, next, thumbnail]);
 
-  if (_utils__WEBPACK_IMPORTED_MODULE_5__.isMobile) {
-    return (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("video", __assign({
-      id: "player",
-      playsInline: true,
-      controls: true,
-      "data-poster": thumbnail
+  if (_utils__WEBPACK_IMPORTED_MODULE_6__.isMobile) {
+    return (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", __assign({
+      className: "aspect-w-16 aspect-h-9"
     }, {
-      children: (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("source", {
-        src: thumbnail.replace("-preview-480x272.jpg", ".mp4"),
-        type: "video/mp4"
-      }, void 0)
+      children: (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("video", __assign({
+        id: "player",
+        playsInline: true,
+        controls: true,
+        "data-poster": thumbnail
+      }, {
+        children: (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("source", {
+          src: thumbnail.replace("-preview-480x272.jpg", ".mp4"),
+          type: "video/mp4"
+        }, void 0)
+      }), void 0)
     }), void 0);
   } else {
     return (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", {

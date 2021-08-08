@@ -174,9 +174,11 @@ const Search = ({
                     >
                       <div className="relative lg:mx-6 mr-3 lg:flex-initial flex-1">
                         <img
-                          src={clip.thumbnail.replace(/\d+x\d+/g, "260x147")}
+                          src={clip.thumbnail}
                           alt="thumbnail"
                           className="lg:max-w-none max-w-full"
+                          width="360"
+                          height="204"
                           onError={(e) => {
                             e.currentTarget.src = `${
                               asset_url ? asset_url : ""
