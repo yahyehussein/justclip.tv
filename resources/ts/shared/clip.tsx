@@ -502,13 +502,13 @@ const Clip = ({
                   next={clip.next}
                 ></Video>
               )}
-              {/* {page && (
+              {page && (
                 <Ad
                   dataAdSlot="1328388064"
                   dataAdFormat="horizontal"
                   className="lg:mt-0 mt-2"
                 ></Ad>
-              )} */}
+              )}
             </>
           )}
           <div

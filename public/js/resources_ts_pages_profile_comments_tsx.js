@@ -9346,8 +9346,6 @@ var Report = function Report(_a) {
       auth = _a.auth,
       children = _a.children;
   var rules = [{
-    name: "Not Gaming Related"
-  }, {
     name: "Title spoiling"
   }, {
     name: "Personal attacks"

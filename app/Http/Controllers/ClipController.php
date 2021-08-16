@@ -28,6 +28,8 @@ class ClipController extends Controller
 
     public function index(Request $request)
     {
+        $irl = [509658, 26936, 509660, 509659, 518203, 116747788, 509670, 417752, 509667, 509663, 509672, 509673, 509669, 509671, 515214];
+
         return Clip::when(Auth::check(), function ($query) use ($request) {
                 switch ($request->query('vote')) {
                     case 'upvotes':
@@ -51,29 +53,16 @@ class ClipController extends Controller
             ->when($request->has('user_id'), function ($query) use ($request) {
                 return $query->withTrashed();
             })
-            ->when($request->query('feed') === 'home', function ($query) use ($request) {
+            ->when($request->query('feed') === 'following', function ($query) use ($request) {
                 return $query->whereIntegerInRaw('broadcaster_id', Cache::rememberForever($request->user()->id . '-following', function () use ($request) {
                     return $request->user()->following()->get()->pluck('id')->toArray();
                 }));
             })
-            ->when($request->query('feed') === 'popular', function ($query) {
-                return $query->whereIntegerNotInRaw('category_id', [
-                    509658,
-                    26936,
-                    509660,
-                    509659,
-                    518203,
-                    116747788,
-                    509670,
-                    417752,
-                    509667,
-                    509663,
-                    509672,
-                    509673,
-                    509669,
-                    509671,
-                    515214,
-                  ]);
+            ->when($request->query('feed') === 'games', function ($query) use ($irl) {
+                return $query->whereIntegerNotInRaw('category_id', $irl);
+            })
+            ->when($request->query('feed') === 'irl', function ($query) use ($irl) {
+                return $query->whereIntegerInRaw('category_id', $irl);
             })
             ->when($request->has('user_id'), function ($query) use ($request) {
                 return $query->where('user_id', $request->query('user_id'));
@@ -94,7 +83,7 @@ class ClipController extends Controller
             ->with([
                 'user:id,login,display_name,avatar',
                 'broadcaster',
-                'category:id,name'
+                'category:id,name,box_art_url'
             ])
             ->when(Auth::check(), function ($query) use ($request) {
                 return $query->with([
@@ -146,8 +135,8 @@ class ClipController extends Controller
             ->appends(['newest' => $request->query('newest')])
             ->appends(['top' => $request->query('top')])
             ->appends(['t' => $request->query('t')])
-            ->appends(['vote' => $request->query('vote')])
-            ->setPath('/json/clip');
+            ->appends(['vote' => $request->query('vote')]);
+            // ->setPath('/json/clip');
     }
 
     public function create(Request $request)

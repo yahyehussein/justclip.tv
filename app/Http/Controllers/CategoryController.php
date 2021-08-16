@@ -29,8 +29,8 @@ class CategoryController extends Controller
                 })
                 ->orderBy('clips_count', 'desc')
                 ->simplePaginate(20)
-                ->appends(['query' => 'categories'])
-                ->setPath('/json/browse/categories');
+                ->appends(['query' => 'categories']);
+                // ->setPath('/json/browse/categories');
         }
 
         return Inertia::render('browse/categories', [
@@ -42,13 +42,17 @@ class CategoryController extends Controller
                 ->orderBy('clips_count', 'desc')
                 ->simplePaginate(20)
                 ->appends(['query' => 'categories'])
-                ->setPath('/json/browse/categories')
+                // ->setPath('/json/browse/categories')
         ]);
     }
 
-    public function show($category_name)
+    public function show(Request $request, $category_name)
     {
         $category = Category::where('name', urldecode($category_name))->firstOrFail();
+
+        if ($request->expectsJson()) {
+            return $category;
+        }
 
         Meta::set('og:title', "{$category->name} Clips - Justclip");
         Meta::set('og:image', preg_replace('/{width}x{height}/i', '138x184', $category->box_art_url));

@@ -5403,13 +5403,21 @@ var Home = function Home(_a) {
   var feedPage = function feedPage() {
     if (auth) {
       if (ziggy_js__WEBPACK_IMPORTED_MODULE_17___default()().current() === "home") {
-        return "&feed=home";
-      } else if (ziggy_js__WEBPACK_IMPORTED_MODULE_17___default()().current() === "popular") {
-        return "&feed=popular";
+        return "&feed=following";
+      } else if (ziggy_js__WEBPACK_IMPORTED_MODULE_17___default()().current() === "games") {
+        return "&feed=games";
+      } else if (ziggy_js__WEBPACK_IMPORTED_MODULE_17___default()().current() === "irl") {
+        return "&feed=irl";
+      }
+    } else {
+      if (ziggy_js__WEBPACK_IMPORTED_MODULE_17___default()().current() === "games") {
+        return "&feed=games";
+      } else if (ziggy_js__WEBPACK_IMPORTED_MODULE_17___default()().current() === "irl") {
+        return "&feed=irl";
       }
     }
 
-    return "&feed=popular";
+    return "&feed=games";
   };
 
   var _b = (0,_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.useRemember)("&hot=true", "sort"),
@@ -5481,20 +5489,23 @@ var Home = function Home(_a) {
         children: [(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", __assign({
           className: "flex items-center justify-between mb-2"
         }, {
-          children: [(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", {
-            children: auth && (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.Fragment, {
-              children: [(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.InertiaLink, __assign({
-                href: "/",
-                className: "px-3 py-1 rounded-full mr-1 hover:bg-opacity-80 font-semibold focus:outline-none lg:ml-0 ml-2 " + (feed === "&feed=home" ? "text-white-light bg-primary" : "bg-secondary")
-              }, {
-                children: "Home"
-              }), void 0), (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.InertiaLink, __assign({
-                href: "/popular",
-                className: "px-3 py-1 rounded-full mr-1 hover:bg-opacity-80 font-semibold focus:outline-none " + (feed === "&feed=popular" ? "text-white-light bg-primary" : "bg-secondary")
-              }, {
-                children: "Popular"
-              }), void 0)]
-            }, void 0)
+          children: [(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
+            children: [auth && (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.InertiaLink, __assign({
+              href: "/",
+              className: "px-3 py-1 rounded-full mr-2 hover:bg-opacity-80 font-semibold focus:outline-none lg:ml-0 ml-2 " + (feed === "&feed=following" ? "text-white-light bg-primary" : "bg-secondary")
+            }, {
+              children: "Following"
+            }), void 0), (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.InertiaLink, __assign({
+              href: "/games",
+              className: "px-3 py-1 rounded-full mr-2 hover:bg-opacity-80 font-semibold focus:outline-none " + (feed === "&feed=games" ? "text-white-light bg-primary" : "bg-secondary")
+            }, {
+              children: "Games"
+            }), void 0), (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.InertiaLink, __assign({
+              href: "/irl",
+              className: "px-3 py-1 rounded-full hover:bg-opacity-80 font-semibold focus:outline-none " + (feed === "&feed=irl" ? "text-white-light bg-primary" : "bg-secondary")
+            }, {
+              children: "IRL"
+            }), void 0)]
           }, void 0), (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_shared_sort_clips__WEBPACK_IMPORTED_MODULE_13__.default, {
             onSort: onSort
           }, void 0)]
@@ -5513,7 +5524,7 @@ var Home = function Home(_a) {
               auth: auth
             }, clip.id);
           })
-        }), void 0), empty && feed === "&feed=home" && (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", __assign({
+        }), void 0), empty && feed === "&feed=following" && (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", __assign({
           className: "relative"
         }, {
           children: [(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_shared_placeholder_clip__WEBPACK_IMPORTED_MODULE_4__.default, {}, void 0), (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_shared_placeholder_clip__WEBPACK_IMPORTED_MODULE_4__.default, {}, void 0), (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", __assign({
@@ -5525,14 +5536,23 @@ var Home = function Home(_a) {
               className: "lg:text-xl text-center mb-2"
             }, {
               children: "Justclip gets better when you follow your favourite broadcaster, so find some clips!"
-            }), void 0), (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.InertiaLink, __assign({
-              href: "/popular",
-              className: "bg-primary text-white-light font-semibold w-full rounded-md p-2 bg-opacity-80 focus:outline-none text-center"
+            }), void 0), (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", __assign({
+              className: "flex space-x-2 w-full"
             }, {
-              children: "Browse Popular Clips"
+              children: [(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.InertiaLink, __assign({
+                href: "/games",
+                className: "bg-primary text-white-light font-semibold w-full rounded-md p-2 bg-opacity-80 focus:outline-none text-center"
+              }, {
+                children: "Browse Games Clips"
+              }), void 0), (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.InertiaLink, __assign({
+                href: "/irl",
+                className: "bg-primary text-white-light font-semibold w-full rounded-md p-2 bg-opacity-80 focus:outline-none text-center"
+              }, {
+                children: "Browse IRL Clips"
+              }), void 0)]
             }), void 0)]
           }), void 0)]
-        }), void 0), empty && feed === "&feed=popular" && (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", __assign({
+        }), void 0), empty && feed === "&feed=games" && (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", __assign({
           className: "relative"
         }, {
           children: [(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_shared_placeholder_clip__WEBPACK_IMPORTED_MODULE_4__.default, {}, void 0), (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_shared_placeholder_clip__WEBPACK_IMPORTED_MODULE_4__.default, {}, void 0), (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", __assign({
@@ -5563,7 +5583,7 @@ var Home = function Home(_a) {
           className: "lg:block hidden"
         }, void 0) : (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_shared_skeleton_leaderboard__WEBPACK_IMPORTED_MODULE_11__.default, {
           className: "lg:block hidden"
-        }, void 0), feed === "&feed=home" && (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", __assign({
+        }, void 0), feed === "&feed=following" && (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", __assign({
           className: "lg:block hidden"
         }, {
           children: [(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", __assign({
@@ -5572,7 +5592,7 @@ var Home = function Home(_a) {
             children: [(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("p", __assign({
               className: "border-b-2 pb-1 font-semibold mb-2 text-lg"
             }, {
-              children: "Home"
+              children: "Following"
             }), void 0), (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("p", {
               children: "Your personal Justclip frontpage. Come here to check in with your favourite broadcasters."
             }, void 0)]
@@ -5586,7 +5606,7 @@ var Home = function Home(_a) {
               children: "Upload Clip"
             }), void 0)
           }), void 0)]
-        }), void 0), feed === "&feed=popular" && (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", __assign({
+        }), void 0), feed === "&feed=games" && (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", __assign({
           className: "lg:block hidden"
         }, {
           children: [(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", __assign({
@@ -5595,9 +5615,32 @@ var Home = function Home(_a) {
             children: [(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("p", __assign({
               className: "border-b-2 pb-1 font-semibold mb-2 text-lg"
             }, {
-              children: "Popular"
+              children: "Games"
             }), void 0), (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("p", {
-              children: "The best clips on Justclip for you, pulled from the most active broadcasters on Justclip. Check here to see the most shared, upvoted, and commented content about Twitch."
+              children: "The best games clips on Justclip for you, pulled from the most active broadcasters on Justclip. Check here to see the most shared, upvoted, and commented content about Twitch."
+            }, void 0)]
+          }), void 0), (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", __assign({
+            className: "p-2 border-b border-l border-r bg-dark mb-3"
+          }, {
+            children: (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.InertiaLink, __assign({
+              href: "/upload",
+              className: "p-3 bg-primary text-white-light text-lg text-center rounded-md font-semibold hover:bg-opacity-80 focus:outline-none uppercase block"
+            }, {
+              children: "Upload Clip"
+            }), void 0)
+          }), void 0)]
+        }), void 0), feed === "&feed=irl" && (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", __assign({
+          className: "lg:block hidden"
+        }, {
+          children: [(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", __assign({
+            className: "bg-dark lg:rounded-t-md border-t border-b lg:border-r lg:border-l p-3"
+          }, {
+            children: [(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("p", __assign({
+              className: "border-b-2 pb-1 font-semibold mb-2 text-lg"
+            }, {
+              children: "IRL"
+            }), void 0), (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("p", {
+              children: "The best IRL clips on Justclip for you, pulled from the most active broadcasters on Justclip. Check here to see the most shared, upvoted, and commented content about Twitch."
             }, void 0)]
           }), void 0), (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", __assign({
             className: "p-2 border-b border-l border-r bg-dark mb-3"
@@ -8201,8 +8244,6 @@ var Remove = function Remove(_a) {
       children = _a.children,
       onConfirmed = _a.onConfirmed;
   var rules = [{
-    name: "Not Gaming Related"
-  }, {
     name: "Title spoiling"
   }, {
     name: "Personal attacks"
@@ -8395,8 +8436,6 @@ var Report = function Report(_a) {
       auth = _a.auth,
       children = _a.children;
   var rules = [{
-    name: "Not Gaming Related"
-  }, {
     name: "Title spoiling"
   }, {
     name: "Personal attacks"

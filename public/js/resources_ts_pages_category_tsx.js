@@ -8147,8 +8147,6 @@ var Remove = function Remove(_a) {
       children = _a.children,
       onConfirmed = _a.onConfirmed;
   var rules = [{
-    name: "Not Gaming Related"
-  }, {
     name: "Title spoiling"
   }, {
     name: "Personal attacks"
@@ -8341,8 +8339,6 @@ var Report = function Report(_a) {
       auth = _a.auth,
       children = _a.children;
   var rules = [{
-    name: "Not Gaming Related"
-  }, {
     name: "Title spoiling"
   }, {
     name: "Personal attacks"
