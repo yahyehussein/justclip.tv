@@ -125,6 +125,9 @@ class Kernel extends ConsoleKernel
                             ->delete("https://api.twitch.tv/helix/eventsub/subscriptions?id={$broadcaster->subscriptions->stream_offline}");
 
                         $broadcaster->subscriptions = null;
+                        $broadcaster->type = null;
+                        $broadcaster->title = null;
+                        $broadcaster->category = null;
                         $broadcaster->timestamps = false;
                         $broadcaster->save();
                     });

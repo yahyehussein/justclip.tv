@@ -17,24 +17,6 @@ interface Data extends Clip {
 }
 
 const Upload = (): JSX.Element => {
-  const irl = [
-    509658,
-    26936,
-    509660,
-    509659,
-    518203,
-    116747788,
-    509670,
-    417752,
-    509667,
-    509663,
-    509672,
-    509673,
-    509669,
-    509671,
-    515214,
-  ];
-
   const [link, setLink] = useState("");
   const [title, setTitle] = useState("");
   const [clip, setClip] = useState<Data | null>(null);
@@ -90,22 +72,6 @@ const Upload = (): JSX.Element => {
             <p className=" text-xl font-semibold">Upload Clip</p>
             <i className="fab fa-twitch fa-lg text-twitch"></i>
           </div>
-          {clip?.category && irl.includes(clip.category.id) && (
-            <div className="bg-dark border-l-8 border-t border-b border-r border-yellow-300 p-3 mb-3 rounded-md flex items-center lg:mx-0 mx-2 lg:mt-0 mt-3">
-              <i className="fas fa-exclamation-triangle text-2xl mr-3 text-yellow-300"></i>
-              <div>
-                <p className="text-lg">
-                  Only {clip.broadcaster.display_name} followers can see{" "}
-                  {clip.category.name} clips
-                </p>
-                <p className="text-sm">
-                  Any clips that are not primarily centralized around games and
-                  the people, will be hidden from popular.
-                </p>
-              </div>
-            </div>
-          )}
-
           <div className="bg-dark lg:rounded-md mb-3 border-t border-b lg:border-r lg:border-l">
             <div className="px-3 pt-3">
               <input

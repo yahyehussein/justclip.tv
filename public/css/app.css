@@ -1616,14 +1616,14 @@ video {
 .mr-3 {
 	margin-right: 0.75rem;
 }
-.mr-1 {
-	margin-right: 0.25rem;
-}
 .mb-1 {
 	margin-bottom: 0.25rem;
 }
 .mt-1 {
 	margin-top: 0.25rem;
+}
+.mr-1 {
+	margin-right: 0.25rem;
 }
 .mb-4 {
 	margin-bottom: 1rem;

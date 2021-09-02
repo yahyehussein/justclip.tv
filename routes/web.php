@@ -65,7 +65,9 @@ Route::get('/ads.txt', function () {
 	]);
 });
 
-Route::get('/popular', [HomeController::class, 'index'])->name('popular');
+Route::get('/games', [HomeController::class, 'index'])->name('games');
+
+Route::get('/irl', [HomeController::class, 'index'])->name('irl');
 
 Route::get('/upload', [UploadController::class, 'index']);
 

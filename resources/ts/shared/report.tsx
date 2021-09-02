@@ -31,9 +31,6 @@ const Report = ({
 }): JSX.Element => {
   const rules = [
     {
-      name: "Not Gaming Related",
-    },
-    {
       name: "Title spoiling",
     },
     {
