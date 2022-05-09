@@ -22,6 +22,7 @@
         "laravel/tinker": "^2.5",
         "laravel/vapor-core": "^2.12",
         "laravel/vapor-ui": "^1.1",
+        "league/flysystem-aws-s3-v3": "~1.0",
         "meilisearch/meilisearch-php": "^0.18.0",
         "sentry/sentry-laravel": "^2.7",
         "socialiteproviders/twitch": "^5.3",

@@ -87,10 +87,10 @@ const Comments = ({
                   key={clip.id}
                   value={{ ...clip, auth: auth }}
                 >
-                  <div className="bg-dark mb-3">
+                  <div className="bg-dark lg:mb-3 lg:border-b">
                     <InertiaLink
                       href={`/clip/${clip.slug}`}
-                      className="border px-4 py-4 flex justify-between items-center group hover:border-muted"
+                      className="border-t lg:border-r lg:border-l px-4 py-4 flex justify-between items-center group hover:border-muted"
                     >
                       <div className="flex flex-col">
                         <p className="text-xs text-muted">
@@ -114,7 +114,7 @@ const Comments = ({
                       {clip.spoiler || clip.tos ? (
                         <div className="overflow-hidden">
                           <img
-                            src={clip.thumbnail.replace(/\d+x\d+/g, "260x147")}
+                            src={clip.thumbnail}
                             width={90}
                             height={50}
                             alt="thumbnail"
@@ -123,7 +123,7 @@ const Comments = ({
                         </div>
                       ) : (
                         <img
-                          src={clip.thumbnail.replace(/\d+x\d+/g, "260x147")}
+                          src={clip.thumbnail}
                           width={90}
                           height={50}
                           alt="thumbnail"
@@ -136,7 +136,7 @@ const Comments = ({
                           key={comment.id}
                           comment={comment}
                           asset_url={asset_url}
-                          className="border-l border-b border-r px-4 pt-4"
+                          className="lg:border-l border-t lg:border-r px-4 pt-4"
                         ></Comment>
                       );
                     })}

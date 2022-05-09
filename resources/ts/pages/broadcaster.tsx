@@ -160,7 +160,7 @@ const Broadcaster = (props: {
             {props.broadcaster.banner && (
               <img
                 alt="Profile banner for sodapoppin"
-                className="object-cover h-32 w-full rounded-t-md"
+                className="object-cover h-32 w-full lg:rounded-t-md"
                 sizes="100vw"
                 srcSet={`${props.broadcaster.banner?.replace(
                   /{width}x{height}/g,
@@ -211,7 +211,7 @@ const Broadcaster = (props: {
                   ))}
               </div>
               <div
-                className={`flex flex-col ${
+                className={`flex flex-col flex-grow ${
                   props.broadcaster.banner ? "mt-3" : ""
                 }`}
               >

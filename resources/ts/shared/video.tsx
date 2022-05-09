@@ -5,6 +5,7 @@ import React, { useEffect, useRef } from "react";
 import { Clip } from "../types/clip";
 import JCPlayer from "@justclip/jcplayer";
 import Plyr from "plyr";
+import axios from "axios";
 import { isMobile } from "../utils";
 import moment from "moment";
 
@@ -21,6 +22,10 @@ const Video: Video = ({ thumbnail, clip, autoplay = false, next }) => {
   useEffect(() => {
     if (isMobile) {
       const plyr = new Plyr("#player");
+
+      plyr.on("ended", () => {
+        axios.post("/viewed", { clip_id: clip?.id });
+      });
 
       return () => {
         plyr.destroy();
@@ -42,7 +47,6 @@ const Video: Video = ({ thumbnail, clip, autoplay = false, next }) => {
         },
         next,
         moment: next ? moment : null,
-        mirror: clip?.mirror,
       });
 
       return () => {
@@ -53,12 +57,14 @@ const Video: Video = ({ thumbnail, clip, autoplay = false, next }) => {
 
   if (isMobile) {
     return (
-      <video id="player" playsInline controls data-poster={thumbnail}>
-        <source
-          src={thumbnail.replace("-preview-480x272.jpg", ".mp4")}
-          type="video/mp4"
-        />
-      </video>
+      <div className="aspect-w-16 aspect-h-9">
+        <video id="player" playsInline controls data-poster={thumbnail}>
+          <source
+            src={thumbnail.replace("-preview-480x272.jpg", ".mp4")}
+            type="video/mp4"
+          />
+        </video>
+      </div>
     );
   } else {
     return (

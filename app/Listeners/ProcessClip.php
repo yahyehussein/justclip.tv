@@ -4,10 +4,12 @@ namespace App\Listeners;
 
 use App\Models\Clip;
 use App\Events\ClipCreated;
+use Illuminate\Support\Str;
 use App\Models\ClipBulletChat;
 use App\Notifications\ClipSimilar;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Cache;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Contracts\Queue\ShouldQueue;
 
@@ -112,7 +114,7 @@ class ProcessClip implements ShouldQueue
             ];
         });
 
-        $emotes = Cache::remember("broadcaster.{$event->clip->broadcaster->id}.emotes", 1800, function () use ($event) {
+        $emotes = Cache::remember("broadcaster.{$event->clip->broadcaster->id}.emotes", 3600, function () use ($event) {
             $channelEmotes = Http::withHeaders(['Client-Id' => env('TWITCH_CLIENT_ID')])
                 ->withToken($event->clip->user->access_token)
                 ->get("https://api.twitch.tv/helix/chat/emotes?broadcaster_id={$event->clip->broadcaster->id}");
@@ -163,7 +165,9 @@ class ProcessClip implements ShouldQueue
 
         $offset = Http::get("https://fzs6becww3.execute-api.us-east-1.amazonaws.com/clip_video_offset/{$event->clip->slug}");
 
-        $clips = Clip::select('id', 'slug', 'title', 'offset', 'duration')->where('video_id', $event->clip->video_id)->get();
+        $clips = Clip::select('id', 'slug', 'title', 'offset', 'duration')
+            ->whereNotNull('offset')
+            ->where('video_id', $event->clip->video_id)->get();
 
         $duration = $event->clip->duration;
 
@@ -193,6 +197,15 @@ class ProcessClip implements ShouldQueue
             $this->chat($event);
             ClipBulletChat::insert($this->ClipBulletChats);
         }
+
+        $file = Str::uuid();
+
+        Storage::disk('s3')->putFileAs('', $event->clip->thumbnail, "$file-preview-480x272.jpg");
+
+        Storage::disk('s3')->putFileAs('', str_replace('-preview-480x272.jpg', '.mp4', $event->clip->thumbnail), "$file.mp4");
+
+        $event->clip->thumbnail = "https://clips-media-assets.b-cdn.net/$file-preview-480x272.jpg";
+        $event->clip->save();
 
         if ($event->clip->broadcaster->subscriptions) {
             return;

@@ -65,7 +65,9 @@ Route::get('/ads.txt', function () {
 	]);
 });
 
-Route::get('/popular', [HomeController::class, 'index'])->name('popular');
+Route::get('/games', [HomeController::class, 'index'])->name('games');
+
+Route::get('/irl', [HomeController::class, 'index'])->name('irl');
 
 Route::get('/upload', [UploadController::class, 'index']);
 
@@ -106,8 +108,6 @@ Route::get('/account/cookiepreferences', [CookiePreferencesController::class, 'i
 Route::get('/bullet/chat', [ClipbulletchatController::class, 'index']);
 
 Route::get('/clippers/leaderboard', [LeaderboardController::class, 'index']);
-
-Route::get('/clippers/leaderboard/calc', [LeaderboardController::class, 'argrateLeaderboard']);
 
 Route::get('/category/{category_name}', [CategoryController::class, 'show'])->where('category_name', '.*');
 

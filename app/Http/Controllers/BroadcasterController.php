@@ -29,8 +29,8 @@ class BroadcasterController extends Controller
                     return $query->whereNotIn('id', $request->user()->blocked_broadcasters);
                 })
                 ->orderBy('votes', 'desc')
-                ->simplePaginate(20)
-                ->setPath('/json/browse/broadcasters');
+                ->simplePaginate(20);
+                // ->setPath('/json/browse/broadcasters');
         }
 
         return Inertia::render('browse/broadcasters', [
@@ -41,13 +41,17 @@ class BroadcasterController extends Controller
                 })
                 ->orderBy('votes', 'desc')
                 ->simplePaginate(20)
-                ->setPath('/json/browse/broadcasters')
+                // ->setPath('/json/browse/broadcasters')
         ]);
     }
 
     public function show(Request $request, $login)
     {
         $broadcaster = Broadcaster::where('login', $login)->withCount('followers')->firstOrFail();
+
+        if ($request->expectsJson()) {
+            return $broadcaster;
+        }
 
         Meta::set('og:title', "{$broadcaster->display_name}'s Clips - Justclip");
         Meta::set('og:description', $broadcaster->about);

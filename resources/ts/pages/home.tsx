@@ -19,6 +19,7 @@ import SortClips from "@shared/sort-clips";
 import TopClippers from "@shared/top-clippers";
 import type { User } from "../types/user";
 import axios from "axios";
+import { isMobile } from "../utils";
 import route from "ziggy-js";
 
 const Home = ({
@@ -31,13 +32,21 @@ const Home = ({
   const feedPage = () => {
     if (auth) {
       if (route().current() === "home") {
-        return "&feed=home";
-      } else if (route().current() === "popular") {
-        return "&feed=popular";
+        return "&feed=following";
+      } else if (route().current() === "games") {
+        return "&feed=games";
+      } else if (route().current() === "irl") {
+        return "&feed=irl";
+      }
+    } else {
+      if (route().current() === "games") {
+        return "&feed=games";
+      } else if (route().current() === "irl") {
+        return "&feed=irl";
       }
     }
 
-    return "&feed=popular";
+    return "&feed=games";
   };
 
   const [sortBy, setSortBy] = useRemember("&hot=true", "sort");
@@ -81,9 +90,11 @@ const Home = ({
   }, []);
 
   useEffect(() => {
-    axios.get("/json/leaderboard?limit=5").then(({ data }) => {
-      setLeaderboard(data.data);
-    });
+    if (!isMobile) {
+      axios.get("/json/leaderboard?limit=5").then(({ data }) => {
+        setLeaderboard(data.data);
+      });
+    }
   }, []);
 
   return (
@@ -94,29 +105,37 @@ const Home = ({
           <div className="flex items-center justify-between mb-2">
             <div>
               {auth && (
-                <>
-                  <InertiaLink
-                    href="/"
-                    className={`px-3 py-1 rounded-full mr-1 hover:bg-opacity-80 font-semibold focus:outline-none lg:inline hidden ${
-                      feed === "&feed=home"
-                        ? "text-white-light bg-primary"
-                        : "bg-secondary"
-                    }`}
-                  >
-                    Home
-                  </InertiaLink>
-                  <InertiaLink
-                    href="/popular"
-                    className={`px-3 py-1 rounded-full mr-1 hover:bg-opacity-80 font-semibold focus:outline-none lg:inline hidden ${
-                      feed === "&feed=popular"
-                        ? "text-white-light bg-primary"
-                        : "bg-secondary"
-                    }`}
-                  >
-                    Popular
-                  </InertiaLink>
-                </>
+                <InertiaLink
+                  href="/"
+                  className={`px-3 py-1 rounded-full mr-2 hover:bg-opacity-80 font-semibold focus:outline-none lg:ml-0 ml-2 ${
+                    feed === "&feed=following"
+                      ? "text-white-light bg-primary"
+                      : "bg-secondary"
+                  }`}
+                >
+                  Following
+                </InertiaLink>
               )}
+              <InertiaLink
+                href="/games"
+                className={`px-3 py-1 rounded-full mr-2 hover:bg-opacity-80 font-semibold focus:outline-none ${
+                  feed === "&feed=games"
+                    ? "text-white-light bg-primary"
+                    : "bg-secondary"
+                }`}
+              >
+                Games
+              </InertiaLink>
+              <InertiaLink
+                href="/irl"
+                className={`px-3 py-1 rounded-full hover:bg-opacity-80 font-semibold focus:outline-none ${
+                  feed === "&feed=irl"
+                    ? "text-white-light bg-primary"
+                    : "bg-secondary"
+                }`}
+              >
+                IRL
+              </InertiaLink>
             </div>
             <SortClips onSort={onSort}></SortClips>
           </div>
@@ -142,7 +161,7 @@ const Home = ({
               );
             })}
           </InfiniteScroll>
-          {empty && feed === "&feed=home" && (
+          {empty && feed === "&feed=following" && (
             <div className="relative">
               <ClipPlaceholder></ClipPlaceholder>
               <ClipPlaceholder></ClipPlaceholder>
@@ -161,7 +180,7 @@ const Home = ({
               </div>
             </div>
           )}
-          {empty && feed === "&feed=popular" && (
+          {empty && feed === "&feed=games" && (
             <div className="relative">
               <ClipPlaceholder></ClipPlaceholder>
               <ClipPlaceholder></ClipPlaceholder>
@@ -186,10 +205,11 @@ const Home = ({
               <TopClippers
                 asset_url={asset_url}
                 leaderboard={leaderboard}
+                className="lg:block hidden"
               ></TopClippers>
             )
           ) : (
-            <LeaderboardSkeleton></LeaderboardSkeleton>
+            <LeaderboardSkeleton className="lg:block hidden"></LeaderboardSkeleton>
           )}
 
           {/* <div
@@ -208,7 +228,7 @@ const Home = ({
                 </p>
                 <p>
                   Your personal Justclip frontpage. Come here to check in with
-                  your favorite broadcasters.
+                  your favourite broadcasters.
                 </p>
               </div>
               <div className="p-2 mb-3 border-b lg:border-l lg:border-r bg-dark">
@@ -219,7 +239,7 @@ const Home = ({
                   Upload Clip
                 </InertiaLink>
               </div>
-            </>
+            </div>
           )}
           {feed === "&feed=popular" && (
             <>
@@ -228,7 +248,7 @@ const Home = ({
                   Popular
                 </p>
                 <p>
-                  The best clips on Justclip for you, pulled from the most
+                  The best games clips on Justclip for you, pulled from the most
                   active broadcasters on Justclip. Check here to see the most
                   shared, upvoted, and commented content about Twitch.
                 </p>
@@ -241,7 +261,29 @@ const Home = ({
                   Upload Clip
                 </InertiaLink>
               </div>
-            </>
+            </div>
+          )}
+          {feed === "&feed=irl" && (
+            <div className="lg:block hidden">
+              <div className="bg-dark lg:rounded-t-md border-t border-b lg:border-r lg:border-l p-3">
+                <p className="border-b-2 pb-1 font-semibold mb-2 text-lg">
+                  IRL
+                </p>
+                <p>
+                  The best IRL clips on Justclip for you, pulled from the most
+                  active broadcasters on Justclip. Check here to see the most
+                  shared, upvoted, and commented content about Twitch.
+                </p>
+              </div>
+              <div className="p-2 border-b border-l border-r bg-dark mb-3">
+                <InertiaLink
+                  href="/upload"
+                  className="p-3 bg-primary text-white-light text-lg text-center rounded-md font-semibold hover:bg-opacity-80 focus:outline-none uppercase block"
+                >
+                  Upload Clip
+                </InertiaLink>
+              </div>
+            </div>
           )}
           <div className="lg:sticky lg:top-3">
             <Footer></Footer>

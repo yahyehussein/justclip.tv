@@ -1,11 +1,12 @@
 <?php
 
-use App\Models\Broadcaster;
-use Illuminate\Http\Request;
-use Illuminate\Support\Carbon;
-use Illuminate\Support\Facades\Log;
-use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ClipController;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\BroadcasterController;
+use App\Http\Controllers\LeaderboardController;
+use App\Http\Controllers\StreamController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,52 +19,20 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::post('/webhooks/callback', function (Request $request) {
-    // Log::info([
-    //     'body' => $request->getContent()
-    // ]);
+Route::get('/clips', [ClipController::class, 'index']);
 
-    // $hmac_message = $request->header('Twitch-Eventsub-Message-Id') . $request->header('Twitch-Eventsub-Message-Timestamp') . $request->getContent();
-    // $expected_signature_header = 'sha256=' . hash('sha256', '4nP2bCnB.cF\c2{j' . $hmac_message);
+Route::get('/broadcasters', [BroadcasterController::class, 'index']);
 
-    // Log::info([
-    //     'hmac_message' => $hmac_message,
-    //     'Twitch-Eventsub-Message-Signature' => $request->header('Twitch-Eventsub-Message-Signature'),
-    //     'expected_signature_header' => $expected_signature_header,
-    //     'varify' => $request->header('Twitch-Eventsub-Message-Signature') != $expected_signature_header
-    // ]);
+Route::get('/categories', [CategoryController::class, 'index']);
 
-    if ($request->input('challenge')) {
-        return response($request->input('challenge'), 200, ['Content-Type' => 'text/plain']);
-    }
+Route::get('/broadcaster/{login}', [BroadcasterController::class, 'show']);
 
-    switch ($request->input('subscription')['type']) {
-        case 'channel.update':
-            $broadcaster = Broadcaster::find($request->input('event')['broadcaster_user_id']);
-            $broadcaster->title = $request->input('event')['title'];
-            $broadcaster->category = $request->input('event')['category_name'];
-            $broadcaster->save();
-            break;
+Route::get('/category/{category_name}', [CategoryController::class, 'show'])->where('category_name', '.*');
 
-        case 'stream.online':
-            $broadcaster = Broadcaster::find($request->input('event')['broadcaster_user_id']);
-            $broadcaster->type = $request->input('event')['type'];
-            $broadcaster->started_at = $request->input('event')['started_at'];
-            $broadcaster->save();
-            break;
+Route::get('/user/{login}', [UserController::class, 'index']);
 
-        case 'stream.offline':
-            $broadcaster = Broadcaster::find($request->input('event')['broadcaster_user_id']);
-            $broadcaster->type = null;
-            $broadcaster->title = null;
-            $broadcaster->category = null;
-            $broadcaster->save();
-            break;
+// Route::get('/leaderboard', [LeaderboardController::class, 'index']);
 
-        default:
-            break;
-    }
+Route::post('/webhooks/callback', [StreamController::class, 'store']);
 
-    return response("", 200, ['Content-Type' => 'text/plain']);
-});
 

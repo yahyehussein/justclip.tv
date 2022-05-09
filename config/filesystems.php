@@ -50,6 +50,10 @@ return [
             'bucket' => env('AWS_BUCKET'),
             'url' => env('AWS_URL'),
             'endpoint' => env('AWS_ENDPOINT'),
+            'visibility' => 'public',
+            'options' => [
+                'CacheControl' => 'public, max-age=31919000',
+            ]
         ],
 
     ],

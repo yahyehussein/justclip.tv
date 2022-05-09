@@ -1742,6 +1742,9 @@ video {
 .h-6 {
 	height: 1.5rem;
 }
+.h-\[84px\] {
+	height: 84px;
+}
 .max-h-32 {
 	max-height: 8rem;
 }
@@ -2138,6 +2141,10 @@ video {
 .bg-outerspace {
 	--tw-bg-opacity: 1;
 	background-color: rgba(47, 51, 54, var(--tw-bg-opacity));
+}
+.bg-yellow-300 {
+	--tw-bg-opacity: 1;
+	background-color: rgba(252, 211, 77, var(--tw-bg-opacity));
 }
 .bg-opacity-70 {
 	--tw-bg-opacity: 0.7;
@@ -2847,6 +2854,10 @@ ins.adsbygoogle[data-ad-status="unfilled"] {
 		position: sticky;
 	}
 
+	.lg\:absolute {
+		position: absolute;
+	}
+
 	.lg\:top-3 {
 		top: 0.75rem;
 	}
@@ -2897,6 +2908,10 @@ ins.adsbygoogle[data-ad-status="unfilled"] {
 		margin-right: 0px;
 	}
 
+	.lg\:ml-0 {
+		margin-left: 0px;
+	}
+
 	.lg\:block {
 		display: block;
 	}
@@ -2919,6 +2934,10 @@ ins.adsbygoogle[data-ad-status="unfilled"] {
 
 	.lg\:h-\[164px\] {
 		height: 164px;
+	}
+
+	.lg\:h-\[112px\] {
+		height: 112px;
 	}
 
 	.lg\:w-\[164px\] {
@@ -2995,6 +3014,15 @@ ins.adsbygoogle[data-ad-status="unfilled"] {
 		border-top-width: 1px;
 	}
 
+	.lg\:border-b {
+		border-bottom-width: 1px;
+	}
+
+	.lg\:bg-dark {
+		--tw-bg-opacity: 1;
+		background-color: rgba(14, 14, 16, var(--tw-bg-opacity));
+	}
+
 	.lg\:p-3 {
 		padding: 0.75rem;
 	}
@@ -3037,6 +3065,14 @@ ins.adsbygoogle[data-ad-status="unfilled"] {
 		padding-top: 0px;
 	}
 
+	.lg\:pt-44 {
+		padding-top: 11rem;
+	}
+
+	.lg\:pb-2 {
+		padding-bottom: 0.5rem;
+	}
+
 	.lg\:text-4xl {
 		font-size: 2.25rem;
 		line-height: 2.5rem;
@@ -3074,6 +3110,17 @@ ins.adsbygoogle[data-ad-status="unfilled"] {
 
 	.lg\:font-normal {
 		font-weight: 400;
+	}
+
+	.lg\:ring-primary {
+		--tw-ring-opacity: 1;
+		--tw-ring-color: rgba(77, 136, 68, var(--tw-ring-opacity));
+	}
+
+	.lg\:hover\:ring-2:hover {
+		--tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
+		--tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color);
+		box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
 	}
 }
 

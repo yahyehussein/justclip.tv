@@ -50,7 +50,7 @@ const Following = ({
     <>
       <Site title={user.login}></Site>
       <Profile asset_url={asset_url} auth={auth} user={user}>
-        <div className="mt-3">
+        <div className="mt-3 lg:px-0 px-2">
           <InfiniteScroll
             dataLength={followings.to}
             next={getFollowings}
@@ -75,7 +75,7 @@ const Following = ({
                   <img
                     src={following.avatar}
                     alt="avatar"
-                    className="hover:ring-2 ring-twitch h-auto w-full"
+                    className="lg:hover:ring-2 lg:ring-primary h-auto w-full"
                   />
                   {following.subscriptions &&
                     (following.type ? (
