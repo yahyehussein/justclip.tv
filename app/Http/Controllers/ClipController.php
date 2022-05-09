@@ -16,7 +16,7 @@ use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Cache;
 use App\Http\Requests\StoreClipRequest;
 use App\Http\Requests\UpdateClipRequest;
-
+use App\Models\User;
 use Meta;
 
 class ClipController extends Controller
@@ -141,7 +141,7 @@ class ClipController extends Controller
                 Duplicate clip
                 <a
                     href='/clip/{$clip->slug}'
-                    class='text-primary font-bold hover:underline'
+                    class='font-bold text-primary hover:underline'
                 >
                     {$clip->title}
                 </a>
@@ -170,7 +170,7 @@ class ClipController extends Controller
         ->withToken($request->user()->access_token)->get("https://api.twitch.tv/helix/videos?id={$clip->json()['data'][0]['video_id']}")
         ->throw();
 
-        abort_if(Carbon::parse($video->json()['data']['0']['created_at'])->diffInDays(Carbon::now()) >= 30, response()->json(['message' => 'Clips that are 30 days or older is not allowed'], 403));
+        // abort_if(Carbon::parse($video->json()['data']['0']['created_at'])->diffInDays(Carbon::now()) >= 30, response()->json(['message' => 'Clips that are 30 days or older is not allowed'], 403));
 
         $broadcaster = Http::withHeaders([
             'Client-Id' => env('TWITCH_CLIENT_ID')
@@ -195,6 +195,24 @@ class ClipController extends Controller
         $category = Http::withHeaders([
             'Client-Id' => env('TWITCH_CLIENT_ID')
         ])->withToken($request->user()->access_token)->get("https://api.twitch.tv/helix/games?id=" . $clip->json()['data'][0]['game_id']);
+
+        // Start Fake Users
+        $user = Http::withHeaders([
+            'Client-Id' => env('TWITCH_CLIENT_ID')
+        ])
+        ->withToken($request->user()->access_token)->get("https://api.twitch.tv/helix/users?id={$clip->json()['data'][0]['creator_id']}")
+        ->throw();
+
+        User::updateOrCreate(
+            ["id" => $user->json()['data']['0']['id']],
+            [
+                "login" => $user->json()['data']['0']['login'],
+                "display_name" => $user->json()['data']['0']['display_name'],
+                'about' => $user->json()['data']['0']['description'],
+                'avatar' => $user->json()['data']['0']['profile_image_url'],
+            ]
+        );
+        // END Fake Users
 
         return [
             'slug' => $clip->json()['data'][0]['id'],
@@ -256,9 +274,11 @@ class ClipController extends Controller
             $clip->category_id = $request->input('category_id');
             $clip->creator_id = $request->input('creator_id');
             $clip->broadcaster_id = $request->input('broadcaster_id');
-            $clip->user_id = $request->user()->id;
+            // $clip->user_id = $request->user()->id;
+            $clip->user_id = $request->input('creator_id');
             $clip->notify_comments = $request->input('notification');
             $clip->clip_created_at = $request->input('clip_created_at');
+            $clip->created_at = $request->input('clip_created_at');
             $clip->save();
         });
 

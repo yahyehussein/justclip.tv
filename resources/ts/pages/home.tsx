@@ -146,15 +146,15 @@ const Home = ({
             <div className="relative">
               <ClipPlaceholder></ClipPlaceholder>
               <ClipPlaceholder></ClipPlaceholder>
-              <div className="absolute w-full h-full bg-dark bg-opacity-70 flex items-center justify-center top-0 px-16 flex-col rounded-md">
+              <div className="absolute top-0 flex flex-col items-center justify-center w-full h-full px-16 rounded-md bg-dark bg-opacity-70">
                 <i className="fas fa-search text-8xl"></i>
-                <p className="lg:text-xl text-center mb-2">
+                <p className="mb-2 text-center lg:text-xl">
                   Justclip gets better when you follow your favourite
                   broadcaster, so find some clips!
                 </p>
                 <InertiaLink
                   href="/popular"
-                  className="bg-primary text-white-light font-semibold w-full rounded-md p-2 bg-opacity-80 focus:outline-none text-center"
+                  className="w-full p-2 font-semibold text-center rounded-md bg-primary text-white-light bg-opacity-80 focus:outline-none"
                 >
                   Browse Popular Clips
                 </InertiaLink>
@@ -165,13 +165,13 @@ const Home = ({
             <div className="relative">
               <ClipPlaceholder></ClipPlaceholder>
               <ClipPlaceholder></ClipPlaceholder>
-              <div className="absolute w-full h-full bg-dark bg-opacity-70 flex items-center justify-center top-0 px-16 flex-col">
-                <p className="text-2xl text-center mb-2">There are no clips</p>
-                <p className="text-center mb-2">
+              <div className="absolute top-0 flex flex-col items-center justify-center w-full h-full px-16 bg-dark bg-opacity-70">
+                <p className="mb-2 text-2xl text-center">There are no clips</p>
+                <p className="mb-2 text-center">
                   Be the first person to upload a clip
                 </p>
                 <button
-                  className="bg-primary text-white-light font-semibold w-full rounded-md p-2 bg-opacity-80 focus:outline-none"
+                  className="w-full p-2 font-semibold rounded-md bg-primary text-white-light bg-opacity-80 focus:outline-none"
                   onClick={() => Inertia.visit("/upload")}
                 >
                   Upload Clip
@@ -192,18 +192,18 @@ const Home = ({
             <LeaderboardSkeleton></LeaderboardSkeleton>
           )}
 
-          <div
+          {/* <div
             // eslint-disable-next-line @typescript-eslint/ban-ts-comment
             // @ts-ignore
             align="center"
-            className="bg-dark lg:rounded-md lg:p-3 lg:border mb-3"
+            className="mb-3 bg-dark lg:rounded-md lg:p-3 lg:border"
           >
             <Ad dataAdSlot="8252889064" dataAdFormat="rectangle"></Ad>
-          </div>
+          </div> */}
           {feed === "&feed=home" && (
             <>
-              <div className="bg-dark lg:rounded-t-md border-t border-b lg:border-r lg:border-l p-3">
-                <p className="border-b-2 pb-1 font-semibold mb-2 text-lg">
+              <div className="p-3 border-t border-b bg-dark lg:rounded-t-md lg:border-r lg:border-l">
+                <p className="pb-1 mb-2 text-lg font-semibold border-b-2">
                   Home
                 </p>
                 <p>
@@ -211,10 +211,10 @@ const Home = ({
                   your favorite broadcasters.
                 </p>
               </div>
-              <div className="p-2 border-b lg:border-l lg:border-r bg-dark mb-3">
+              <div className="p-2 mb-3 border-b lg:border-l lg:border-r bg-dark">
                 <InertiaLink
                   href="/upload"
-                  className="p-3 bg-primary text-white-light text-lg text-center rounded-md font-semibold hover:bg-opacity-80 focus:outline-none uppercase block"
+                  className="block p-3 text-lg font-semibold text-center uppercase rounded-md bg-primary text-white-light hover:bg-opacity-80 focus:outline-none"
                 >
                   Upload Clip
                 </InertiaLink>
@@ -223,8 +223,8 @@ const Home = ({
           )}
           {feed === "&feed=popular" && (
             <>
-              <div className="bg-dark lg:rounded-t-md border-t border-b lg:border-r lg:border-l p-3">
-                <p className="border-b-2 pb-1 font-semibold mb-2 text-lg">
+              <div className="p-3 border-t border-b bg-dark lg:rounded-t-md lg:border-r lg:border-l">
+                <p className="pb-1 mb-2 text-lg font-semibold border-b-2">
                   Popular
                 </p>
                 <p>
@@ -233,10 +233,10 @@ const Home = ({
                   shared, upvoted, and commented content about Twitch.
                 </p>
               </div>
-              <div className="p-2 border-b border-l border-r bg-dark mb-3">
+              <div className="p-2 mb-3 border-b border-l border-r bg-dark">
                 <InertiaLink
                   href="/upload"
-                  className="p-3 bg-primary text-white-light text-lg text-center rounded-md font-semibold hover:bg-opacity-80 focus:outline-none uppercase block"
+                  className="block p-3 text-lg font-semibold text-center uppercase rounded-md bg-primary text-white-light hover:bg-opacity-80 focus:outline-none"
                 >
                   Upload Clip
                 </InertiaLink>

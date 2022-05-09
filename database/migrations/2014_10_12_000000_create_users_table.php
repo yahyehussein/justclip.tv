@@ -17,7 +17,7 @@ class CreateUsersTable extends Migration
             $table->unsignedBigInteger('id')->primary();
             $table->string('login')->index();
             $table->string('display_name');
-            $table->string('email');
+            $table->string('email')->nullable();
             $table->string('about', 300)->nullable();
             $table->text('avatar');
             $table->json('blocked_broadcasters')->nullable();

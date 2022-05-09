@@ -43,7 +43,7 @@ class ProcessClip implements ShouldQueue
 
         $chat = Http::withHeaders([
                 'Accept' => 'application/vnd.twitchtv.v5+json',
-                'Client-Id' => '00othjdvynvi0aiiyfhixi0nwbgaqx'
+                'Client-Id' => 'kimne78kx3ncx6brgo4mv6wki5h1ko'
             ])
             ->get("https://api.twitch.tv/v5/videos/{$event->clip->video_id}/comments?${parameter}");
 
@@ -161,7 +161,7 @@ class ProcessClip implements ShouldQueue
             ];
         }
 
-        $offset = Http::get("https://wjvtcijege.execute-api.us-east-1.amazonaws.com/clip_video_offset/{$event->clip->slug}");
+        $offset = Http::get("https://fzs6becww3.execute-api.us-east-1.amazonaws.com/clip_video_offset/{$event->clip->slug}");
 
         $clips = Clip::select('id', 'slug', 'title', 'offset', 'duration')->where('video_id', $event->clip->video_id)->get();
 

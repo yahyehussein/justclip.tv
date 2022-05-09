@@ -5928,14 +5928,14 @@ var Layout = function Layout(_a) {
     id: "global-tooltip"
   }, {
     children: [(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", __assign({
-      className: "flex justify-between pt-4 mb-2 container mx-auto px-3 items-center"
+      className: "container flex items-center justify-between px-3 pt-4 mx-auto mb-2"
     }, {
       children: [(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", __assign({
         className: "flex items-center"
       }, {
         children: [(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.InertiaLink, __assign({
           href: "/",
-          className: "mr-2 lg:hidden block text-2xl"
+          className: "block mr-2 text-2xl lg:hidden"
         }, {
           children: (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("img", {
             src: (asset_url ? asset_url : "") + "/images/logo_m.png",
@@ -5944,11 +5944,11 @@ var Layout = function Layout(_a) {
           }, void 0)
         }), void 0), (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_tippyjs_react__WEBPACK_IMPORTED_MODULE_9__.default, __assign({
           content: "Browse",
-          className: "lg:block hidden"
+          className: "hidden lg:block"
         }, {
           children: (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.InertiaLink, __assign({
             href: "/browse",
-            className: "mr-4 lg:text-3xl text-2xl"
+            className: "mr-4 text-2xl lg:text-3xl"
           }, {
             children: (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("i", {
               className: "far fa-window-restore hover:text-primary"
@@ -5956,7 +5956,7 @@ var Layout = function Layout(_a) {
           }), void 0)
         }), void 0), (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.InertiaLink, __assign({
           href: "/",
-          className: "lg:block hidden mr-3"
+          className: "hidden mr-3 lg:block"
         }, {
           children: (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("img", {
             src: (asset_url ? asset_url : "") + "/images/logo.png",
@@ -5966,52 +5966,9 @@ var Layout = function Layout(_a) {
               maxWidth: "180px"
             }
           }, void 0)
-        }), void 0), (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", __assign({
-          className: "lg:flex hidden items-center w-80 rounded-full pr-6 text-base bg-gray group hover:bg-black border transition duration-300 mr-3"
-        }, {
-          children: [(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("input", {
-            type: "text",
-            name: "search",
-            id: "search",
-            placeholder: "Search",
-            className: "w-full pl-6 py-3 bg-gray focus:outline-none rounded-full group-hover:bg-black transition duration-300 text-white",
-            autoComplete: "off",
-            autoCorrect: "off",
-            value: q,
-            onChange: function onChange(e) {
-              setQ(e.target.value);
-            },
-            onKeyDown: function onKeyDown(e) {
-              if (e.key === "Enter") {
-                if (q) {
-                  _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_4__.Inertia.visit("/search?q=" + q);
-                }
-              }
-            }
-          }, void 0), (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", __assign({
-            className: "hover:text-primary justify-self-stretch cursor-pointer",
-            onClick: function onClick() {
-              if (q) {
-                _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_4__.Inertia.visit("/search?q=" + q);
-              }
-            }
-          }, {
-            children: (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("i", {
-              className: "fas fa-search"
-            }, void 0)
-          }), void 0)]
-        }), void 0), (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("a", __assign({
-          href: "https://discord.gg/GDNME7gPz2",
-          className: "lg:block hidden",
-          target: "_blank",
-          rel: "noreferrer"
-        }, {
-          children: (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("i", {
-            className: "fab fa-discord fa-3x"
-          }, void 0)
         }), void 0)]
       }), void 0), auth ? (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", __assign({
-        className: "lg:flex hidden items-center text-3xl relative"
+        className: "relative items-center hidden text-3xl lg:flex"
       }, {
         children: [(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_shared_notifications__WEBPACK_IMPORTED_MODULE_5__.default, {}, void 0), (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_tippyjs_react__WEBPACK_IMPORTED_MODULE_9__.default, __assign({
           content: "Upload Clip"
@@ -6027,7 +5984,7 @@ var Layout = function Layout(_a) {
               viewBox: "0 0 20 20",
               x: "0px",
               y: "0px",
-              className: "fill-current hover:fill-current hover:text-primary text-white"
+              className: "text-white fill-current hover:fill-current hover:text-primary"
             }, {
               children: (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("g", {
                 children: [(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
@@ -6061,7 +6018,7 @@ var Layout = function Layout(_a) {
               width: "30",
               height: "30",
               viewBox: "0 0 24 24",
-              className: "fill-current hover:fill-current hover:text-primary text-white"
+              className: "text-white fill-current hover:fill-current hover:text-primary"
             }, {
               children: (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
                 d: "M24 14.187v-4.374c-2.148-.766-2.726-.802-3.027-1.529-.303-.729.083-1.169 1.059-3.223l-3.093-3.093c-2.026.963-2.488 1.364-3.224 1.059-.727-.302-.768-.889-1.527-3.027h-4.375c-.764 2.144-.8 2.725-1.529 3.027-.752.313-1.203-.1-3.223-1.059l-3.093 3.093c.977 2.055 1.362 2.493 1.059 3.224-.302.727-.881.764-3.027 1.528v4.375c2.139.76 2.725.8 3.027 1.528.304.734-.081 1.167-1.059 3.223l3.093 3.093c1.999-.95 2.47-1.373 3.223-1.059.728.302.764.88 1.529 3.027h4.374c.758-2.131.799-2.723 1.537-3.031.745-.308 1.186.099 3.215 1.062l3.093-3.093c-.975-2.05-1.362-2.492-1.059-3.223.3-.726.88-.763 3.027-1.528zm-4.875.764c-.577 1.394-.068 2.458.488 3.578l-1.084 1.084c-1.093-.543-2.161-1.076-3.573-.49-1.396.581-1.79 1.693-2.188 2.877h-1.534c-.398-1.185-.791-2.297-2.183-2.875-1.419-.588-2.507-.045-3.579.488l-1.083-1.084c.557-1.118 1.066-2.18.487-3.58-.579-1.391-1.691-1.784-2.876-2.182v-1.533c1.185-.398 2.297-.791 2.875-2.184.578-1.394.068-2.459-.488-3.579l1.084-1.084c1.082.538 2.162 1.077 3.58.488 1.392-.577 1.785-1.69 2.183-2.875h1.534c.398 1.185.792 2.297 2.184 2.875 1.419.588 2.506.045 3.579-.488l1.084 1.084c-.556 1.121-1.065 2.187-.488 3.58.577 1.391 1.689 1.784 2.875 2.183v1.534c-1.188.398-2.302.791-2.877 2.183zm-7.125-5.951c1.654 0 3 1.346 3 3s-1.346 3-3 3-3-1.346-3-3 1.346-3 3-3zm0-2c-2.762 0-5 2.238-5 5s2.238 5 5 5 5-2.238 5-5-2.238-5-5-5z"
@@ -6080,7 +6037,7 @@ var Layout = function Layout(_a) {
               width: "30",
               height: "30",
               viewBox: "0 0 24 24",
-              className: "fill-current hover:fill-current hover:text-primary text-white"
+              className: "text-white fill-current hover:fill-current hover:text-primary"
             }, {
               children: (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
                 d: "M14 19v-.083c-1.178.685-2.542 1.083-4 1.083-4.411 0-8-3.589-8-8s3.589-8 8-8c1.458 0 2.822.398 4 1.083v-2.245c-1.226-.536-2.576-.838-4-.838-5.522 0-10 4.477-10 10s4.478 10 10 10c1.424 0 2.774-.302 4-.838v-2.162zm4-9.592l2.963 2.592-2.963 2.592v-1.592h-8v-2h8v-1.592zm-2-4.408v4h-8v6h8v4l8-7-8-7z"
@@ -6106,38 +6063,38 @@ var Layout = function Layout(_a) {
           }), void 0)
         }), void 0)]
       }), void 0) : (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", __assign({
-        className: "lg:block hidden"
+        className: "hidden lg:block"
       }, {
         children: (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("a", __assign({
           href: "/login",
-          className: "flex items-center space-x-1 bg-twitch px-6 py-2 rounded-full font-semibold text-lg hover:bg-opacity-80 transition text-white-light"
+          className: "flex items-center px-6 py-2 space-x-1 text-lg font-semibold transition rounded-full bg-twitch hover:bg-opacity-80 text-white-light"
         }, {
           children: [(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("i", {
-            className: "fab fa-twitch mt-1"
+            className: "mt-1 fab fa-twitch"
           }, void 0), (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("span", {
             children: "Connect with Twitch"
           }, void 0)]
         }), void 0)
       }), void 0), (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", __assign({
-        className: "lg:hidden block"
+        className: "block lg:hidden"
       }, {
         children: (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_headlessui_react__WEBPACK_IMPORTED_MODULE_10__.Menu, {
           children: function children(_a) {
             var open = _a.open;
             return (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.Fragment, {
               children: [(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_headlessui_react__WEBPACK_IMPORTED_MODULE_10__.Menu.Button, __assign({
-                className: "focus:outline-none z-10"
+                className: "z-10 focus:outline-none"
               }, {
                 children: (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("i", {
-                  className: "fas fa-bars hover:text-primary text-2xl"
+                  className: "text-2xl fas fa-bars hover:text-primary"
                 }, void 0)
               }), void 0), open && (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", {
-                className: "fixed top-0 left-0 w-screen h-screen z-20 bg-dark bg-opacity-80"
+                className: "fixed top-0 left-0 z-20 w-screen h-screen bg-dark bg-opacity-80"
               }, void 0), (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(_headlessui_react__WEBPACK_IMPORTED_MODULE_10__.Menu.Items, __assign({
-                className: "flex flex-col bg-dark text-left border-t border-b whitespace-nowrap absolute top-0 right-0 w-full z-50 py-3"
+                className: "absolute top-0 right-0 z-50 flex flex-col w-full py-3 text-left border-t border-b bg-dark whitespace-nowrap"
               }, {
                 children: [(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", __assign({
-                  className: "flex items-center justify-between pb-3 border-b mb-3 px-2"
+                  className: "flex items-center justify-between px-2 pb-3 mb-3 border-b"
                 }, {
                   children: [auth ? (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_headlessui_react__WEBPACK_IMPORTED_MODULE_10__.Menu.Item, {
                     children: (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.InertiaLink, __assign({
@@ -6147,7 +6104,7 @@ var Layout = function Layout(_a) {
                       children: [(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("img", {
                         src: auth.avatar.replace(/\d+x\d+/g, "70x70"),
                         alt: "avatar",
-                        className: "ring-2 ring-primary mr-2",
+                        className: "mr-2 ring-2 ring-primary",
                         width: "36",
                         height: "36"
                       }, void 0), (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", __assign({
@@ -6156,7 +6113,7 @@ var Layout = function Layout(_a) {
                         children: [(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("span", {
                           children: auth.display_name
                         }, void 0), (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("span", __assign({
-                          className: "text-muted text-xs"
+                          className: "text-xs text-muted"
                         }, {
                           children: "Clipper"
                         }), void 0)]
@@ -6165,31 +6122,31 @@ var Layout = function Layout(_a) {
                   }, void 0) : (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_headlessui_react__WEBPACK_IMPORTED_MODULE_10__.Menu.Item, {
                     children: (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("a", __assign({
                       href: "/login",
-                      className: "flex items-center bg-twitch px-6 py-2 rounded-full justify-center text-white-light"
+                      className: "flex items-center justify-center px-6 py-2 rounded-full bg-twitch text-white-light"
                     }, {
                       children: [(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("i", {
-                        className: "fab fa-twitch mt-1 mr-1"
+                        className: "mt-1 mr-1 fab fa-twitch"
                       }, void 0), (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("span", {
                         children: "Connect with Twitch"
                       }, void 0)]
                     }), void 0)
                   }, void 0), (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_headlessui_react__WEBPACK_IMPORTED_MODULE_10__.Menu.Item, {
                     children: (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("i", {
-                      className: "fas fa-times text-primary text-2xl"
+                      className: "text-2xl fas fa-times text-primary"
                     }, void 0)
                   }, void 0)]
                 }), void 0), (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", __assign({
                   className: "px-2"
                 }, {
                   children: [(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", __assign({
-                    className: "flex items-center w-full rounded-full pr-6 text-base bg-dark border mb-3"
+                    className: "flex items-center w-full pr-6 mb-3 text-base border rounded-full bg-dark"
                   }, {
                     children: [(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("input", {
                       type: "text",
                       name: "search",
                       id: "search",
                       placeholder: "Search",
-                      className: "w-full pl-6 py-3 bg-dark focus:outline-none rounded-full",
+                      className: "w-full py-3 pl-6 rounded-full bg-dark focus:outline-none",
                       autoComplete: "off",
                       autoCorrect: "off",
                       value: q,
@@ -6205,7 +6162,7 @@ var Layout = function Layout(_a) {
                       }
                     }, void 0), (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_headlessui_react__WEBPACK_IMPORTED_MODULE_10__.Menu.Item, {
                       children: (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", __assign({
-                        className: "justify-self-stretch cursor-pointer",
+                        className: "cursor-pointer justify-self-stretch",
                         onClick: function onClick() {
                           if (q) {
                             _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_4__.Inertia.visit("/search?q=" + q);
@@ -6223,7 +6180,7 @@ var Layout = function Layout(_a) {
                       className: "flex items-center mb-3"
                     }, {
                       children: [(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("i", {
-                        className: "fas fa-fire mr-2 fa-fw"
+                        className: "mr-2 fas fa-fire fa-fw"
                       }, void 0), (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("span", {
                         children: "Popular"
                       }, void 0)]
@@ -6234,7 +6191,7 @@ var Layout = function Layout(_a) {
                       className: "flex items-center mb-3"
                     }, {
                       children: [(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("i", {
-                        className: "fas fa-list-ol mr-2 fa-fw"
+                        className: "mr-2 fas fa-list-ol fa-fw"
                       }, void 0), (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("span", {
                         children: "Leaderboards"
                       }, void 0)]
@@ -6245,7 +6202,7 @@ var Layout = function Layout(_a) {
                       className: "flex items-center mb-3"
                     }, {
                       children: [(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("i", {
-                        className: "fas fa-gavel mr-2 fa-fw"
+                        className: "mr-2 fas fa-gavel fa-fw"
                       }, void 0), (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("span", {
                         children: "Terms"
                       }, void 0)]
@@ -6256,7 +6213,7 @@ var Layout = function Layout(_a) {
                       className: "flex items-center mb-3"
                     }, {
                       children: [(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("i", {
-                        className: "fas fa-video mr-2 fa-fw"
+                        className: "mr-2 fas fa-video fa-fw"
                       }, void 0), (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("span", {
                         children: "Content Policy"
                       }, void 0)]
@@ -6267,7 +6224,7 @@ var Layout = function Layout(_a) {
                       className: "flex items-center mb-3"
                     }, {
                       children: [(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("i", {
-                        className: "fas fa-user-shield mr-2 fa-fw"
+                        className: "mr-2 fas fa-user-shield fa-fw"
                       }, void 0), (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("span", {
                         children: "Privacy Policy"
                       }, void 0)]
@@ -6278,7 +6235,7 @@ var Layout = function Layout(_a) {
                       className: "flex items-center"
                     }, {
                       children: [(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("i", {
-                        className: "far fa-copyright mr-2 fa-fw"
+                        className: "mr-2 far fa-copyright fa-fw"
                       }, void 0), (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("span", {
                         children: "DMCA"
                       }, void 0)]
@@ -6287,21 +6244,21 @@ var Layout = function Layout(_a) {
                     children: [(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_headlessui_react__WEBPACK_IMPORTED_MODULE_10__.Menu.Item, {
                       children: (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.InertiaLink, __assign({
                         href: "/upload",
-                        className: "rounded-full text-center bg-secondary px-6 py-2 w-full block my-3"
+                        className: "block w-full px-6 py-2 my-3 text-center rounded-full bg-secondary"
                       }, {
                         children: "Upload"
                       }), void 0)
                     }, void 0), (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_headlessui_react__WEBPACK_IMPORTED_MODULE_10__.Menu.Item, {
                       children: (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.InertiaLink, __assign({
                         href: "/settings",
-                        className: "rounded-full text-center bg-secondary px-6 py-2 w-full block my-3"
+                        className: "block w-full px-6 py-2 my-3 text-center rounded-full bg-secondary"
                       }, {
                         children: "Account Settings"
                       }), void 0)
                     }, void 0), (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_headlessui_react__WEBPACK_IMPORTED_MODULE_10__.Menu.Item, {
                       children: (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.InertiaLink, __assign({
                         href: "/logout",
-                        className: "rounded-full text-center bg-secondary px-6 py-2 w-full block"
+                        className: "block w-full px-6 py-2 text-center rounded-full bg-secondary"
                       }, {
                         children: "Log Out"
                       }), void 0)
@@ -6314,10 +6271,10 @@ var Layout = function Layout(_a) {
         }, void 0)
       }), void 0)]
     }), void 0), children, !!!cookies.cookieSettings && (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", __assign({
-      className: "fixed w-full bottom-2 flex justify-center items-center z-50"
+      className: "fixed z-50 flex items-center justify-center w-full bottom-2"
     }, {
       children: (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", __assign({
-        className: "border-l-4 border-primary p-2 flex items-center container bg-dark rounded-md shadow"
+        className: "container flex items-center p-2 border-l-4 rounded-md shadow border-primary bg-dark"
       }, {
         children: [(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", __assign({
           className: "text-sm"
@@ -6333,7 +6290,7 @@ var Layout = function Layout(_a) {
             }, {
               children: "Cookie Settings page."
             }), void 0), ". If you click 'Accept All,' you consent to the use of cookies on Justclip websites. Learn more about cookies in our", " ", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.InertiaLink, __assign({
-              href: "/privacy",
+              href: "/privacy-policy",
               className: "text-primary hover:underline"
             }, {
               children: "Privacy Policy"
@@ -6343,7 +6300,7 @@ var Layout = function Layout(_a) {
           className: "flex flex-col flex-shrink-0"
         }, {
           children: [(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("button", __assign({
-            className: "bg-primary px-3 py-1 rounded-full hover:bg-opacity-80 mb-2 focus:outline-none",
+            className: "px-3 py-1 mb-2 rounded-full bg-primary hover:bg-opacity-80 focus:outline-none",
             onClick: function onClick() {
               setCookie("cookieSettings", "true", {
                 path: "/",
@@ -6353,7 +6310,7 @@ var Layout = function Layout(_a) {
           }, {
             children: "Accept All"
           }), void 0), (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("button", __assign({
-            className: "bg-secondary px-3 py-1 rounded-full hover:bg-opacity-80 focus:outline-none",
+            className: "px-3 py-1 rounded-full bg-secondary hover:bg-opacity-80 focus:outline-none",
             onClick: function onClick() {
               removeCookie("cookieSettings", {
                 path: "/",

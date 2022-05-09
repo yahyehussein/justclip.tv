@@ -280,7 +280,7 @@ const Clip = ({
           link ? "hover:border-muted cursor-pointer" : ""
         }`}
       >
-        <div className="w-10 lg:flex flex-col items-center pt-2 bg-codgray rounded-tl-md rounded-bl-md hidden">
+        <div className="flex-col items-center hidden w-10 pt-2 lg:flex bg-codgray rounded-tl-md rounded-bl-md">
           <button
             className={`hover:bg-primary hover:bg-opacity-50 px-2 py-1 focus:outline-none ${
               userVoted?.vote_type === 1 && "bg-primary bg-opacity-70"
@@ -303,8 +303,8 @@ const Clip = ({
         </div>
         <div className="flex-1">
           <div className="pl-2 mb-1">
-            <div className="lg:text-xs text-sm text-muted lg:pt-0 pt-2">
-              <span className="lg:inline-block hidden align-middle">
+            <div className="pt-2 text-sm lg:text-xs text-muted lg:pt-0">
+              <span className="hidden align-middle lg:inline-block">
                 Clipped by
               </span>
               &nbsp;
@@ -312,7 +312,7 @@ const Clip = ({
                 <img
                   src={clip.user.avatar.replace(/\d+x\d+/g, "28x28")}
                   alt="avatar"
-                  className="lg:hidden inline align-middle ring-2 ring-primary mr-2"
+                  className="inline mr-2 align-middle lg:hidden ring-2 ring-primary"
                   width="20"
                   height="20"
                 />
@@ -321,7 +321,7 @@ const Clip = ({
                 <MiniProfile asset_url={asset_url} user_id={clip.user.id}>
                   <InertiaLink
                     href={`/${clip.user.display_name}`}
-                    className="hover:underline lg:font-normal font-semibold inline-block align-middle"
+                    className="inline-block font-semibold align-middle hover:underline lg:font-normal"
                     onClick={(e) => e.stopPropagation()}
                   >
                     {clip.user.display_name}
@@ -330,7 +330,7 @@ const Clip = ({
               ) : (
                 <span className="inline-block align-middle">[DELETED]</span>
               )}
-              <span className="lg:hidden inline-block align-middle">
+              <span className="inline-block align-middle lg:hidden">
                 &nbsp;&bull;
               </span>
               &nbsp;
@@ -344,7 +344,7 @@ const Clip = ({
                 </span>
               </Tippy>
               &nbsp;
-              <span className="lg:inline-block hidden align-middle">
+              <span className="hidden align-middle lg:inline-block">
                 with{" "}
                 {clip.upvotes_count + clip.downvotes_count != 0
                   ? Math.round(
@@ -359,32 +359,32 @@ const Clip = ({
               <span className="inline-block align-middle">
                 {removed && (
                   <Tippy content="Clip Removed">
-                    <i className="far fa-trash-alt text-red-persimmon mr-1 inline-block align-middle"></i>
+                    <i className="inline-block mr-1 align-middle far fa-trash-alt text-red-persimmon"></i>
                   </Tippy>
                 )}
                 {locked && (
                   <Tippy content="Comment Locked">
-                    <i className="fas fa-lock text-yellow-300 mr-1 inline-block align-middle"></i>
+                    <i className="inline-block mr-1 text-yellow-300 align-middle fas fa-lock"></i>
                   </Tippy>
                 )}
                 {outOfContext && (
                   <Tippy content="Out of Context">
-                    <i className="fas fa-exclamation-triangle text-yellow-300 inline-block align-middle"></i>
+                    <i className="inline-block text-yellow-300 align-middle fas fa-exclamation-triangle"></i>
                   </Tippy>
                 )}
               </span>
             </div>
-            <p className="lg:text-xl text-lg lg:py-0 py-1">
+            <p className="py-1 text-lg lg:text-xl lg:py-0">
               {hearted && (
                 <Tippy
                   content={
                     <span>
-                      <i className="fas fa-heart text-xs"></i> by{" "}
+                      <i className="text-xs fas fa-heart"></i> by{" "}
                       {clip.broadcaster.display_name}
                     </span>
                   }
                 >
-                  <span className="mr-2 inline-block align-middle relative">
+                  <span className="relative inline-block mr-2 align-middle">
                     <img
                       src={clip.broadcaster.avatar.replace(/\d+x\d+/g, "28x28")}
                       alt="avatar"
@@ -392,7 +392,7 @@ const Clip = ({
                       width="20"
                       height="20"
                     />
-                    <i className="fas fa-heart text-twitch absolute -bottom-1 -right-1 text-xs"></i>
+                    <i className="absolute text-xs fas fa-heart text-twitch -bottom-1 -right-1"></i>
                   </span>
                 </Tippy>
               )}
@@ -400,7 +400,7 @@ const Clip = ({
                 <span onClick={(e) => e.stopPropagation()}>
                   <InertiaLink
                     href={`/category/${clip.category.name}`}
-                    className="bg-primary px-2 py-1 rounded-full text-xs mr-1 hover:bg-opacity-80 font-semibold inline-block align-middle text-white-light"
+                    className="inline-block px-2 py-1 mr-1 text-xs font-semibold align-middle rounded-full bg-primary hover:bg-opacity-80 text-white-light"
                   >
                     {clip.category.name}
                   </InertiaLink>
@@ -412,7 +412,7 @@ const Clip = ({
                     href={`/content-policy#${deletedBy.rule
                       .replaceAll(" ", "_")
                       .toLowerCase()}`}
-                    className="bg-secondary px-2 py-1 rounded-full text-xs mr-1 hover:bg-opacity-80 font-semibold lg:inline-block align-middle hidden"
+                    className="hidden px-2 py-1 mr-1 text-xs font-semibold align-middle rounded-full bg-secondary hover:bg-opacity-80 lg:inline-block"
                   >
                     Removed - {deletedBy.rule}
                   </InertiaLink>
@@ -420,19 +420,19 @@ const Clip = ({
               )}
               {clip.title}
               {spoiler && (
-                <span className="border border-gray-chateau text-xs px-1 pb-1 inline-block align-middle ml-1 rounded-md font-semibold text-gray-chateau leading-3">
+                <span className="inline-block px-1 pb-1 ml-1 text-xs font-semibold leading-3 align-middle border rounded-md border-gray-chateau text-gray-chateau">
                   spoiler
                 </span>
               )}
               {tos && (
-                <span className="border border-red-persimmon text-xs px-1 pb-1 inline-block align-middle ml-1 rounded-md text-red-persimmon font-semibold leading-3">
+                <span className="inline-block px-1 pb-1 ml-1 text-xs font-semibold leading-3 align-middle border rounded-md border-red-persimmon text-red-persimmon">
                   tos
                 </span>
               )}
             </p>
           </div>
           {(spoiler || tos) && !page ? (
-            <div className="overflow-hidden relative lg:text-base text-xs">
+            <div className="relative overflow-hidden text-xs lg:text-base">
               <div className="aspect-w-16 aspect-h-9">
                 <img
                   src={clip.thumbnail}
@@ -440,24 +440,24 @@ const Clip = ({
                   className="w-full blur-player"
                 />
               </div>
-              <div className="flex items-center absolute top-0 right-0 mt-2 mr-1 lg:hidden">
+              <div className="absolute top-0 right-0 flex items-center mt-2 mr-1 lg:hidden">
                 {clip.category && (
-                  <div className="bg-primary px-2 py-1 rounded-full mr-1 font-semibold bg-opacity-80 text-white-light">
+                  <div className="px-2 py-1 mr-1 font-semibold rounded-full bg-primary bg-opacity-80 text-white-light">
                     {clip.category.name}
                   </div>
                 )}
-                <div className="bg-primary px-2 py-1 rounded-full font-semibold bg-opacity-80 text-white-light">
+                <div className="px-2 py-1 font-semibold rounded-full bg-primary bg-opacity-80 text-white-light">
                   {clip.broadcaster.display_name}
                 </div>
               </div>
-              <div className="bg-dark bg-opacity-70 absolute bottom-0 right-0 mb-2 mr-2 rounded-md px-1">
+              <div className="absolute bottom-0 right-0 px-1 mb-2 mr-2 rounded-md bg-dark bg-opacity-70">
                 {moment.duration(clip.duration, "seconds").format()}
               </div>
             </div>
           ) : (
             <>
               {isMobile && !page ? (
-                <div className="relative lg:hidden block text-xs">
+                <div className="relative block text-xs lg:hidden">
                   <div className="aspect-w-16 aspect-h-9">
                     <img
                       src={clip.thumbnail}
@@ -465,17 +465,17 @@ const Clip = ({
                       className="w-full"
                     />
                   </div>
-                  <div className="flex items-center absolute top-0 right-0 mt-2 mr-1">
+                  <div className="absolute top-0 right-0 flex items-center mt-2 mr-1">
                     {clip.category && (
-                      <div className="bg-primary px-2 py-1 rounded-full mr-1 font-semibold bg-opacity-80 text-white-light">
+                      <div className="px-2 py-1 mr-1 font-semibold rounded-full bg-primary bg-opacity-80 text-white-light">
                         {clip.category.name}
                       </div>
                     )}
-                    <div className="bg-primary px-2 py-1 rounded-full font-semibold bg-opacity-80 text-white-light">
+                    <div className="px-2 py-1 font-semibold rounded-full bg-primary bg-opacity-80 text-white-light">
                       {clip.broadcaster.display_name}
                     </div>
                   </div>
-                  <div className="bg-dark bg-opacity-70 absolute bottom-0 right-0 mb-2 mr-2 rounded-md px-1">
+                  <div className="absolute bottom-0 right-0 px-1 mb-2 mr-2 rounded-md bg-dark bg-opacity-70">
                     {moment.duration(clip.duration, "seconds").format()}
                   </div>
                 </div>
@@ -487,13 +487,13 @@ const Clip = ({
                   next={clip.next}
                 ></Video>
               )}
-              {page && (
+              {/* {page && (
                 <Ad
                   dataAdSlot="1328388064"
                   dataAdFormat="horizontal"
-                  className="lg:mt-0 mt-2"
+                  className="mt-2 lg:mt-0"
                 ></Ad>
-              )}
+              )} */}
             </>
           )}
           <div
@@ -509,7 +509,7 @@ const Clip = ({
                 href={`/clip/${clip.slug}`}
                 className="flex items-center p-2 font-semibold border-r hover:bg-secondary hover:text-white focus:outline-none"
               >
-                <i className="fas fa-comment-alt align-middle"></i>
+                <i className="align-middle fas fa-comment-alt"></i>
                 &nbsp;
                 {numeral(clip.comments_count).format("0a")} Comments
               </InertiaLink>
@@ -529,7 +529,7 @@ const Clip = ({
                     id={clip.id}
                     title="Delete clip?"
                     description="Are you sure you want to delete your clip and votes? You can't undo this."
-                    className="p-2 hover:bg-secondary hover:text-white focus:outline-none font-semibold border-r"
+                    className="p-2 font-semibold border-r hover:bg-secondary hover:text-white focus:outline-none"
                     onConfirmed={handleDelete}
                   >
                     <>
@@ -543,7 +543,7 @@ const Clip = ({
                   >
                     <label
                       htmlFor={`spoiler-${clip.id}`}
-                      className="flex items-center px-5 py-2 hover:bg-secondary cursor-pointer"
+                      className="flex items-center px-5 py-2 cursor-pointer hover:bg-secondary"
                       onClick={handleSpoiler}
                     >
                       <input
@@ -558,7 +558,7 @@ const Clip = ({
                     </label>
                     <label
                       htmlFor={`tos-${clip.id}`}
-                      className="flex items-center px-5 py-2 hover:bg-secondary cursor-pointer"
+                      className="flex items-center px-5 py-2 cursor-pointer hover:bg-secondary"
                       onClick={handleTos}
                     >
                       <input
@@ -573,7 +573,7 @@ const Clip = ({
                     </label>
                     <label
                       htmlFor={`notification-${clip.id}`}
-                      className="flex items-center px-5 py-2 hover:bg-secondary cursor-pointer"
+                      className="flex items-center px-5 py-2 cursor-pointer hover:bg-secondary"
                       onClick={handleNotifyComments}
                     >
                       <input
@@ -595,7 +595,7 @@ const Clip = ({
                       id={clip.id}
                       title="Restore clip?"
                       description="Are you sure you want to restore this clip?"
-                      className="p-2 hover:bg-secondary hover:text-white focus:outline-none font-semibold border-r"
+                      className="p-2 font-semibold border-r hover:bg-secondary hover:text-white focus:outline-none"
                       onConfirmed={handleRestore}
                     >
                       <>
@@ -605,7 +605,7 @@ const Clip = ({
                   ) : (
                     <>
                       <Remove
-                        className="p-2 hover:bg-secondary hover:text-white focus:outline-none font-semibold border-r"
+                        className="p-2 font-semibold border-r hover:bg-secondary hover:text-white focus:outline-none"
                         onConfirmed={handleRemove}
                       >
                         <>
@@ -619,7 +619,7 @@ const Clip = ({
                       >
                         <label
                           htmlFor={`out-of-context-${clip.id}`}
-                          className="flex items-center px-5 py-2 hover:bg-secondary cursor-pointer"
+                          className="flex items-center px-5 py-2 cursor-pointer hover:bg-secondary"
                           onClick={handleOutOfContext}
                         >
                           <input
@@ -634,7 +634,7 @@ const Clip = ({
                         </label>
                         <label
                           htmlFor={`lock-${clip.id}`}
-                          className="flex items-center px-5 py-2 hover:bg-secondary cursor-pointer"
+                          className="flex items-center px-5 py-2 cursor-pointer hover:bg-secondary"
                           onClick={handleLocked}
                         >
                           <input
@@ -649,7 +649,7 @@ const Clip = ({
                         </label>
                         <label
                           htmlFor={`spoiler-${clip.id}`}
-                          className="flex items-center px-5 py-2 hover:bg-secondary cursor-pointer"
+                          className="flex items-center px-5 py-2 cursor-pointer hover:bg-secondary"
                           onClick={handleSpoiler}
                         >
                           <input
@@ -664,7 +664,7 @@ const Clip = ({
                         </label>
                         <label
                           htmlFor={`tos-${clip.id}`}
-                          className="flex items-center px-5 py-2 hover:bg-secondary cursor-pointer"
+                          className="flex items-center px-5 py-2 cursor-pointer hover:bg-secondary"
                           onClick={handleTos}
                         >
                           <input
@@ -690,7 +690,7 @@ const Clip = ({
                     auth={auth}
                   >
                     <>
-                      <i className="fas fa-flag align-middle mr-1"></i> Report
+                      <i className="mr-1 align-middle fas fa-flag"></i> Report
                     </>
                   </Report>
                 )
@@ -699,7 +699,7 @@ const Clip = ({
             {typeof clip.views_count === "undefined" ? (
               <InertiaLink
                 href={`/broadcaster/${clip.broadcaster.login}`}
-                className="p-2 font-semibold flex items-center rounded-br-md group hover:bg-secondary border-l"
+                className="flex items-center p-2 font-semibold border-l rounded-br-md group hover:bg-secondary"
                 onClick={(e) => e.stopPropagation()}
               >
                 <img
@@ -732,11 +732,11 @@ const Clip = ({
                   </p>
                   {clip.broadcaster.subscriptions &&
                     (clip.broadcaster.type ? (
-                      <span className="bg-red-600 rounded-full w-10 align-middle font-semibold text-center text-xs uppercase text-white-light">
+                      <span className="w-10 text-xs font-semibold text-center uppercase align-middle bg-red-600 rounded-full text-white-light">
                         Live
                       </span>
                     ) : (
-                      <span className="bg-gray rounded-full w-16 align-middle font-semibold text-center text-xs uppercase">
+                      <span className="w-16 text-xs font-semibold text-center uppercase align-middle rounded-full bg-gray">
                         Offline
                       </span>
                     ))}
@@ -751,9 +751,9 @@ const Clip = ({
 
           {/* mobile */}
 
-          <div className="flex items-center p-2 lg:hidden justify-between">
+          <div className="flex items-center justify-between p-2 lg:hidden">
             <div className="flex items-center">
-              <div className="items-center rounded-full flex border mr-2 px-2 py-1">
+              <div className="flex items-center px-2 py-1 mr-2 border rounded-full">
                 <button
                   className={`px-2 focus:outline-none ${
                     userVoted?.vote_type === 1 ? "text-primary" : ""
@@ -772,13 +772,13 @@ const Clip = ({
                   <i className="fas fa-arrow-down"></i>
                 </button>
               </div>
-              <div className="items-center rounded-full flex border px-2 py-1">
-                <i className="fas fa-comment-alt align-middle mr-1"></i>{" "}
+              <div className="flex items-center px-2 py-1 border rounded-full">
+                <i className="mr-1 align-middle fas fa-comment-alt"></i>{" "}
                 {numeral(clip.comments_count).format("0a")}
               </div>
             </div>
             <div
-              className="items-center rounded-full flex border p-2"
+              className="flex items-center p-2 border rounded-full"
               onClick={(e) => {
                 e.stopPropagation();
                 setIsOpen(!isOpen);
@@ -790,9 +790,9 @@ const Clip = ({
                 className="fixed inset-0 z-10 flex items-center justify-center overflow-y-auto"
                 overlayClassName="fixed inset-0 bg-dark bg-opacity-30"
               >
-                <div className="bg-dark mx-3 border rounded-md z-50 p-2 w-full relative">
+                <div className="relative z-50 w-full p-2 mx-3 border rounded-md bg-dark">
                   <button
-                    className="absolute top-1 right-3 focus:outline-none text-lg"
+                    className="absolute text-lg top-1 right-3 focus:outline-none"
                     onClick={() => {
                       setIsOpen(false);
                     }}
@@ -803,7 +803,7 @@ const Clip = ({
                     href={`https://www.twitch.tv/videos/${
                       clip.video_id
                     }?t=${secondsToHms(clip.offset)}`}
-                    className="px-3 py-2 font-semibold focus:outline-none block"
+                    className="block px-3 py-2 font-semibold focus:outline-none"
                     target="_blank"
                     rel="noreferrer"
                   >
@@ -812,7 +812,7 @@ const Clip = ({
                   {clip.user ? (
                     <InertiaLink
                       href={`/${clip.user.login}`}
-                      className="px-3 py-2 font-semibold focus:outline-none block"
+                      className="block px-3 py-2 font-semibold focus:outline-none"
                     >
                       <i className="far fa-user-circle fa-fw"></i>{" "}
                       {clip.user.display_name}&apos;s profile
@@ -822,7 +822,7 @@ const Clip = ({
                   )}
                   <InertiaLink
                     href={`/broadcaster/${clip.broadcaster.login}`}
-                    className="px-3 py-2 font-semibold focus:outline-none block"
+                    className="block px-3 py-2 font-semibold focus:outline-none"
                   >
                     <i className="fab fa-twitch fa-fw"></i> More from{" "}
                     {clip.broadcaster.display_name}
@@ -842,7 +842,7 @@ const Clip = ({
                       </Confirm>
                       <label
                         htmlFor={`spoiler-${clip.id}`}
-                        className="px-4 py-2 font-semibold focus:outline-none block"
+                        className="block px-4 py-2 font-semibold focus:outline-none"
                         onClick={handleSpoiler}
                       >
                         <input
@@ -857,7 +857,7 @@ const Clip = ({
                       </label>
                       <label
                         htmlFor={`tos-${clip.id}`}
-                        className="px-4 py-2 font-semibold focus:outline-none block"
+                        className="block px-4 py-2 font-semibold focus:outline-none"
                         onClick={handleTos}
                       >
                         <input
@@ -872,7 +872,7 @@ const Clip = ({
                       </label>
                       <label
                         htmlFor={`notification-${clip.id}`}
-                        className="px-4 py-2 font-semibold focus:outline-none block"
+                        className="block px-4 py-2 font-semibold focus:outline-none"
                         onClick={handleNotifyComments}
                       >
                         <input
@@ -895,7 +895,7 @@ const Clip = ({
                         auth={auth}
                       >
                         <>
-                          <i className="fas fa-flag align-middle fa-fw"></i>{" "}
+                          <i className="align-middle fas fa-flag fa-fw"></i>{" "}
                           Report
                         </>
                       </Report>
